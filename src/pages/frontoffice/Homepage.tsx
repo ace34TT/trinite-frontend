@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Homepage() {
+  const navigate = useNavigate();
   return (
     <div className="h-screen w-screen flex flex-col justify-center gap-52 items-center bg-black">
       <div></div>
@@ -11,7 +13,10 @@ export default function Homepage() {
         </div>
       </div>
       <div className="flex items-center gap-5 text-white font-extrabold text-5xl">
-        <div className="p-4 cursor-pointer hover:scale-110 transform transition duration-300 ease-in-out">
+        <div
+          className="p-4 cursor-pointer hover:scale-110 transform transition duration-300 ease-in-out"
+          onClick={() => navigate("/notre-maison")}
+        >
           Entrer
         </div>
         <div className="border border-gray-400 h-16"></div>
