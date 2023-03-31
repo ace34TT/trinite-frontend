@@ -6,7 +6,9 @@ function MainLayout() {
   return (
     <>
       <MainHeader />
-      <Outlet />
+      <div className="bg-white text-black dark:bg-black dark:text-white">
+        <Outlet />
+      </div>
     </>
   );
 }

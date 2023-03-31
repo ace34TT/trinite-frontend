@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Trinity() {
   return (
-    <div className="flex justify-center py-16 prose max-w-none text-2xl bg-white text-black dark:bg-black dark:text-white w-screen">
-      <div className="w-4/12 ">
+    <div className="flex justify-center py-16 prose max-w-none text-2xl w-screen">
+      <div className="w-4/12 text-black dark:text-white  ">
         <p>
           Plongez dans l'univers intemporel des bijoux Trinitée, une véritable
           ode à l'histoire et à l'artisanat d'antan. <br /> Chacune des pièces

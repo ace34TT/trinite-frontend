@@ -17,7 +17,7 @@ export default function MainHeader() {
           <Link to={"/trinite"}>Trinite</Link>
         </li>
         <li>
-          <a href="">Unique</a>
+          <Link to={"/atelier"}>L’atelier</Link>
         </li>
         <li>
           <a href="">Atelier</a>
