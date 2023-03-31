@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export default function Homepage() {
   const navigate = useNavigate();
   return (
-    <div className="h-screen w-screen flex flex-col justify-center gap-52 items-center bg-black">
+    <div className="h-screen w-screen flex flex-col justify-center gap-52 items-center dark:bg-black">
       <div></div>
       <div className="text-white flex items-center gap-32">
         <div>Logo</div>

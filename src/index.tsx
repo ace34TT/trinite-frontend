@@ -5,16 +5,24 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import Favicon from "react-favicon";
-
+import { PersistGate } from "redux-persist/integration/react";
+import { store } from "./redux/store";
+import { Provider } from "react-redux";
+import { persistStore } from "redux-persist";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+let persistor = persistStore(store);
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Favicon url="https://i.ibb.co/0st12ck/1-transparent-logo-black-scroped.png" />
-      <App />
-    </BrowserRouter>
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <BrowserRouter>
+          <Favicon url="https://i.ibb.co/0st12ck/1-transparent-logo-black-scroped.png" />
+          <App />
+        </BrowserRouter>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );
 
