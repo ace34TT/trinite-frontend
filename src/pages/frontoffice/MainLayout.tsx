@@ -1,5 +1,5 @@
 import React from "react";
-import MainHeader from "../../components/frontoffice/MainHeader";
+import MainHeader from "../../components/main-header/MainHeader";
 import { Outlet } from "react-router-dom";
 
 function MainLayout() {

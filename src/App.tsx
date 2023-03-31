@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Homepage from "./pages/frontoffice/Homepage";
 import MainLayout from "./pages/frontoffice/MainLayout";
 import OurHouse from "./pages/frontoffice/OurHouse";
+import Trinity from "./pages/frontoffice/Trinity";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path="/" element={<Homepage />} />
       <Route path="/" element={<MainLayout />}>
         <Route path="notre-maison" element={<OurHouse />}></Route>
+        <Route path="trinite" element={<Trinity />}></Route>
       </Route>
       {/* <Route path="/" element={<Frontoffice />}>
         <Route index element={<Homepage />} />
