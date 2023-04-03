@@ -27,7 +27,7 @@ export default function MainHeader() {
           <Link to={"/atelier"}>L’atelier</Link>
         </li>
         <li>
-          <Link to="">Contact</Link>
+          <Link to="/contact">Contact</Link>
         </li>
         <li>
           <button

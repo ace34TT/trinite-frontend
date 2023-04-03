@@ -1,51 +1,66 @@
 import React from "react";
-
+const images = [require("./../../assets/products/article-01.png")];
 export default function Trinity() {
   return (
-    <div className="flex justify-center py-16 prose max-w-none text-2xl w-screen">
-      <div className="w-4/12 text-black dark:text-white  ">
-        <p>
-          Plongez dans l'univers intemporel des bijoux Trinitée, une véritable
-          ode à l'histoire et à l'artisanat d'antan. <br /> Chacune des pièces
-          de notre collection évoque un trésor ancien comme déniché par un
-          archéologue passionné.
-        </p>
-        <br />
-        <p>
-          Créée en 2022 par Antsa Gaëlle, notre marque est profondément inspirée
-          des bijoux traditionnels de Madagascar, reflétant la richesse du pays
-          où l'histoire culturelle, la durabilité et le savoir-faire artisanal
-          sont mis en avant pour vous offrir des créations d'exception.
-        </p>
-        <p>
-          Notre emblématique bracelet Vango Vango est plus qu'un simple bijou,
-          c'est un symbole de l'histoire et de la culture de Madagascar, fruit
-          d'un savoir-faire ancestral transmis de génération en génération. Avec
-          son design unique et son charme intemporel, il est l'accessoire
-          parfait pour les clients les plus exigeants, qui cherchent à se
-          démarquer avec style et élégance.
-        </p>
-        <br />
-        <p>
-          Chez Trintée, chaque bijoux est une pièce unique, créée avec passion
-          et savoir-faire artisanal, pour vous offrir une expérience unique et
-          intemporelle, où la qualité, l'éthique et la durabilité sont au cœur
-          de notre engagement.
-        </p>
-        <p>
-          Nous sommes fiers de mettre en lumière les traditions malgaches tout
-          en apportant notre touche personnelle à chacune de nos créations.
-        </p>
-        <br />
-        <p>
-          Plongez dans notre univers d'élégance et de raffinement, où le temps
-          semble suspendu et où chaque bijou est chargé d'une symbolique forte
-          et émotionnelle.
-        </p>
-        <p>
-          Rejoignez-nous dans cette aventure hors du temps et découvrez notre
-          collection de bijoux inspirée par l'histoire et la culture malgaches.
-        </p>
+    <div className="pt-16">
+      <div className="grid grid-cols-3 gap-4 divide-x divide-y">
+        <div className="py-16 px-14 flex items-center justify-center">
+          La collection Trinité est une rencontre. Entre héritage et innovation.
+          Entre des siécles de savoir-faire et le désir de penser le bijoux
+          autrement. Entre l'expertise des meilleurs ateliers de Madagascar et
+          la vision créative de la nouvelle génération.
+        </div>
+        <div className="py-16 px-14 flex flex-col items-center justify-center">
+          <div className="flex justify-between gap-10">
+            <p>
+              Bracelet en or 18 CARATS de Madagascar Or Rose, Or et Or blanc
+            </p>
+            <p>2300€</p>
+          </div>
+          <img src={images[0]} alt="" />
+        </div>
+        <div className="py-16 px-14 flex items-center justify-center">
+          La collection Trinité est une rencontre. Entre héritage et innovation.
+          Entre des siécles de savoir-faire et le désir de penser le bijoux
+          autrement. Entre l'expertise des meilleurs ateliers de Madagascar et
+          la vision créative de la nouvelle génération.
+        </div>
+        <div className="py-16 px-14 flex items-center justify-center">
+          La collection Trinité est une rencontre. Entre héritage et innovation.
+          Entre des siécles de savoir-faire et le désir de penser le bijoux
+          autrement. Entre l'expertise des meilleurs ateliers de Madagascar et
+          la vision créative de la nouvelle génération.
+        </div>
+        <div className="py-16 px-14 flex items-center justify-center">
+          La collection Trinité est une rencontre. Entre héritage et innovation.
+          Entre des siécles de savoir-faire et le désir de penser le bijoux
+          autrement. Entre l'expertise des meilleurs ateliers de Madagascar et
+          la vision créative de la nouvelle génération.
+        </div>
+        <div className="py-16 px-14 flex items-center justify-center">
+          La collection Trinité est une rencontre. Entre héritage et innovation.
+          Entre des siécles de savoir-faire et le désir de penser le bijoux
+          autrement. Entre l'expertise des meilleurs ateliers de Madagascar et
+          la vision créative de la nouvelle génération.
+        </div>
+        <div className="py-16 px-14 flex items-center justify-center">
+          La collection Trinité est une rencontre. Entre héritage et innovation.
+          Entre des siécles de savoir-faire et le désir de penser le bijoux
+          autrement. Entre l'expertise des meilleurs ateliers de Madagascar et
+          la vision créative de la nouvelle génération.
+        </div>
+        <div className="py-16 px-14 flex items-center justify-center">
+          La collection Trinité est une rencontre. Entre héritage et innovation.
+          Entre des siécles de savoir-faire et le désir de penser le bijoux
+          autrement. Entre l'expertise des meilleurs ateliers de Madagascar et
+          la vision créative de la nouvelle génération.
+        </div>
+        <div className="py-16 px-14 flex items-center justify-center">
+          La collection Trinité est une rencontre. Entre héritage et innovation.
+          Entre des siécles de savoir-faire et le désir de penser le bijoux
+          autrement. Entre l'expertise des meilleurs ateliers de Madagascar et
+          la vision créative de la nouvelle génération.
+        </div>
       </div>
     </div>
   );

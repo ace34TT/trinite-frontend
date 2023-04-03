@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function Homepage() {
   const navigate = useNavigate();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div className="h-screen w-screen flex flex-col justify-center gap-52 items-center dark:bg-black">
       <div></div>
