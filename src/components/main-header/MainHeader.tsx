@@ -7,9 +7,9 @@ export default function MainHeader() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   return (
-    <header className="flex justify-around items-center h-20 bg-white text-black dark:bg-black dark:text-white">
+    <header className="flex justify-around items-center  py-7 bg-white text-black dark:bg-black dark:text-white">
       <div className="">logo</div>
-      <ul className="flex items-center gap-24 text-2xl">
+      <ul className="flex items-center font-normal gap-24 text-xl">
         <li>
           <Link to={"/notre-maison"}>La maison</Link>
         </li>
@@ -20,7 +20,7 @@ export default function MainHeader() {
           <Link to={"/atelier"}>L’atelier</Link>
         </li>
         <li>
-          <a href="">Atelier</a>
+          <Link to="">Contact</Link>
         </li>
         <li>
           <label className="relative inline-flex items-center cursor-pointer">
@@ -34,7 +34,9 @@ export default function MainHeader() {
           </label>
         </li>
       </ul>
-      <div className="">maison de haute </div>
+      <div className="text-2xl uppercase">
+        Maison <br /> de haute <br /> joaeollerie
+      </div>
     </header>
   );
 }
