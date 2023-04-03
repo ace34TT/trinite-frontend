@@ -9,6 +9,8 @@ import { PersistGate } from "redux-persist/integration/react";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import { persistStore } from "redux-persist";
+import "./configs/i18n";
+
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
