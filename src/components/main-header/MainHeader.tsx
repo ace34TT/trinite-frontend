@@ -18,13 +18,13 @@ export default function MainHeader() {
       <div className="">logo</div>
       <ul className="flex items-center font-normal gap-24 text-xl">
         <li>
-          <Link to={"/notre-maison"}>La maison</Link>
+          <Link to={"/notre-maison"}>{t("header.trad1")}</Link>
         </li>
         <li>
           <Link to={"/trinite"}>Trinite</Link>
         </li>
         <li>
-          <Link to={"/atelier"}>L’atelier</Link>
+          <Link to={"/atelier"}>{t("header.trad2")}</Link>
         </li>
         <li>
           <Link to="/contact">Contact</Link>
