@@ -53,12 +53,7 @@ export default function MainHeader() {
           </button>
         </li>
         <li>
-          <div
-            className="flex items-center justify-center w-full"
-            onClick={() => {
-              dispatch(toggleTheme());
-            }}
-          >
+          <div className="flex items-center justify-center w-full">
             <label
               htmlFor="toggleB"
               className="flex items-center cursor-pointer"
