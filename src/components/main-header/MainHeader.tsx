@@ -11,7 +11,7 @@ const languages = [
 
 export default function MainHeader() {
   const dispatch = useDispatch();
-  const [activeLanguage, setActiveLanguage] = useState(1);
+  const [activeLanguage, setActiveLanguage] = useState(0);
   const { t, i18n } = useTranslation();
   return (
     <header className="flex justify-around items-center  py-7 bg-white text-black dark:bg-black dark:text-white">
