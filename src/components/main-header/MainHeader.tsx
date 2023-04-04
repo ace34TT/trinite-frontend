@@ -31,12 +31,12 @@ export default function MainHeader() {
           />
         </Link>
       </div>
-      <ul className="flex items-center font-normal gap-24 text-xl">
+      <ul className="flex items-center font-normal gap-10 text-xl">
         <li>
           <Link to={"/notre-maison"}>{t("header.trad1")}</Link>
         </li>
         <li>
-          <Link to={"/trinite"}>trinité</Link>
+          <Link to={"/trinite"}>Trinité</Link>
         </li>
         <li>
           <Link to={"/atelier"}>{t("header.trad2")}</Link>
@@ -74,14 +74,14 @@ export default function MainHeader() {
                     dispatch(toggleTheme());
                   }}
                 />
-                <div className="block bg-white w-14 h-8 rounded-full border-2 border-black"></div>
-                <div className="dot absolute left-1 top-1 bg-black w-6 h-6 rounded-full transition"></div>
+                <div className="block bg-white w-14 h-8 border-2 rounded-md border-black"></div>
+                <div className="dot absolute left-1 top-1 bg-black w-6 h-6 rounded-md transition"></div>
               </div>
             </label>
           </div>
         </li>
       </ul>
-      <div className="text-2xl uppercase">
+      <div className="text-xl uppercase">
         Maison <br /> de haute <br /> joaeollerie
       </div>
     </header>
