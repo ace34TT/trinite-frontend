@@ -23,11 +23,13 @@ export default function MainHeader() {
   return (
     <header className="flex justify-around items-center  py-7 bg-white text-black dark:bg-black dark:text-white">
       <div className="">
-        <img
-          src={theme.currentTheme === "dark" ? logo[0] : logo[1]}
-          className="h-24"
-          alt=""
-        />
+        <Link to={"/accueil"}>
+          <img
+            src={theme.currentTheme === "dark" ? logo[0] : logo[1]}
+            className="h-24"
+            alt=""
+          />
+        </Link>
       </div>
       <ul className="flex items-center font-normal gap-24 text-xl">
         <li>
