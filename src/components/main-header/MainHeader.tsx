@@ -71,7 +71,7 @@ export default function MainHeader() {
                     dispatch(toggleTheme());
                   }}
                 />
-                <div className="block bg-white w-14 h-8 rounded-full"></div>
+                <div className="block bg-white w-14 h-8 rounded-full border-2 border-black"></div>
                 <div className="dot absolute left-1 top-1 bg-black w-6 h-6 rounded-full transition"></div>
               </div>
             </label>
