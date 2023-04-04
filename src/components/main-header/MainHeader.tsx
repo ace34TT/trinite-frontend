@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 const languages = [
   { code: "fr", name: "Français" },
-  { code: "en", name: "English" },
+  { code: "en", name: "Anglais" },
 ];
 
 export default function MainHeader() {
@@ -48,7 +48,7 @@ export default function MainHeader() {
               setActiveLanguage(0);
             }}
           >
-            {activeLanguage === 0 ? languages[0].name : languages[1].name}
+            {activeLanguage === 0 ? languages[1].name : languages[0].name}
           </button>
         </li>
         <li>
