@@ -36,7 +36,7 @@ export default function MainHeader() {
           <Link to={"/notre-maison"}>{t("header.trad1")}</Link>
         </li>
         <li>
-          <Link to={"/trinite"}>Trinite</Link>
+          <Link to={"/trinite"}>trinité</Link>
         </li>
         <li>
           <Link to={"/atelier"}>{t("header.trad2")}</Link>
