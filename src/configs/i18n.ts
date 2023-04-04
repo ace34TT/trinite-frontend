@@ -19,9 +19,9 @@ i18n.use(initReactI18next).init({
         },
         OurHouse: {
           trad1:
-            "Plongez dans l'univers intemporel des bijoux Trinitée, une véritable ode à l'histoire et à l'artisanat d'antan. <br /> Chacune des pièces de notre collection évoque un trésor ancien comme déniché par un archéologue passionné.",
+            "Plongez dans l'univers intemporel des bijoux Trinitée, une véritable ode à l'histoire et à l'artisanat d'antan.",
           trad2:
-            "Créée en 2022 par Antsa Gaëlle, notre marque est profondément inspirée des bijoux traditionnels de Madagascar, reflétant la richesse du pays où l'histoire culturelle, la durabilité et le savoir-faire artisanal sont mis en avant pour vous offrir des créations d'exception.",
+            "Chacune des pièces de notre collection évoque un trésor ancien comme déniché par un archéologue passionné.",
           trad3:
             "Créée en 2022 par Antsa Gaëlle, notre marque est profondément inspirée des bijoux traditionnels de Madagascar, reflétant la richesse du pays où l'histoire culturelle, la durabilité et le savoir-faire artisanal sont mis en avant pour vous offrir des créations d'exception.",
           trad4:
@@ -29,8 +29,10 @@ i18n.use(initReactI18next).init({
           trad5:
             "Chez Trintée, chaque bijoux est une pièce unique, créée avec passion et savoir-faire artisanal, pour vous offrir une expérience unique et intemporelle, où la qualité, l'éthique et la durabilité sont au cœur de notre engagement.",
           trad6:
-            "Nous sommes fiers de mettre en lumière les traditions malgaches tout en apportant notre touche personnelle à chacune de nos créations. Plongez dans notre univers d'élégance et de raffinement, où le temps semble suspendu et où chaque bijou est chargé d'une symbolique forte et émotionnelle.",
+            "Nous sommes fiers de mettre en lumière les traditions malgaches tout en apportant notre touche personnelle à chacune de nos créations.",
           trad7:
+            " Plongez dans notre univers d'élégance et de raffinement, où le temps semble suspendu et où chaque bijou est chargé d'une symbolique forte et émotionnelle.",
+          trad8:
             " Rejoignez-nous dans cette aventure hors du temps et découvrez notre collection de bijoux inspirée par l'histoire et la culture malgaches.",
         },
         Studio: {
@@ -68,7 +70,7 @@ i18n.use(initReactI18next).init({
         },
         OurHouse: {
           trad1:
-            "Dive into the timeless universe of Trinitée jewelry, a true ode to history and ancient craftsmanship",
+            "Dive into the timeless universe of Trinitée jewelry, a true ode to history and ancient craftsmanship.",
           trad2:
             "Each piece in our collection evokes an ancient treasure unearthed by a passionate archaeologist.",
           trad3:
@@ -78,8 +80,10 @@ i18n.use(initReactI18next).init({
           trad5:
             "At Trinitée, each piece of jewelry is a unique creation made with passion and artisanal expertise to offer you a unique and timeless experience, where quality, ethics, and sustainability are at the heart of our commitment.",
           trad6:
-            "We are proud to highlight Malagasy traditions while bringing our own personal touch to each of our creations. Immerse yourself in our universe of elegance and refinement, where time seems to stand still and each piece of jewelry is charged with strong emotional symbolism.",
+            "We are proud to highlight Malagasy traditions while bringing our own personal touch to each of our creations.",
           trad7:
+            "Immerse yourself in our universe of elegance and refinement, where time seems to stand still and each piece of jewelry is charged with strong emotional symbolism.",
+          trad8:
             "Join us on this timeless adventure and discover our collection of jewelry inspired by Malagasy history and culture.",
         },
         Studio: {

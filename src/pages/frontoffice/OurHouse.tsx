@@ -9,16 +9,16 @@ export default function OurHouse() {
         <p>
           {t("OurHouse.trad1")}
           <br />
-          {t("OurHouse.trad2")}
+          {t("OurHouse.trad2")}{" "} 
         </p>
-        <br />
         <p>{t("OurHouse.trad3")}</p>
         <p>{t("OurHouse.trad4")}</p>
         <br />
         <p>{t("OurHouse.trad5")}</p>
-        <br />
         <p>{t("OurHouse.trad6")}</p>
+        <br />
         <p>{t("OurHouse.trad7")}</p>
+        <p>{t("OurHouse.trad8")}</p>
       </div>
     </div>
   );
