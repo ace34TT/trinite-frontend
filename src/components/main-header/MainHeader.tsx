@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggleTheme } from "../../features/theme.feature";
 import "./style.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import logo from "./../../assets/logo/logo-trinité.png";
 const languages = [
   { code: "fr", name: "Français" },
   { code: "en", name: "Anglais" },
@@ -21,7 +22,7 @@ export default function MainHeader() {
           console.log("Bonjour");
         }}
       >
-        logo
+        <img src={logo} className="h-24" alt="" />
       </div>
       <ul className="flex items-center font-normal gap-24 text-xl">
         <li>

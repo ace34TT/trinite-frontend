@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import "./style.css";
+import logo from "./../../../assets/logo/logo-trinité.png";
 export default function Portal() {
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -8,7 +9,7 @@ export default function Portal() {
     <div className="h-screen w-screen flex flex-col justify-center gap-52 items-center dark:bg-black">
       <div></div>
       <div className="text-white flex items-center gap-32">
-        <div>Logo</div>
+        <img src={logo} className="h-32" alt="" />
         <div className="the-house text-4xl">
           MAISON <br /> DE HAUTE <br /> JOAILLERIE
         </div>
