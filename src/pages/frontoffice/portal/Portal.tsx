@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import logo from "./../../../assets/logo/logo-trinité.png";
 export default function Portal() {
@@ -23,7 +23,7 @@ export default function Portal() {
         </div>
         <div className="border border-gray-400 h-16"></div>
         <div className="p-4 cursor-pointer hover:scale-110 transform transition duration-300 ease-in-out">
-          Contact
+          <Link to={"/contact"}>Contact</Link>
         </div>
       </div>
     </div>
