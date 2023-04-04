@@ -8,6 +8,7 @@ const reducers = combineReducers({
 const persistConfig = {
   key: "root",
   storage,
+  blacklist: ["theme"],
 };
 const persistedReducer = persistReducer(persistConfig, reducers);
 export const store = configureStore({
@@ -15,6 +16,8 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
+      ignoredActions: [""],
+      ignoredPaths: ["theme"],
     }),
 });
 
