@@ -15,7 +15,14 @@ export default function MainHeader() {
   const { t, i18n } = useTranslation();
   return (
     <header className="flex justify-around items-center  py-7 bg-white text-black dark:bg-black dark:text-white">
-      <div className="">logo</div>
+      <div
+        className=""
+        onClick={() => {
+          console.log("Bonjour");
+        }}
+      >
+        logo
+      </div>
       <ul className="flex items-center font-normal gap-24 text-xl">
         <li>
           <Link to={"/notre-maison"}>{t("header.trad1")}</Link>
@@ -45,15 +52,30 @@ export default function MainHeader() {
           </button>
         </li>
         <li>
-          <label className="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" value="" className="sr-only peer" />
-            <div
-              onClick={() => {
-                dispatch(toggleTheme());
-              }}
-              className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4  rounded-full peer dark:bg-white peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-black after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 "
-            ></div>
-          </label>
+          <div
+            className="flex items-center justify-center w-full"
+            onClick={() => {
+              dispatch(toggleTheme());
+            }}
+          >
+            <label
+              htmlFor="toggleB"
+              className="flex items-center cursor-pointer"
+            >
+              <div className="relative">
+                <input
+                  type="checkbox"
+                  id="toggleB"
+                  className="sr-only"
+                  onClick={() => {
+                    dispatch(toggleTheme());
+                  }}
+                />
+                <div className="block bg-white w-14 h-8 rounded-full"></div>
+                <div className="dot absolute left-1 top-1 bg-black w-6 h-6 rounded-full transition"></div>
+              </div>
+            </label>
+          </div>
         </li>
       </ul>
       <div className="text-2xl uppercase">

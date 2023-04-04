@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
-
 interface IThemeHandler {
   currentTheme: "dark" | "light";
 }
@@ -14,6 +12,8 @@ export const themeSlice = createSlice({
   reducers: {
     toggleTheme: (state) => {
       console.log("changing theme");
+      console.log(state.currentTheme);
+
       if (state.currentTheme === "dark") {
         document.body.classList.remove("dark");
         state.currentTheme = "light";
