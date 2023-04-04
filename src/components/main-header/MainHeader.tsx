@@ -1,10 +1,15 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../features/theme.feature";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import logo from "./../../assets/logo/logo-trinité.png";
+import { RootState } from "../../redux/store";
+
+const logo = [
+  require("./../../assets/logo/logo-trinité.png"),
+  require("./../../assets/logo/logo-w.png"),
+];
 const languages = [
   { code: "fr", name: "Français" },
   { code: "en", name: "Anglais" },
@@ -12,17 +17,17 @@ const languages = [
 
 export default function MainHeader() {
   const dispatch = useDispatch();
+  const theme = useSelector((state: RootState) => state.theme);
   const [activeLanguage, setActiveLanguage] = useState(0);
   const { t, i18n } = useTranslation();
   return (
     <header className="flex justify-around items-center  py-7 bg-white text-black dark:bg-black dark:text-white">
-      <div
-        className=""
-        onClick={() => {
-          console.log("Bonjour");
-        }}
-      >
-        <img src={logo} className="h-24" alt="" />
+      <div className="">
+        <img
+          src={theme.currentTheme === "dark" ? logo[0] : logo[1]}
+          className="h-24"
+          alt=""
+        />
       </div>
       <ul className="flex items-center font-normal gap-24 text-xl">
         <li>
