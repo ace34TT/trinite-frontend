@@ -4,11 +4,11 @@ Command: npx gltfjsx@6.1.4 Bracelet-compressed.glb --types
 */
 
 import * as THREE from "three";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { Group } from "three";
-import { useFrame } from "react-three-fiber";
+import { useFrame, useThree } from "react-three-fiber";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -24,14 +24,52 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
     "models/final/Bracelet-compressed.glb"
   ) as GLTFResult;
 
-  const groupRef = useRef<Group>(null);
-  const rotationSpeed = 0.1;
+  const groupRef = useRef<THREE.Group>(null);
 
-  useFrame(({ clock }) => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y += rotationSpeed * clock.getDelta(); // increment rotation angle by a fixed amount
-      if (groupRef.current.rotation.y > Math.PI * 2) {
-        groupRef.current.rotation.y -= Math.PI * 2; // wrap the angle to keep it within 0 to 2*PI range
+  const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 });
+  const [prevMouseCoords, setPrevMouseCoords] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    function handleMouseMove(event: { clientX: any; clientY: any }) {
+      const { clientX, clientY } = event;
+      setPrevMouseCoords(mouseCoords);
+      setMouseCoords({ x: clientX, y: clientY });
+    }
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, [mouseCoords]);
+
+  useFrame(() => {
+    const { x, y } = mouseCoords;
+    const { x: prevX, y: prevY } = prevMouseCoords;
+    const group = groupRef.current;
+
+    if (group) {
+      const newX = (x / window.innerWidth) * 2 - 1;
+      const newY = -(y / window.innerHeight) * 2 + 1;
+      const prevXNormalized = (prevX / window.innerWidth) * 2 - 1;
+      const prevYNormalized = -(prevY / window.innerHeight) * 2 + 1;
+
+      const maxRotationX = Math.PI / 3;
+      const maxRotationY = Math.PI / 3;
+
+      group.rotation.x += -(newY - prevYNormalized) * 0.1;
+      group.rotation.y += (newX - prevXNormalized) * 0.1;
+
+      if (group.rotation.x > maxRotationX) {
+        group.rotation.x = maxRotationX;
+      } else if (group.rotation.x < -maxRotationX) {
+        group.rotation.x = -maxRotationX;
+      }
+
+      if (group.rotation.y > maxRotationY) {
+        group.rotation.y = maxRotationY;
+      } else if (group.rotation.y < -maxRotationY) {
+        group.rotation.y = -maxRotationY;
       }
     }
   });
@@ -42,7 +80,7 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
         geometry={nodes.Circle002.geometry}
         material={materials["Scratched Gold"]}
         position={[0, 0, 0]}
-        rotation={[1.55, 0, 0]}
+        rotation={[1.55, 0, 1.2]}
         scale={2.5}
       />
     </group>
