@@ -80,6 +80,8 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
         geometry={nodes.Circle002.geometry}
         material={materials["Scratched Gold"]}
         position={[0, 0, 0]}
+        rotation={[1.55, 0, 0]}
+        scale={3}
         rotation={[1.55, 0, 1.2]}
         scale={2.5}
       />
