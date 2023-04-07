@@ -35,9 +35,7 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
       setPrevMouseCoords(mouseCoords);
       setMouseCoords({ x: clientX, y: clientY });
     }
-
     window.addEventListener("mousemove", handleMouseMove);
-
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
@@ -54,8 +52,8 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
       const prevXNormalized = (prevX / window.innerWidth) * 2 - 1;
       const prevYNormalized = -(prevY / window.innerHeight) * 2 + 1;
 
-      const maxRotationX = Math.PI / 3;
-      const maxRotationY = Math.PI / 3;
+      const maxRotationX = Math.PI / 20;
+      const maxRotationY = Math.PI / 20;
 
       group.rotation.x += -(newY - prevYNormalized) * 0.1;
       group.rotation.y += (newX - prevXNormalized) * 0.1;
@@ -81,7 +79,7 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
         material={materials["Scratched Gold"]}
         position={[0, 0, 0]}
         rotation={[1.55, 0, 1.2]}
-        scale={3}
+        scale={3.5}
       />
     </group>
   );

@@ -32,11 +32,7 @@ export default function Homepage() {
           <div className="w-[100%] h-[70%]">
             <Canvas>
               <PerspectiveCamera position={[0, 0, 0]} />
-              <OrbitControls
-                enableZoom={false}
-                minPolarAngle={1}
-                maxPolarAngle={1.5}
-              />
+              <OrbitControls enableZoom={false} />
               <Suspense fallback={null}>
                 <Model />
                 <Environment preset="warehouse" />
