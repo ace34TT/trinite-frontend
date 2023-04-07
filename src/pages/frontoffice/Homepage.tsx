@@ -1,14 +1,15 @@
-import { Suspense } from "react";
+import { Suspense, useRef } from "react";
 import { Helmet } from "react-helmet";
 // import SphereThreeModel from "../../components/three-model/SphereThreeModel";
 import {
   Environment,
   OrbitControls,
   PerspectiveCamera,
+  useEnvironment,
+  useFBO,
 } from "@react-three/drei";
-import { Canvas } from "react-three-fiber";
+import { Canvas, useFrame, useThree } from "react-three-fiber";
 import { Model } from "../../components/three-model/Bracelet";
-// import { Model } from "../../components/three-model/MainModel";
 
 export default function Homepage() {
   return (
@@ -16,17 +17,19 @@ export default function Homepage() {
       <Helmet>
         <title>Trinité - Accueil</title>
       </Helmet>
-      <div className=" h-screen flex flex-col justify-center items-center min-h-[500px]">
+      <div className=" h-screen flex flex-col justify-center items-center ">
         <Canvas>
-          <PerspectiveCamera position={[0, 0, 10]} />
+          <PerspectiveCamera position={[0, 0, 0]} />
           <OrbitControls
             enableZoom={false}
-            minPolarAngle={1.5}
+            minPolarAngle={1}
             maxPolarAngle={1.5}
           />
+          {/* <axesHelper />
+          <gridHelper args={[10, 10]} /> */}
           <Suspense fallback={null}>
             <Model />
-            <Environment preset="sunset" />
+            <Environment preset="warehouse" />
           </Suspense>
         </Canvas>
         <div className="text-3xl text-center">
