@@ -1,5 +1,6 @@
-import { Suspense, useRef } from "react";
+import { Suspense, useRef, useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { Html, useProgress } from "@react-three/drei";
 // import SphereThreeModel from "../../components/three-model/SphereThreeModel";
 import {
   Environment,
@@ -12,31 +13,44 @@ import { Canvas, useFrame, useThree } from "react-three-fiber";
 import { Model } from "../../components/three-model/Bracelet";
 
 export default function Homepage() {
+  const { progress } = useProgress();
   return (
     <>
       <Helmet>
         <title>Trinité - Accueil</title>
       </Helmet>
-      <div className=" h-screen flex flex-col justify-center items-center ">
-        <Canvas>
-          <PerspectiveCamera position={[0, 0, 0]} />
-          <OrbitControls
-            enableZoom={false}
-            minPolarAngle={1}
-            maxPolarAngle={1.5}
-          />
-          {/* <axesHelper />
-          <gridHelper args={[10, 10]} /> */}
-          <Suspense fallback={null}>
-            <Model />
-            <Environment preset="warehouse" />
-          </Suspense>
-        </Canvas>
-        <div className="text-3xl text-center">
-          Entre tradition et modernité symbole fort de liberté <br /> et
-          d’émancipation
+      {progress < 100 ? (
+        <div
+          className="flex flex-1 flex-col items-center justify-center  text-9xl"
+          style={{ height: "calc(100vh - 200px)" }}
+        >
+          <div>{progress} %</div>
         </div>
-      </div>
+      ) : (
+        <div
+          className=" h-screen flex flex-col justify-center items-center pb-7"
+          style={{ height: "calc(100vh - 200px)" }}
+        >
+          <div className="w-[100%] h-[70%]">
+            <Canvas>
+              <PerspectiveCamera position={[0, 0, 0]} />
+              <OrbitControls
+                enableZoom={false}
+                minPolarAngle={1}
+                maxPolarAngle={1.5}
+              />
+              <Suspense fallback={null}>
+                <Model />
+                <Environment preset="warehouse" />
+              </Suspense>
+            </Canvas>
+          </div>
+          <div className="text-3xl text-center mb-5">
+            Entre tradition et modernité symbole fort de liberté <br /> et
+            d’émancipation
+          </div>
+        </div>
+      )}
     </>
   );
 }

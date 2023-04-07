@@ -43,7 +43,7 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
         material={materials["Scratched Gold"]}
         position={[0, 0, 0]}
         rotation={[1.55, 0, 0]}
-        scale={2.5}
+        scale={3}
       />
     </group>
   );
