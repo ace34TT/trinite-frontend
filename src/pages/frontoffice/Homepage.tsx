@@ -1,7 +1,6 @@
-import { Suspense, useRef, useEffect } from "react";
+import { Suspense, useRef, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Html, useProgress } from "@react-three/drei";
-// import SphereThreeModel from "../../components/three-model/SphereThreeModel";
 import {
   Environment,
   OrbitControls,
@@ -12,6 +11,16 @@ import { Model } from "../../components/three-model/Bracelet";
 
 export default function Homepage() {
   const { progress } = useProgress();
+  const [pourcentage, setPourcentage] = useState(0);
+
+  useEffect(() => {
+    for (let i = 0; i < 100; i++) {
+      setTimeout(() => {
+        setPourcentage(i);
+      }, i * 50); // attendre i secondes avant d'exécuter la fonction de rappel
+    }
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -22,7 +31,7 @@ export default function Homepage() {
           className="flex flex-1 flex-col items-center justify-center  text-9xl"
           style={{ height: "calc(100vh - 200px)" }}
         >
-          <div>{progress} %</div>
+          <div>{pourcentage} %</div>
         </div>
       ) : (
         <div
