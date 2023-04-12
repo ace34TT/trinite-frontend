@@ -17,7 +17,7 @@ export default function Homepage() {
     for (let i = 0; i < 100; i++) {
       setTimeout(() => {
         setPourcentage(i);
-      }, i * 50); 
+      }, i * 400);
     }
   }, []);
 
