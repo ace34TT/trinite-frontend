@@ -14,10 +14,11 @@ export default function Trinity() {
       <div className="pt-16">
         <div className="grid grid-cols-3">
           <div className="py-16 px-14 flex items-center justify-center border border-gray-300">
-            La collection Trinité est une rencontre. Entre héritage et
-            innovation. Entre des siécles de savoir-faire et le désir de penser
-            le bijoux autrement. Entre l'expertise des meilleurs ateliers de
-            Madagascar et la vision créative de la nouvelle génération.
+            La collection Trinité incarne la fusion exquise entre l'héritage
+            ancestral et l'audace de l'innovation. La collection allie la
+            sagesse d'un savoir-faire séculaire aux aspirations novatrices d'une
+            nouvelle génération, pour offrir des créations uniques et
+            intemporelles.
           </div>
           <div className="py-16 px-14 flex flex-col items-center justify-start border border-gray-300">
             <div className="flex justify-between gap-10">

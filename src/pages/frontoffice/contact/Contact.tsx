@@ -17,7 +17,7 @@ export default function Contact() {
           <br />
           <p className="m-3">bonjour@trinité.com</p>
           <p className="m-3">0622007168</p>
-          <p className="m-3 underline cursor-pointer">Prendre rendez-vous</p>
+          {/* <p className="m-3 underline cursor-pointer">Prendre rendez-vous</p> */}
         </div>
       </div>
     </>
