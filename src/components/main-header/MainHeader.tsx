@@ -1,6 +1,24 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleTheme } from "../../features/theme.feature";
+import "./style.css";
+import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { RootState } from "../../redux/store";
 
-const Responsive = () => {
+const logo = [
+  require("./../../assets/logo/logo-trinité.png"),
+  require("./../../assets/logo/logo-w.png"),
+];
+const languages = [
+  { code: "fr", name: "Français" },
+  { code: "en", name: "Anglais" },
+];
+const MainHeader = () => {
+  const dispatch = useDispatch();
+  const theme = useSelector((state: RootState) => state.theme);
+  const [activeLanguage, setActiveLanguage] = useState(0);
+  const { t, i18n } = useTranslation();
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -8,7 +26,7 @@ const Responsive = () => {
   };
 
   return (
-    <nav className="bg-gray-800">
+    <header className=" bg-white text-black dark:bg-black dark:text-white">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -61,48 +79,72 @@ const Responsive = () => {
           </div>
           <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
             {/* Logo ou nom du site */}
-            <div className="flex-shrink-0 flex items-center">
-              <a href="/">
+            <div className="flex-shrink-0 flex items-center  ">
+              <Link to={"/accueil"}>
                 <img
-                  className="block lg:hidden h-8 w-auto"
-                  src="/logo.svg"
-                  alt="Workflow"
+                  src={theme.currentTheme === "dark" ? logo[0] : logo[1]}
+                  className="h-24"
+                  alt=""
                 />
-                <img
-                  className="hidden lg:block h-8 w-auto"
-                  src="/logo.svg"
-                  alt="Workflow"
-                />
-              </a>
+              </Link>
             </div>
             {/* Liens de navigation */}
-            <div className="hidden sm:block sm:ml-6">
-              <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Accueil
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Services
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  À propos
-                </a>
-                <a
-                  href="#"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  Contact
-                </a>
-              </div>
+            <header className=" hidden sm:block sm:ml-6  flex justify-around items-center  py-7 bg-white text-black dark:bg-black dark:text-white">
+              <ul className="flex items-center font-normal gap-10 text-xl">
+                <li>
+                  <Link to={"/notre-maison"}>{t("header.trad1")}</Link>
+                </li>
+                <li>
+                  <Link to={"/trinite"}>Trinité</Link>
+                </li>
+                <li>
+                  <Link to={"/atelier"}>{t("header.trad2")}</Link>
+                </li>
+                <li>
+                  <Link to="/contact">Contact</Link>
+                </li>
+                <li>
+                  <button
+                    onClick={() => {
+                      if (activeLanguage === 0) {
+                        i18n.changeLanguage(languages[1].code);
+                        setActiveLanguage(1);
+                        return;
+                      }
+                      i18n.changeLanguage(languages[0].code);
+                      setActiveLanguage(0);
+                    }}
+                  >
+                    {activeLanguage === 0
+                      ? languages[1].name
+                      : languages[0].name}
+                  </button>
+                </li>
+                <li>
+                  <div className="flex items-center justify-center w-full">
+                    <label
+                      htmlFor="toggleB"
+                      className="flex items-center cursor-pointer"
+                    >
+                      <div className="relative">
+                        <input
+                          type="checkbox"
+                          id="toggleB"
+                          className="sr-only"
+                          onClick={() => {
+                            dispatch(toggleTheme());
+                          }}
+                        />
+                        <div className="block bg-white w-14 h-8 border-2 rounded-md border-black"></div>
+                        <div className="dot absolute left-1 top-1 bg-black w-6 h-6 rounded-md transition"></div>
+                      </div>
+                    </label>
+                  </div>
+                </li>
+              </ul>
+            </header>
+            <div className="text-xl uppercase hidden ">
+              Maison <br /> de haute <br /> joaeollerie
             </div>
           </div>
         </div>
@@ -140,8 +182,8 @@ const Responsive = () => {
           </a>
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 
-export default Responsive;
+export default MainHeader;
