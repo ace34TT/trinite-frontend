@@ -1,5 +1,3 @@
-import React from "react";
-import img from "./../../assets/3d.png";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 export default function OurHouse() {
