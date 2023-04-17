@@ -35,6 +35,26 @@ i18n.use(initReactI18next).init({
           trad8:
             " Rejoignez-nous dans cette aventure hors du temps et découvrez notre collection de bijoux inspirée par l'histoire et la culture malgaches.",
         },
+        Trinite: {
+          trad1:
+            "La collection Trinité est une rencontre. Entre héritage et innovation. Entre des siécles de savoir-faire et le désir de penser le bijoux autrement. Entre l'expertise des meilleurs ateliers de Madagascar et la vision créative de la nouvelle génération.",
+          trad2:
+            "Bracelet en or 18 CARATS de Madagascar Or Rose, Or et Or blanc",
+          trad3:
+            "Boucles d’oreilles en or 18 CARATS de Madagascar Or Rose, Or et Or blanc",
+          trad4: "Bague en or 18 CARATS de Madagascar Or Rose, Or et Or blanc",
+          trad5:
+            "Bracelet en or 18 CARATS de Madagascar Or Rose, Or et Or blanc orné de 6 diamants",
+          trad6:
+            "La collection Trinité est une rencontre. Entre héritage et innovation. Entre des siécles de savoir-faire et le désir de penser le bijoux autrement. Entre l'expertise des meilleurs ateliers de Madagascar et la vision créative de la nouvelle génération.",
+          trad7:
+            "La collection Trinité est une rencontre. Entre héritage et innovation. Entre des siécles de savoir-faire et le désir de penser le bijoux autrement. Entre l'expertise des meilleurs ateliers de Madagascar et la vision créative de la nouvelle génération.",
+          trad8:
+            "La collection Trinité est une rencontre. Entre héritage et innovation. Entre des siécles de savoir-faire et le désir de penser le bijoux autrement. Entre l'expertise des meilleurs ateliers de Madagascar et la vision créative de la nouvelle génération.",
+          trad9:
+            "La collection Trinité est une rencontre. Entre héritage et innovation. Entre des siécles de savoir-faire et le désir de penser le bijoux autrement. Entre l'expertise des meilleurs ateliers de Madagascar et la vision créative de la nouvelle génération.",
+        },
+
         Studio: {
           trad1:
             "Nous utilisons des matériaux précieux soigneusement sélectionnés pour leur qualité et leur origine éthique, tout en valorisant le travail des artisans et en leur offrant des conditions de travail équitables. En choisissant notre marque, vous êtes non seulement assurés d'acquérir des bijoux de haute qualitée, mais également de contribuer à la préservation des traditions artisanales de Madagascar, de soutenir les travailleurs locaux et de faire un choix éthique.",
@@ -85,6 +105,26 @@ i18n.use(initReactI18next).init({
             "Immerse yourself in our universe of elegance and refinement, where time seems to stand still and each piece of jewelry is charged with strong emotional symbolism.",
           trad8:
             "Join us on this timeless adventure and discover our collection of jewelry inspired by Malagasy history and culture.",
+        },
+        Trinite: {
+          trad1:
+            "The Trinity collection is an encounter. Between heritage and innovation. Between centuries of know-how and the desire to think of jewelry differently. Between the expertise of the best workshops in Madagascar and the creative vision of the new generation.",
+          trad2:
+            "18 CARAT gold bracelet from Madagascar Rose Gold, Gold and White Gold",
+          trad3:
+            "18 CARAT gold earrings from Madagascar Rose Gold, Gold and White Gold",
+          trad4:
+            "18 CARAT gold ring from Madagascar Rose gold, Gold and White gold",
+          trad5:
+            "18 CARAT gold bracelet from Madagascar Rose Gold, Gold and White Gold adorned with 6 diamonds",
+          trad6:
+            "The Trinity collection is an encounter. Between inheritance and innovation. Between centuries of know-how and the desire to think jewelry otherwise. Between the expertise of the best workshops of Madagascar and the creative vision of the new generation.",
+          trad7:
+            "The Trinity collection is an encounter. Between inheritance and innovation. Between centuries of know-how and the desire to think jewelry otherwise. Between the expertise of the best workshops of Madagascar and the creative vision of the new generation.",
+          trad8:
+            "The Trinity collection is an encounter. Between inheritance and innovation. Between centuries of know-how and the desire to think jewelry otherwise. Between the expertise of the best workshops of Madagascar and the creative vision of the new generation.",
+          trad9:
+            "The Trinity collection is an encounter. Between inheritance and innovation. Between centuries of know-how and the desire to think jewelry otherwise. Between the expertise of the best workshops of Madagascar and the creative vision of the new generation.",
         },
         Studio: {
           trad1:
