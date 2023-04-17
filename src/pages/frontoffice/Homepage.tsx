@@ -16,7 +16,7 @@ export default function Homepage() {
   useEffect(() => {
     for (let i = 0; i < 100; i++) {
       setTimeout(() => {
-        setPourcentage(i);
+        setPercentage(i);
       }, i * 600);
     }
   }, []);
