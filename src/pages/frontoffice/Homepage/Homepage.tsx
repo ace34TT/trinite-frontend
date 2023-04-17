@@ -31,7 +31,7 @@ export default function Homepage() {
           className="flex flex-1 flex-col items-center justify-center  text-9xl"
           style={{ height: "calc(100vh - 152px)" }}
         >
-          <div>{percentage} %</div>
+          <div id="loader">{percentage} %</div>
         </div>
       ) : (
         <div
@@ -41,7 +41,11 @@ export default function Homepage() {
           <div className="w-[100%] h-[70%]">
             <Canvas>
               <PerspectiveCamera position={[0, 0, 0]} />
-              <OrbitControls enableZoom={false} />
+              <OrbitControls
+                enableZoom={false}
+                enableRotate={false}
+                enablePan={false}
+              />
               <Suspense fallback={null}>
                 <Model />
                 <Environment preset="warehouse" />
@@ -49,8 +53,8 @@ export default function Homepage() {
             </Canvas>
           </div>
           <div className="text-md sm:text-3xl text-center mb-5 px-5">
-            Entre tradition et modernité symbole fort de liberté et
-            d’émancipation.
+            Entre tradition et modernité symbole fort de{" "}
+            <br className="sr-only sm:not-sr-only" /> liberté et d’émancipation.
           </div>
         </div>
       )}
