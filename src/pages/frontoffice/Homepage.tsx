@@ -47,7 +47,6 @@ export default function Homepage() {
         style={{ height: "calc(100vh - 152px)" }}
       >
         <div className="w-[100%] h-[70%] relative">
-          {/* <ModelViewer /> */}
           <Canvas>
             <PerspectiveCamera position={[0, 0, 0]} />
             <OrbitControls enableZoom={false} />
