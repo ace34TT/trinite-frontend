@@ -47,9 +47,12 @@ const MainHeader = () => {
 
   return (
     <header className=" bg-white text-black dark:bg-black dark:text-white pt-6 ">
-      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 ">
+      <div className="px-2 sm:px-6 lg:px-8 ">
         <div className="relative flex items-center justify-around h-16 pb-5 sm:pb-0 border-b-2  border-white sm:border-b-0">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden ">
+          <div
+            id="iconMobile"
+            className="absolute inset-y-0 left-0 flex items-center sm:hidden "
+          >
             {/* Bouton pour activer/désactiver le menu mobile */}
             <button
               type="button"
@@ -100,6 +103,73 @@ const MainHeader = () => {
               </svg>
             </button>
           </div>
+          <div id="logo" className="">
+            <Link to={"/accueil"}>
+              <img
+                src={theme.currentTheme === "dark" ? logo[0] : logo[1]}
+                className="h-20 sm:h-24"
+                alt=""
+              />
+            </Link>
+          </div>
+          <div
+            id="text1"
+            className=" hidden sm:block sm:ml-6  flex justify-around items-center  py-7 bg-white text-black dark:bg-black dark:text-white"
+          >
+            <ul className="flex items-center font-normal gap-10 text-xl">
+              <li>
+                <Link to={"/notre-maison"}>{t("header.trad1")}</Link>
+              </li>
+              <li>
+                <Link to={"/trinite"}>Trinité</Link>
+              </li>
+              <li>
+                <Link to={"/atelier"}>{t("header.trad2")}</Link>
+              </li>
+              <li>
+                <Link to="/contact">Contact</Link>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    if (activeLanguage === 0) {
+                      i18n.changeLanguage(languages[1].code);
+                      setActiveLanguage(1);
+                      return;
+                    }
+                    i18n.changeLanguage(languages[0].code);
+                    setActiveLanguage(0);
+                  }}
+                >
+                  {activeLanguage === 0 ? languages[1].name : languages[0].name}
+                </button>
+              </li>
+              <li>
+                <div className="flex items-center justify-center w-full">
+                  <label
+                    htmlFor="toggleB"
+                    className="flex items-center cursor-pointer"
+                  >
+                    <div className="relative">
+                      <input
+                        type="checkbox"
+                        id="toggleB"
+                        className="sr-only"
+                        onClick={() => {
+                          dispatch(toggleTheme());
+                        }}
+                      />
+                      <div className="block bg-white w-14 h-8 border-2 rounded-md border-black"></div>
+                      <div className="dot absolute left-1 top-1 bg-black w-6 h-6 rounded-md transition"></div>
+                    </div>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div id="text2" className="text-xl uppercase hidden sm:block">
+            Maison <br /> de haute <br /> joaeollerie
+          </div>
         </div>
       </div>
 
@@ -140,13 +210,13 @@ const MainHeader = () => {
           </div>
           <div className="px-3 py-3">
             <label
-              htmlFor="toggleB"
+              htmlFor="toggleB1"
               className="flex items-center cursor-pointer"
             >
               <div className="relative">
                 <input
                   type="checkbox"
-                  id="toggleB"
+                  id="toggleB1"
                   className="sr-only"
                   onClick={() => {
                     dispatch(toggleTheme());
