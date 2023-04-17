@@ -74,8 +74,18 @@ export default function MainHeader() {
                     dispatch(toggleTheme());
                   }}
                 />
-                <div className="block bg-white w-14 h-8 border-2 rounded-md border-black"></div>
-                <div className="dot absolute left-1 top-1 bg-black w-6 h-6 rounded-md transition"></div>
+                <div
+                  className={`block w-14 h-8 border-2 rounded-md ${
+                    theme.currentTheme === "light"
+                      ? "bg-white border-black"
+                      : "bg-white border-white"
+                  }`}
+                ></div>
+                <div
+                  className={`dot absolute left-1 top-1 w-6 h-6 rounded-md transition ${
+                    theme.currentTheme === "light" ? "bg-white " : "bg-black "
+                  }`}
+                ></div>
               </div>
             </label>
           </div>
