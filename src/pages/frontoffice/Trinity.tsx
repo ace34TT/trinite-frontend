@@ -12,7 +12,7 @@ export default function Trinity() {
         <title>Trinité - Trinité</title>
       </Helmet>
       <div className="pt-16">
-        <div className="grid grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3">
           <div className="py-16 px-14 flex items-center justify-center border border-gray-300">
             La collection Trinité est une rencontre. Entre héritage et
             innovation. Entre des siécles de savoir-faire et le désir de penser
