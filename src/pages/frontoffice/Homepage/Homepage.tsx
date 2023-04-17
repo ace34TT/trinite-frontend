@@ -7,8 +7,8 @@ import {
   PerspectiveCamera,
 } from "@react-three/drei";
 import { Canvas } from "react-three-fiber";
-import { Model } from "../../components/three-model/Bracelet";
-
+import { Model } from "../../../components/three-model/Bracelet";
+import "./style.css";
 export default function Homepage() {
   const { progress } = useProgress();
   const [percentage, setPercentage] = useState(0);
@@ -29,13 +29,13 @@ export default function Homepage() {
       {progress < 100 ? (
         <div
           className="flex flex-1 flex-col items-center justify-center  text-9xl"
-          style={{ height: "calc(100vh - 200px)" }}
+          style={{ height: "calc(100vh - 152px)" }}
         >
           <div>{percentage} %</div>
         </div>
       ) : (
         <div
-          className=" h-screen flex flex-col justify-center items-center pb-7"
+          className="flex flex-col justify-center items-center pb-7"
           style={{ height: "calc(100vh - 200px)" }}
         >
           <div className="w-[100%] h-[70%]">
@@ -48,8 +48,8 @@ export default function Homepage() {
               </Suspense>
             </Canvas>
           </div>
-          <div className="text-3xl text-center mb-5">
-            Entre tradition et modernité symbole fort de liberté <br /> et
+          <div className="text-md sm:text-3xl text-center mb-5 px-5">
+            Entre tradition et modernité symbole fort de liberté et
             d’émancipation.
           </div>
         </div>
