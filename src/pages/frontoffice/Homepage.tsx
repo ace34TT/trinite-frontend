@@ -44,7 +44,7 @@ export default function Homepage() {
       </Helmet>
       <div
         className=" h-screen flex flex-col justify-center items-center pb-7"
-        style={{ height: "calc(100vh - 200px)" }}
+        style={{ height: "calc(100vh - 152px)" }}
       >
         <div className="w-[100%] h-[70%] relative">
           {/* <ModelViewer /> */}
