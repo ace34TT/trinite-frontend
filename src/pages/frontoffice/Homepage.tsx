@@ -1,6 +1,6 @@
 import { Suspense, useRef, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import { Html, useProgress } from "@react-three/drei";
+import { useProgress } from "@react-three/drei";
 import {
   Environment,
   OrbitControls,
@@ -11,13 +11,13 @@ import { Model } from "../../components/three-model/Bracelet";
 
 export default function Homepage() {
   const { progress } = useProgress();
-  const [pourcentage, setPourcentage] = useState(0);
+  const [percentage, setPercentage] = useState(0);
 
   useEffect(() => {
     for (let i = 0; i < 100; i++) {
       setTimeout(() => {
-        setPourcentage(i);
-      }, i * 50); 
+        setPercentage(i);
+      }, i * 50);
     }
   }, []);
 
@@ -31,7 +31,7 @@ export default function Homepage() {
           className="flex flex-1 flex-col items-center justify-center  text-9xl"
           style={{ height: "calc(100vh - 200px)" }}
         >
-          <div>{pourcentage} %</div>
+          <div>{percentage} %</div>
         </div>
       ) : (
         <div
@@ -50,7 +50,7 @@ export default function Homepage() {
           </div>
           <div className="text-3xl text-center mb-5">
             Entre tradition et modernité symbole fort de liberté <br /> et
-            d’émancipation
+            d’émancipation.
           </div>
         </div>
       )}

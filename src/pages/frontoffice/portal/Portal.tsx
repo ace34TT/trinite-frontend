@@ -19,7 +19,7 @@ export default function Portal() {
             MAISON <br /> DE HAUTE <br /> JOAILLERIE
           </div>
         </div>
-        <div className="flex items-center gap-5 text-white font-light text-5xl">
+        <div className="flex items-center gap-5 text-white font-light text-3xl">
           <div
             className="p-4 cursor-pointer hover:scale-110 transform transition duration-300 ease-in-out"
             onClick={() => navigate("/accueil")}

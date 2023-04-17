@@ -31,7 +31,7 @@ export default function MainHeader() {
           />
         </Link>
       </div>
-      <ul className="flex items-center font-normal gap-10 text-xl">
+      <ul className="uppercase flex items-center font-normal gap-10 text-xl">
         <li>
           <Link to={"/notre-maison"}>{t("header.trad1")}</Link>
         </li>
@@ -56,7 +56,9 @@ export default function MainHeader() {
               setActiveLanguage(0);
             }}
           >
-            {activeLanguage === 0 ? languages[1].name : languages[0].name}
+            <p className="uppercase">
+              {activeLanguage === 0 ? languages[1].name : languages[0].name}
+            </p>
           </button>
         </li>
         <li>
@@ -74,8 +76,18 @@ export default function MainHeader() {
                     dispatch(toggleTheme());
                   }}
                 />
-                <div className="block bg-white w-14 h-8 border-2 rounded-md border-black"></div>
-                <div className="dot absolute left-1 top-1 bg-black w-6 h-6 rounded-md transition"></div>
+                <div
+                  className={`block w-14 h-6 border-2 rounded-md border-black  ${
+                    theme.currentTheme === "dark"
+                      ? "bg-black border-white"
+                      : "bg-white border-black"
+                  }`}
+                ></div>
+                <div
+                  className={`dot absolute right-0 top-0 w-6 h-6 rounded-md transition ${
+                    theme.currentTheme === "dark" ? "bg-white" : "bg-black"
+                  }`}
+                ></div>
               </div>
             </label>
           </div>
