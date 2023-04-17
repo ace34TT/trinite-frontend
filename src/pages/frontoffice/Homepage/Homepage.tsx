@@ -1,4 +1,4 @@
-import { Suspense, useRef, useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useProgress } from "@react-three/drei";
 import {

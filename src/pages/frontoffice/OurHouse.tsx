@@ -9,13 +9,14 @@ export default function OurHouse() {
       <Helmet>
         <title>Trinité - La Maison</title>
       </Helmet>
-      <div className="flex justify-center py-16 prose max-w-none text-2xl w-screen">
-        <div className="w-4/12 text-black dark:text-white  ">
+      <div className="flex justify-center py-0 sm:py-16 prose max-w-none text-md sm-text-2xl w-screen">
+        <div className="w-10/12 sm:w-4/12 text-black dark:text-white leading-5 ">
           <p>
             {t("OurHouse.trad1")}
             <br />
             {t("OurHouse.trad2")}{" "}
           </p>
+          <br />
           <p>{t("OurHouse.trad3")}</p>
           <p>{t("OurHouse.trad4")}</p>
           <br />
