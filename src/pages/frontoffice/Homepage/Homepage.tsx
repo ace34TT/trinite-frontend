@@ -52,7 +52,7 @@ export default function Homepage() {
               </Suspense>
             </Canvas>
           </div>
-          <div className="text-md sm:text-3xl text-center mb-5 px-5">
+          <div className="text-md sm:text-3xl text-center mb-5 px-5 font-roman">
             Entre tradition et modernité symbole fort de{" "}
             <br className="sr-only sm:not-sr-only" /> liberté et d’émancipation.
           </div>

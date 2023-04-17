@@ -19,7 +19,7 @@ i18n.use(initReactI18next).init({
         },
         OurHouse: {
           trad1:
-            "Plongez dans l'univers intemporel des bijoux Trinitée, une véritable ode à l'histoire et à l'artisanat d'antan.",
+            "Plongez dans l'univers intemporel des bijoux Trinité, une véritable ode à l'histoire et à l'artisanat d'antan.Chacune des pièces de notre collection évoque un trésor ancien comme déniché par un archéologue passionné.",
           trad2:
             "Chacune des pièces de notre collection évoque un trésor ancien comme déniché par un archéologue passionné.",
           trad3:

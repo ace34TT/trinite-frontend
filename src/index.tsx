@@ -10,7 +10,7 @@ import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import { persistStore } from "redux-persist";
 import "./configs/i18n";
-
+import "./assets/font/SourceSerifVariable-Roman.otf";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
