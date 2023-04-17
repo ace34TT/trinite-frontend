@@ -13,7 +13,7 @@ export default function Portal() {
       </Helmet>
       <div className="h-screen w-screen flex flex-col justify-center gap-32 sm:gap-52 items-center dark:bg-black">
         <div className="sr-only sm:not-sr-only"></div>
-        <div className="text-white flex flex-col-reverse sm:flex-row items-center gap-16 sm-gap-32">
+        <div className="text-white flex flex-col-reverse sm:flex-row items-center gap-16 sm:gap-32">
           <img src={logo} className="h-28 sm:h-32" alt="" />
           <div className="the-house text-2xl sm:text-4xl ">
             MAISON <br /> DE HAUTE <br /> JOAILLERIE

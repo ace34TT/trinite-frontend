@@ -9,8 +9,8 @@ export default function OurHouse() {
       <Helmet>
         <title>Trinité - La Maison</title>
       </Helmet>
-      <div className="flex justify-center py-0 sm:py-16 prose max-w-none text-md sm-text-2xl w-screen">
-        <div className="w-10/12 sm:w-4/12 text-black dark:text-white leading-5 ">
+      <div className="flex justify-center py-0 sm:py-16 prose max-w-none text-md sm:text-2xl w-screen">
+        <div className="w-10/12 sm:w-4/12 text-black dark:text-white leading-5 sm:leading-snug ">
           <p>
             {t("OurHouse.trad1")}
             <br />
