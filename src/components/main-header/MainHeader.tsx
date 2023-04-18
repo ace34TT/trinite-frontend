@@ -110,9 +110,10 @@ const MainHeader = () => {
               />
             </Link>
           </div>
+
           <div
             id="text1"
-            className=" hidden sm:block sm:ml-6  flex justify-around items-center  py-7 bg-white text-black dark:bg-black dark:text-white"
+            className="hidden sm:block sm:ml-6 py-7 bg-white text-black dark:bg-black dark:text-white"
           >
             <ul className="flex items-center font-normal gap-10 text-xl">
               <li>
