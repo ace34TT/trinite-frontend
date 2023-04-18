@@ -1,5 +1,4 @@
 import { Helmet } from "react-helmet";
-// import SphereThreeModel from "../../components/three-model/SphereThreeModel";
 import {
   Environment,
   OrbitControls,
