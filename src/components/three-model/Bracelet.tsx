@@ -8,6 +8,7 @@ import { useEffect, useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useFrame } from "react-three-fiber";
+import { useWindowSize } from "react-use";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -19,6 +20,8 @@ type GLTFResult = GLTF & {
 };
 
 export function Model(props: JSX.IntrinsicElements["group"]) {
+  const [scale, setScale] = useState(3.5);
+  const { width } = useWindowSize();
   const { nodes, materials } = useGLTF(
     "models/final/Bracelet-compressed.glb"
   ) as GLTFResult;
@@ -39,6 +42,14 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, [mouseCoords]);
+
+  useEffect(() => {
+    if (width < 768) {
+      setScale(2.5);
+    } else {
+      setScale(3.5);
+    }
+  }, [width]);
 
   useFrame(() => {
     const { x, y } = mouseCoords;
@@ -78,7 +89,7 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
         material={materials["Scratched Gold"]}
         position={[0, 0, 0]}
         rotation={[1.55, 0, 1.2]}
-        scale={3.5}
+        scale={scale}
       />
     </group>
   );

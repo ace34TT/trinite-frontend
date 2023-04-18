@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../features/theme.feature";
 import "./style.css";
@@ -36,10 +36,32 @@ const MainHeader = () => {
   function enableScroll() {
     document.body.style.overflow = "auto";
   }
+  function hideCanvas() {
+    const canvas = document.querySelector("canvas");
+    if (canvas) {
+      canvas.style.display = "none";
+    }
+  }
+  function appearCanvas() {
+    const canvas = document.querySelector("canvas");
+    if (canvas) {
+      canvas.style.display = "block";
+    }
+  }
+
+  useEffect(() => {
+    if (showMenu) {
+      hideCanvas();
+    } else if (!showMenu) {
+      appearCanvas();
+    }
+  }, [showMenu]);
+
   // enable scrolling
 
   return (
     <header className=" bg-white text-black dark:bg-black dark:text-white pt-6 ">
+      {/* Menu Desktop */}
       <div className="px-2 sm:px-6 lg:px-8 ">
         <div className="relative flex items-center justify-around h-16 pb-5 sm:pb-0 border-b-2  border-white sm:border-b-0">
           <div

@@ -1,6 +1,7 @@
 import { Suspense, useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { useProgress } from "@react-three/drei";
+import { useTranslation } from "react-i18next";
 import {
   Environment,
   OrbitControls,
@@ -10,6 +11,7 @@ import { Canvas } from "react-three-fiber";
 import { Model } from "../../../components/three-model/Bracelet";
 import "./style.css";
 export default function Homepage() {
+  const { t, i18n } = useTranslation();
   const { progress } = useProgress();
   const [percentage, setPercentage] = useState(0);
   useEffect(() => {
@@ -52,8 +54,8 @@ export default function Homepage() {
             </Canvas>
           </div>
           <div className="text-md sm:text-3xl text-center mb-5 px-5 font-roman">
-            Entre tradition et modernité symbole fort de{" "}
-            <br className="sr-only sm:not-sr-only" /> liberté et d’émancipation.
+            {t("home.trad1")}
+            <br className="sr-only sm:not-sr-only" /> {t("home.trad2")}
           </div>
         </div>
       )}

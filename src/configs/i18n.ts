@@ -13,6 +13,11 @@ i18n.use(initReactI18next).init({
     fr: {
       translation: {
         homepage_1: "Entrer",
+        home:{
+          trad1:"Entre tradition et modernité symbole fort de",
+          trad2:"liberté et d’émancipation.",
+        },
+
         header: {
           trad1: "La maison",
           trad2: "L’atelier",
@@ -84,6 +89,10 @@ i18n.use(initReactI18next).init({
     en: {
       translation: {
         homepage_1: "Enter",
+        home:{
+          trad1:"Between tradition and modernity, a strong symbol of",
+          trad2:"freedom and emancipation.",
+        },
         header: {
           trad1: "THE MAISON",
           trad2: "STUDIO",
