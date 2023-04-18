@@ -47,17 +47,26 @@ export default function Trinity() {
             </div>
             <img src={images[0]} alt="" />
           </div>
-          <div className="py-16 px-14 flex items-center justify-center border border-gray-300">
-            {t("Trinite.trad6")}
+          <div className=" py-16 px-14 flex flex-col items-center justify-start border border-gray-300">
+            <div className="flex justify-between gap-10">
+              <p>{t("Trinite.trad3")}</p>
+              <p>660€</p>
+            </div>
+            <img className="justify-self-center" src={images[1]} alt="" />
           </div>
-          <div className="py-16 px-14 flex items-center justify-center border border-gray-300">
-            {t("Trinite.trad7")}
+          <div className=" py-16 px-14 flex flex-col items-center justify-start border border-gray-300">
+            <div className="flex justify-between gap-10">
+              <p>{t("Trinite.trad4")}</p>
+              <p>940€</p>
+            </div>
+            <img src={images[2]} alt="" />
           </div>
-          <div className="py-16 px-14 flex items-center justify-center border border-gray-300">
-            {t("Trinite.trad8")}
-          </div>
-          <div className="py-16 px-14 flex items-center justify-center border border-gray-300">
-            {t("Trinite.trad9")}
+          <div className="py-16 px-14 flex flex-col items-center justify-start border border-gray-300">
+            <div className="flex justify-between gap-10">
+              <p>{t("Trinite.trad5")}</p>
+              <p>4200€</p>
+            </div>
+            <img src={images[0]} alt="" />
           </div>
           <div className="py-16 px-14 flex items-center justify-center border border-gray-300"></div>
         </div>
