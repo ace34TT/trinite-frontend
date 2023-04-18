@@ -21,9 +21,8 @@ export default function Workshop() {
             </ul>
           </div>
           <br />
-          <div>
+          <div className="break-words">
             {t("Studio.trad7")}
-            <br />
             {t("Studio.trad8")}
             <ul className="m-0">
               <li className="m-0">{t("Studio.trad9")}</li>

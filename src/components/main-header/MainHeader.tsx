@@ -60,7 +60,7 @@ const MainHeader = () => {
   // enable scrolling
 
   return (
-    <header className=" bg-white text-black dark:bg-black dark:text-white pt-6 ">
+    <header className="z-50 bg-white text-black dark:bg-black dark:text-white pt-6 ">
       {/* Menu Desktop */}
       <div className="px-2 sm:px-6 lg:px-8 ">
         <div className="relative flex items-center justify-around h-16 pb-5 sm:pb-0 border-b-2  border-white sm:border-b-0">
@@ -213,19 +213,31 @@ const MainHeader = () => {
         }}
         id="mobile-menu"
       >
-        <div className="px-2 pt-2 pb-3 space-y-1">
-          <a href="#" className="  block px-3 py-3   text-base font-medium">
-            <Link to={"/notre-maison"}>{t("header.trad1")}</Link>
-          </a>
-          <a href="#" className="   block px-3 py-3   text-base font-medium">
-            <Link to={"/trinite"}>Trinité</Link>
-          </a>
-          <a href="#" className="   block px-3 py-3   text-base font-medium">
-            <Link to={"/atelier"}>{t("header.trad2")}</Link>
-          </a>
-          <a href="#" className="   block px-3 py-3  text-base font-medium">
-            <Link to="/contact">Contact</Link>
-          </a>
+        <div className="px-2 pt-2 pb-3 space-y-1 uppercase">
+          <Link
+            className="block px-3 py-3 text-base font-medium"
+            to={"/notre-maison"}
+          >
+            {t("header.trad1")}
+          </Link>
+
+          <Link
+            className="block px-3 py-3 text-base font-medium"
+            to={"/trinite"}
+          >
+            Trinité
+          </Link>
+          <Link
+            className="block px-3 py-3 text-base font-medium"
+            to={"/atelier"}
+          >
+            {t("header.trad2")}
+          </Link>
+
+          <Link className="block px-3 py-3 text-base font-medium" to="/contact">
+            Contact
+          </Link>
+
           <div className="px-3 py-3">
             <button
               onClick={() => {
@@ -238,7 +250,9 @@ const MainHeader = () => {
                 setActiveLanguage(0);
               }}
             >
-              {activeLanguage === 0 ? languages[1].name : languages[0].name}
+              <p className="uppercase">
+                {activeLanguage === 0 ? languages[1].name : languages[0].name}
+              </p>
             </button>
           </div>
           <div className="px-3 py-3">

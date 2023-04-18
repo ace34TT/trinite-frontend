@@ -13,9 +13,9 @@ i18n.use(initReactI18next).init({
     fr: {
       translation: {
         homepage_1: "Entrer",
-        home:{
-          trad1:"Entre tradition et modernité symbole fort de",
-          trad2:"liberté et d’émancipation.",
+        home: {
+          trad1: "Entre tradition et modernité symbole fort de",
+          trad2: "liberté et d’émancipation.",
         },
 
         header: {
@@ -73,7 +73,7 @@ i18n.use(initReactI18next).init({
           trad6: "or blanc 750/1000 : or 18 carats ",
           trad7: "poinçons et gravures ",
           trad8:
-            "chaque bijou Trinité porte les poinçons et gravures suivantes :",
+            "chaque bijou Trinité porte les poinçons et gravures suivantes: ",
           trad9: "le poinçon de maître garantissant le lieu de fabrication",
           trad10:
             "le poinçon de l’état certifiant la qualité du métal précieux :tête d’aigle pour l’or et tête de minerve pour l’argent",
@@ -89,9 +89,9 @@ i18n.use(initReactI18next).init({
     en: {
       translation: {
         homepage_1: "Enter",
-        home:{
-          trad1:"Between tradition and modernity, a strong symbol of",
-          trad2:"freedom and emancipation.",
+        home: {
+          trad1: "Between tradition and modernity, a strong symbol of",
+          trad2: "freedom and emancipation.",
         },
         header: {
           trad1: "THE MAISON",
@@ -148,7 +148,7 @@ i18n.use(initReactI18next).init({
           trad6: "white gold: 18-carat gold",
           trad7: "Stamps and engravings",
           trad8:
-            "Each Trinité jewelry piece bears the following stamps and engravings",
+            "Each Trinité jewelry piece bears the following stamps and engravings: ",
           trad9: "The master stamp guarantees the place of manufacture",
           trad10:
             "The state stamp certifies the quality of the precious metal: an eagle's head for gold and a minerva's head for silver",

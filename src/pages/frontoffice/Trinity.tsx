@@ -14,7 +14,7 @@ export default function Trinity() {
       <Helmet>
         <title>Trinité - Trinité</title>
       </Helmet>
-      <div className="pt-16">
+      <div className="pt-0 sm:pt-16">
         <div className="grid grid-cols-1 sm:grid-cols-3">
           <div className="py-16 px-14 flex items-center justify-center border border-gray-300">
             {t("Trinite.trad1")}
