@@ -31,7 +31,7 @@ export default function MainHeader() {
           />
         </Link>
       </div>
-      <ul className="uppercase flex items-center font-normal gap-10 text-xl">
+      <ul className="uppercase flex items-center font-normal gap-10 text-md">
         <li>
           <Link to={"/notre-maison"}>{t("header.trad1")}</Link>
         </li>
