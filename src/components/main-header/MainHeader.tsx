@@ -105,12 +105,11 @@ const MainHeader = () => {
               />
             </Link>
           </div>
-
           <div
-            id="text1"
+            id="text-1"
             className="hidden sm:block sm:ml-6 py-7 bg-white text-black dark:bg-black dark:text-white"
           >
-            <ul className="flex items-center font-normal gap-10 text-xl">
+            <ul className="flex items-center font-normal gap-10 text-xl uppercase">
               <li>
                 <Link to={"/notre-maison"}>{t("header.trad1")}</Link>
               </li>
@@ -135,7 +134,11 @@ const MainHeader = () => {
                     setActiveLanguage(0);
                   }}
                 >
-                  {activeLanguage === 0 ? languages[1].name : languages[0].name}
+                  <p className="uppercase">
+                    {activeLanguage === 0
+                      ? languages[1].name
+                      : languages[0].name}
+                  </p>
                 </button>
               </li>
               <li>
@@ -153,8 +156,20 @@ const MainHeader = () => {
                           dispatch(toggleTheme());
                         }}
                       />
-                      <div className="block bg-white w-14 h-8 border-2 rounded-md border-black"></div>
-                      <div className="dot absolute left-1 top-1 bg-black w-6 h-6 rounded-md transition"></div>
+                      <div
+                        className={`block w-14 h-6 border-2 rounded-md border-black  ${
+                          theme.currentTheme === "dark"
+                            ? "bg-black border-white"
+                            : "bg-white border-black"
+                        }`}
+                      ></div>
+                      <div
+                        className={`dot absolute right-0 top-0 w-6 h-6 rounded-md transition ${
+                          theme.currentTheme === "dark"
+                            ? "bg-white"
+                            : "bg-black"
+                        }`}
+                      ></div>
                     </div>
                   </label>
                 </div>
@@ -166,7 +181,6 @@ const MainHeader = () => {
           </div>
         </div>
       </div>
-
       {/* Menu mobile qui apparaît lorsque le bouton est cliqué */}
       <div
         className={`${
