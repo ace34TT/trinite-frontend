@@ -1,6 +1,4 @@
 import { Helmet } from "react-helmet";
-import { Html, useProgress } from "@react-three/drei";
-import { Text } from "@react-three/drei";
 // import SphereThreeModel from "../../components/three-model/SphereThreeModel";
 import {
   Environment,
@@ -9,8 +7,7 @@ import {
 } from "@react-three/drei";
 import { Canvas } from "react-three-fiber";
 import { Model } from "../../components/three-model/Bracelet";
-import { useState, useEffect, Suspense } from "react";
-import ModelViewer from "../../components/models/ModelViewer";
+import { Suspense } from "react";
 
 // function LoadingScreen() {
 //   const [progress, setProgress] = useState(0);
