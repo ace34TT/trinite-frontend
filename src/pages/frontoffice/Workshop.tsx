@@ -1,4 +1,3 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 export default function Workshop() {
@@ -8,8 +7,8 @@ export default function Workshop() {
       <Helmet>
         <title>Trinité - Atelier</title>
       </Helmet>
-      <div className="flex justify-center py-16 prose max-w-none text-2xl w-screen">
-        <div className="w-8/12 text-black dark:text-white  ">
+      <div className="flex justify-center py-0 sm:py-16 prose max-w-none text-base sm:text-2xl w-screen">
+        <div className="w-10/12 sm:w-4/12 text-black dark:text-white leading-5 sm:leading-snug">
           <p>{t("Studio.trad1")}</p>
           <br />
           <div>

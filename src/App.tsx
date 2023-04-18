@@ -8,7 +8,7 @@ import Trinity from "./pages/frontoffice/Trinity";
 import Workshop from "./pages/frontoffice/Workshop";
 import Contact from "./pages/frontoffice/contact/Contact";
 import Portal from "./pages/frontoffice/portal/Portal";
-import Homepage from "./pages/frontoffice/Homepage";
+import Homepage from "./pages/frontoffice/Homepage/Homepage";
 
 function App() {
   return (
