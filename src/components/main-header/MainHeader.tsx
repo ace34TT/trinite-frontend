@@ -221,13 +221,13 @@ const MainHeader = () => {
           </div>
           <div className="px-3 py-3">
             <label
-              htmlFor="toggleB1"
+              htmlFor="toggleB2"
               className="flex items-center cursor-pointer"
             >
               <div className="relative">
                 <input
                   type="checkbox"
-                  id="toggleB1"
+                  id="toggleB2"
                   className="sr-only"
                   onClick={() => {
                     dispatch(toggleTheme());
