@@ -6,6 +6,7 @@ const images = [
   require("./../../assets/products/article_02.png"),
   require("./../../assets/products/article_03.png"),
 ];
+
 export default function Trinity() {
   const { t } = useTranslation();
   return (

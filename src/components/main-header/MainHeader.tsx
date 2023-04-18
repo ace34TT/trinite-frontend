@@ -29,21 +29,11 @@ const MainHeader = () => {
     setShowMenu(!showMenu);
   };
 
-  const disableScroll = () => {
-    const scrollTop = document.body.scrollTop;
-    const scrollLeft = document.body.scrollLeft;
-    console.log("====================================");
-    console.log(scrollTop, scrollLeft);
-    console.log("====================================");
-    window.onscroll = function () {
-      window.scrollTo(scrollLeft, scrollTop);
-    };
-  };
-
+  function disableScroll() {
+    document.body.style.overflow = "hidden";
+    console.log("disableScroll by mihaja ");
+  }
   // enable scrolling
-  const enableScroll = () => {
-    window.onscroll = function () {};
-  };
 
   return (
     <header className=" bg-white text-black dark:bg-black dark:text-white pt-6 ">
