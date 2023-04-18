@@ -56,7 +56,6 @@ const MainHeader = () => {
                 toggleMenu();
               }}
             >
-              <span className="sr-only">Open main menu</span>
               <svg
                 className={`${showMenu ? "hidden" : "block"} h-10 w-10`}
                 xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +108,7 @@ const MainHeader = () => {
             id="text-1"
             className="hidden sm:block sm:ml-6 py-7 bg-white text-black dark:bg-black dark:text-white"
           >
-            <ul className="flex items-center font-normal gap-10 text-xl uppercase">
+            <ul className="flex items-center font-normal gap-10 text-md uppercase">
               <li>
                 <Link to={"/notre-maison"}>{t("header.trad1")}</Link>
               </li>
