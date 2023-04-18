@@ -57,11 +57,6 @@ const MainHeader = () => {
               }}
             >
               <span className="sr-only">Open main menu</span>
-              {/*
-                Barres de menu mobile. 
-                Utilise la classe "hidden" pour cacher les barres de menu mobile
-                sur les appareils plus grands.
-              */}
               <svg
                 className={`${showMenu ? "hidden" : "block"} h-10 w-10`}
                 xmlns="http://www.w3.org/2000/svg"
