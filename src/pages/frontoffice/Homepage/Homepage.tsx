@@ -12,7 +12,6 @@ import "./style.css";
 export default function Homepage() {
   const { progress } = useProgress();
   const [percentage, setPercentage] = useState(0);
-
   useEffect(() => {
     for (let i = 0; i < 100; i++) {
       setTimeout(() => {

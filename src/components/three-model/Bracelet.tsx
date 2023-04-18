@@ -4,11 +4,10 @@ Command: npx gltfjsx@6.1.4 Bracelet-compressed.glb --types
 */
 
 import * as THREE from "three";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import { Group } from "three";
-import { useFrame, useThree } from "react-three-fiber";
+import { useFrame } from "react-three-fiber";
 
 type GLTFResult = GLTF & {
   nodes: {
