@@ -3,52 +3,34 @@ import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import logo from "./../../../assets/logo/logo-trinité.png";
 import { Helmet } from "react-helmet";
-import { useGLTF } from "@react-three/drei";
+import { useGLTF, useProgress } from "@react-three/drei";
 import { useState, useEffect } from "react";
-import { GLTF } from "three/examples/jsm/loaders/GLTFLoader";
-
-type GLTFResult = GLTF & {
-  nodes: {
-    Circle002: THREE.Mesh;
-  };
-  materials: {
-    ["Scratched Gold"]: THREE.MeshStandardMaterial;
-  };
-};
-
-function useModelLoading(path: string) {
-  const [model, setModel] = useState<GLTFResult | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  // useEffect(() => {
-  //   useGLTF(path).then((result) => {
-  //     setModel(result);
-  //     setIsLoading(false);
-  //   });
-  // }, [path]);
-  return { model, isLoading };
-}
 
 export default function Portal() {
   const navigate = useNavigate();
   const { t } = useTranslation();
   //
-  const [isLoading, setIsLoading] = useState(true);
-  // useEffect(() => {
-  //   useGLTF("models/final/Bracelet-compressed.glb").then((result) => {
-  //     setModel(result);
-  //     setIsLoading(false);
-  //   });
-  // }, []);
-
+  const { progress } = useProgress();
+  useGLTF.preload("/Bracelet-compressed.glb");
+  const [percentage, setPercentage] = useState(0);
+  useEffect(() => {
+    for (let i = 0; i < 100; i++) {
+      setTimeout(() => {
+        setPercentage(i);
+      }, i * 600);
+    }
+  }, []);
   return (
     <>
       <Helmet>
         <title>Trinité</title>
       </Helmet>
       <div>
-        {isLoading ? (
+        {progress < 100 ? (
           // Show loading screen when isLoading is true
-          <div>Loading...</div>
+          <div className="h-screen w-screen flex items-center justify-center  text-9xl bg-black text-white">
+            <div id="loader">{percentage} %</div>
+          </div>
         ) : (
           // Render the Portal content when the model finishes loading
           <div className="h-screen w-screen flex flex-col justify-center gap-32 sm:gap-52 items-center dark:bg-black">
