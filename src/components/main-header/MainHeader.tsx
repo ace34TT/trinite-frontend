@@ -31,7 +31,10 @@ const MainHeader = () => {
 
   function disableScroll() {
     document.body.style.overflow = "hidden";
-    console.log("disableScroll by mihaja ");
+  }
+
+  function enableScroll() {
+    document.body.style.overflow = "auto";
   }
   // enable scrolling
 
@@ -51,7 +54,6 @@ const MainHeader = () => {
               aria-expanded="false"
               onClick={() => {
                 toggleMenu();
-                disableScroll();
               }}
             >
               <span className="sr-only">Open main menu</span>
@@ -67,6 +69,9 @@ const MainHeader = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 aria-hidden="true"
+                onClick={() => {
+                  disableScroll();
+                }}
               >
                 <path
                   strokeLinecap="round"
@@ -83,6 +88,9 @@ const MainHeader = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
                 aria-hidden="true"
+                onClick={() => {
+                  enableScroll();
+                }}
               >
                 <path
                   strokeLinecap="round"
@@ -168,6 +176,10 @@ const MainHeader = () => {
         className={`${
           showMenu ? "block" : "hidden"
         } sm:hidden pt-20 absolute bg-white dark:bg-black w-[100%] h-screen overscroll-none`}
+        onClick={() => {
+          toggleMenu();
+          enableScroll();
+        }}
         id="mobile-menu"
       >
         <div className="px-2 pt-2 pb-3 space-y-1">
