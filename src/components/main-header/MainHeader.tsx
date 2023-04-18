@@ -268,8 +268,6 @@ const MainHeader = () => {
                   className="sr-only"
                   onClick={() => {
                     dispatch(toggleTheme());
-                    toggleMenu();
-                    enableScroll();
                   }}
                 />
                 <div
