@@ -1,20 +1,19 @@
 @font-face {
-    font-family: myFirstFont;
-    src: url(./../../assets/font/Hiragino\ Kaku\ Gothic\ StdN\ W8.otf);
+  font-family: myFirstFont;
+  src: url(./../../assets/font/Hiragino\ Kaku\ Gothic\ StdN\ W8.otf);
 }
 
-header>* {
-    font-family: myFirstFont;
+header > * {
+  font-family: myFirstFont;
 }
-
 
 /* Toggle B */
 
-input:checked~.dot {
-    transform: translateX(100%);
-    background-color: #000000;
+input:checked ~ .dot {
+  transform: translateX(100%);
+  background-color: #000000;
 }
 
 .no-scroll {
-    overflow: hidden;
+  overflow: hidden;
 }
