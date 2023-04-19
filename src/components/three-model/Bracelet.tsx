@@ -38,7 +38,7 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
   
   useFrame(() => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += 0.01; // adjust the rotation speed as needed
+      groupRef.current.rotation.y += 0.01; 
     }
   });
 

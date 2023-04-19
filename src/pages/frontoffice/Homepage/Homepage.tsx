@@ -5,11 +5,12 @@ import { useTranslation } from "react-i18next";
 import {
   Environment,
   OrbitControls,
-  PerspectiveCamera,
+  OrthographicCamera,
 } from "@react-three/drei";
 import { Canvas } from "react-three-fiber";
 import { Model } from "../../../components/three-model/Bracelet";
 import "./style.css";
+
 export default function Homepage() {
   const { t } = useTranslation();
 
@@ -24,7 +25,11 @@ export default function Homepage() {
       >
         <div className="w-[100%] h-[70%] mb-16">
           <Canvas>
-            <PerspectiveCamera position={[0, 0, 0]} />
+            <OrthographicCamera
+              position={[0, 0, 100]}
+              zoom={50}
+              makeDefault={true}
+            />
             <OrbitControls
               enableZoom={false}
               enableRotate={false}
