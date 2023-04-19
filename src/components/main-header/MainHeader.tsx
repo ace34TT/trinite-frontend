@@ -27,6 +27,7 @@ const languages = [
 // to disable scrolling
 const isActiveStyle = {
   backgroundImage: 'url("./../../assets/icon/united-kingdom.png")',
+  // backgroundColor: "red",
   backgroundRepeat: "no-repeat",
   backgroundSize: "contain",
   // padding: "5px",
@@ -43,11 +44,11 @@ const MainHeader = () => {
   };
 
   function disableScroll() {
-    const bodyScroll = (document.body.style.overflow = "hidden");
+    document.body.style.overflow = "hidden";
   }
 
   function enableScroll() {
-    const bodyScroll = (document.body.style.overflow = "auto");
+    document.body.style.overflow = "auto";
   }
   function hideCanvas() {
     const canvas = document.querySelector("canvas");
@@ -71,7 +72,7 @@ const MainHeader = () => {
   }, [showMenu]);
 
   return (
-    <header className="z-50 bg-white text-black dark:bg-black dark:text-white pt-6 ">
+    <header className="z-50 bg-white text-black dark:bg-black dark:text-white pt-16 ">
       {/* Menu pour Desktop */}
       <div className="px-2 sm:px-6 lg:px-8 ">
         <div className="relative flex items-center justify-around h-16 pb-5 sm:pb-0 border-b-2  border-white sm:border-b-0">
@@ -143,6 +144,9 @@ const MainHeader = () => {
           >
             <ul className="flex items-center font-normal gap-10 text-md uppercase">
               <li>
+                <div className="oval-shape"></div>
+              </li>
+              <li>
                 <NavLink
                   className={`${
                     theme.currentTheme === "dark" ? "link-dark" : "link"
@@ -200,9 +204,15 @@ const MainHeader = () => {
                 >
                   <p className="uppercase">
                     {activeLanguage === 0 ? (
-                      <img className="h-8" src={languages[1].icon} alt="" />
+                      <div className="flex gap-4">
+                        {languages[1].code}
+                        <img className="h-8" src={languages[1].icon} alt="" />
+                      </div>
                     ) : (
-                      <img className="h-8" src={languages[0].icon} alt="" />
+                      <div className="flex gap-4">
+                        {languages[0].code}
+                        <img className="h-8" src={languages[0].icon} alt="" />
+                      </div>
                     )}
                   </p>
                 </button>
