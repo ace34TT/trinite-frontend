@@ -30,6 +30,13 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
 
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 });
   const [prevMouseCoords, setPrevMouseCoords] = useState({ x: 0, y: 0 });
+  useEffect(() => {
+    if (width < 768) {
+      setScale(2.5);
+    } else {
+      setScale(3.5);
+    }
+  }, [width]);
 
   useEffect(() => {
     function handleMouseMove(event: { clientX: any; clientY: any }) {
@@ -42,15 +49,6 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, [mouseCoords]);
-
-  useEffect(() => {
-    if (width < 768) {
-      setScale(2.5);
-    } else {
-      setScale(3.5);
-    }
-  }, [width]);
-
   useFrame(() => {
     const { x, y } = mouseCoords;
     const { x: prevX, y: prevY } = prevMouseCoords;

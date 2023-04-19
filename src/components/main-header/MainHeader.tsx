@@ -5,7 +5,6 @@ import "./style.css";
 import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { RootState } from "../../redux/store";
-import circle from "./../../assets/item/link-circle.png";
 const logo = [
   require("./../../assets/logo/logo-trinité.png"),
   require("./../../assets/logo/logo-w.png"),
@@ -23,15 +22,32 @@ const languages = [
   },
 ];
 
-// usage
-// to disable scrolling
-const isActiveStyle = {
-  backgroundImage: 'url("./../../assets/icon/united-kingdom.png")',
-  // backgroundColor: "red",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "contain",
-  // padding: "5px",
+interface ICircle {
+  height: number;
+  width: number;
+}
+const Circle = ({ height, width }: ICircle) => {
+  return (
+    <>
+      <svg
+        // width="182"
+        // height="83"
+        width={width}
+        height={height}
+        viewBox="0 0 182 83"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M65.9247 2C-6.41527 25.6869 17.6981 60.5594 30.0806 67.7971C48.1376 78.3516 82.8692 80.9565 97.2068 80.9565C108.938 80.9565 153.906 82.2724 169.547 70.429C174.341 66.7988 179.137 61.8635 179.974 50.0319C180.626 40.8203 168.873 32.9647 153.254 25.6869C127.837 13.8435 91.3411 13.1855 82.8688 13.1855C72.4415 13.1855 0.0840141 15.8174 2.03888 47.4"
+          stroke="white"
+          stroke-width="3"
+        />
+      </svg>
+    </>
+  );
 };
+
 const MainHeader = () => {
   const dispatch = useDispatch();
   const theme = useSelector((state: RootState) => state.theme);
@@ -70,7 +86,7 @@ const MainHeader = () => {
       appearCanvas();
     }
   }, [showMenu]);
-
+  const [activeLink, setActiveLink] = useState(1);
   return (
     <header className="z-50 bg-white text-black dark:bg-black dark:text-white pt-16 ">
       {/* Menu pour Desktop */}
@@ -142,7 +158,7 @@ const MainHeader = () => {
             id="text-1"
             className="hidden sm:block sm:ml-6 py-7 bg-white text-black dark:bg-black dark:text-white"
           >
-            <ul className="flex items-center font-normal gap-10 text-md uppercase">
+            <ul className="flex items-center font-normal gap-16 text-md uppercase">
               <li>
                 <div className="oval-shape"></div>
               </li>
@@ -150,44 +166,72 @@ const MainHeader = () => {
                 <NavLink
                   className={`${
                     theme.currentTheme === "dark" ? "link-dark" : "link"
-                  }`}
-                  style={({ isActive }) => (isActive ? isActiveStyle : {})}
+                  } relative`}
                   to={"/notre-maison"}
+                  onClick={() => {
+                    setActiveLink(1);
+                  }}
                 >
                   {t("header.trad1")}
+                  {activeLink === 1 && (
+                    <div className="absolute -top-10 -left-11">
+                      <Circle height={82} width={183} />
+                    </div>
+                  )}
                 </NavLink>
               </li>
               <li>
                 <NavLink
                   className={`${
                     theme.currentTheme === "dark" ? "link-dark" : "link"
-                  }`}
-                  style={({ isActive }) => (isActive ? isActiveStyle : {})}
+                  } relative`}
                   to={"/trinite"}
+                  onClick={() => {
+                    setActiveLink(2);
+                  }}
                 >
                   Trinité
+                  {activeLink === 2 && (
+                    <div className="absolute -top-10 -left-14">
+                      <Circle height={82} width={183} />
+                    </div>
+                  )}
                 </NavLink>
               </li>
               <li>
                 <NavLink
                   className={`${
                     theme.currentTheme === "dark" ? "link-dark" : "link"
-                  }`}
-                  style={({ isActive }) => (isActive ? isActiveStyle : {})}
+                  } relative`}
                   to={"/atelier"}
+                  onClick={() => {
+                    setActiveLink(3);
+                  }}
                 >
                   {t("header.trad2")}
+                  {activeLink === 3 && (
+                    <div className="absolute -top-10 -left-12">
+                      <Circle height={82} width={183} />
+                    </div>
+                  )}
                 </NavLink>
               </li>
               <li>
                 <NavLink
                   className={`${
                     theme.currentTheme === "dark" ? "link-dark" : "link"
-                  }`}
-                  style={({ isActive }) => (isActive ? isActiveStyle : {})}
+                  } relative`}
                   to="/contact"
+                  onClick={() => {
+                    setActiveLink(4);
+                  }}
                 >
                   Contact
+                  {activeLink === 4 && (
+                    <div className="absolute -top-10 -left-11">
+                      <Circle height={82} width={183} />
+                    </div>
+                  )}
                 </NavLink>
               </li>
               <li>
