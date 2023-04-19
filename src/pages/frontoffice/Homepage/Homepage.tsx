@@ -11,54 +11,36 @@ import { Canvas } from "react-three-fiber";
 import { Model } from "../../../components/three-model/Bracelet";
 import "./style.css";
 export default function Homepage() {
-  const { t, i18n } = useTranslation();
-  const { progress } = useProgress();
-  const [percentage, setPercentage] = useState(0);
-  useEffect(() => {
-    for (let i = 0; i < 100; i++) {
-      setTimeout(() => {
-        setPercentage(i);
-      }, i * 600);
-    }
-  }, []);
+  const { t } = useTranslation();
 
   return (
     <>
       <Helmet>
         <title>Trinité - Accueil</title>
       </Helmet>
-      {progress < 100 ? (
-        <div
-          className="flex flex-1 flex-col items-center justify-center  text-9xl"
-          style={{ height: "calc(100vh - 152px)" }}
-        >
-          <div id="loader">{percentage} %</div>
+      <div
+        className="flex flex-col justify-center items-center pb-7"
+        style={{ height: "calc(100vh - 200px)" }}
+      >
+        <div className="w-[100%] h-[70%]">
+          <Canvas>
+            <PerspectiveCamera position={[0, 0, 0]} />
+            <OrbitControls
+              enableZoom={false}
+              enableRotate={false}
+              enablePan={false}
+            />
+            <Suspense fallback={null}>
+              <Model />
+              <Environment preset="warehouse" />
+            </Suspense>
+          </Canvas>
         </div>
-      ) : (
-        <div
-          className="flex flex-col justify-center items-center pb-7"
-          style={{ height: "calc(100vh - 200px)" }}
-        >
-          <div className="w-[100%] h-[70%]">
-            <Canvas>
-              <PerspectiveCamera position={[0, 0, 0]} />
-              <OrbitControls
-                enableZoom={false}
-                enableRotate={false}
-                enablePan={false}
-              />
-              <Suspense fallback={null}>
-                <Model />
-                <Environment preset="warehouse" />
-              </Suspense>
-            </Canvas>
-          </div>
-          <div className="text-md sm:text-3xl text-center mb-5 px-5 font-roman">
-            {t("home.trad1")}
-            <br className="sr-only sm:not-sr-only" /> {t("home.trad2")}
-          </div>
+        <div className="text-md sm:text-3xl text-center mb-5 px-5 font-roman">
+          {t("home.trad1")}
+          <br className="sr-only sm:not-sr-only" /> {t("home.trad2")}
         </div>
-      )}
+      </div>
     </>
   );
 }

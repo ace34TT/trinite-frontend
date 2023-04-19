@@ -15,8 +15,8 @@ export default function Homepage() {
         <title>Trinité - Accueil</title>
       </Helmet>
       <div
-        className=" h-screen flex flex-col justify-center items-center pb-7"
-        style={{ height: "calc(100vh - 152px)" }}
+        className=" h-screen flex flex-col justify-center items-center"
+        style={{ height: "calc(100vh - 200px)" }}
       >
         <div className="w-[100%] h-[70%] relative">
           {/* <ModelViewer /> */}

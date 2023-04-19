@@ -2,22 +2,35 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleTheme } from "../../features/theme.feature";
 import "./style.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { RootState } from "../../redux/store";
-
+import circle from "./../../assets/item/link-circle.png";
 const logo = [
   require("./../../assets/logo/logo-trinité.png"),
   require("./../../assets/logo/logo-w.png"),
 ];
 const languages = [
-  { code: "fr", name: "Français" },
-  { code: "en", name: "Anglais" },
+  {
+    code: "fr",
+    name: "Français",
+    icon: require("./../../assets/icon/france.png"),
+  },
+  {
+    code: "en",
+    name: "Anglais",
+    icon: require("./../../assets/icon/united-kingdom.png"),
+  },
 ];
 
 // usage
 // to disable scrolling
-
+const isActiveStyle = {
+  backgroundImage: 'url("./../../assets/icon/united-kingdom.png")',
+  backgroundRepeat: "no-repeat",
+  backgroundSize: "contain",
+  // padding: "5px",
+};
 const MainHeader = () => {
   const dispatch = useDispatch();
   const theme = useSelector((state: RootState) => state.theme);
@@ -132,16 +145,48 @@ const MainHeader = () => {
           >
             <ul className="flex items-center font-normal gap-10 text-md uppercase">
               <li>
-                <Link to={"/notre-maison"}>{t("header.trad1")}</Link>
+                <NavLink
+                  className={`${
+                    theme.currentTheme === "dark" ? "link-dark" : "link"
+                  }`}
+                  style={({ isActive }) => (isActive ? isActiveStyle : {})}
+                  to={"/notre-maison"}
+                >
+                  {t("header.trad1")}
+                </NavLink>
               </li>
               <li>
-                <Link to={"/trinite"}>Trinité</Link>
+                <NavLink
+                  className={`${
+                    theme.currentTheme === "dark" ? "link-dark" : "link"
+                  }`}
+                  style={({ isActive }) => (isActive ? isActiveStyle : {})}
+                  to={"/trinite"}
+                >
+                  Trinité
+                </NavLink>
               </li>
               <li>
-                <Link to={"/atelier"}>{t("header.trad2")}</Link>
+                <NavLink
+                  className={`${
+                    theme.currentTheme === "dark" ? "link-dark" : "link"
+                  }`}
+                  style={({ isActive }) => (isActive ? isActiveStyle : {})}
+                  to={"/atelier"}
+                >
+                  {t("header.trad2")}
+                </NavLink>
               </li>
               <li>
-                <Link to="/contact">Contact</Link>
+                <NavLink
+                  className={`${
+                    theme.currentTheme === "dark" ? "link-dark" : "link"
+                  }`}
+                  style={({ isActive }) => (isActive ? isActiveStyle : {})}
+                  to="/contact"
+                >
+                  Contact
+                </NavLink>
               </li>
               <li>
                 <button
@@ -156,9 +201,11 @@ const MainHeader = () => {
                   }}
                 >
                   <p className="uppercase">
-                    {activeLanguage === 0
-                      ? languages[1].name
-                      : languages[0].name}
+                    {activeLanguage === 0 ? (
+                      <img className="h-8" src={languages[1].icon} alt="" />
+                    ) : (
+                      <img className="h-8" src={languages[0].icon} alt="" />
+                    )}
                   </p>
                 </button>
               </li>
@@ -183,14 +230,14 @@ const MainHeader = () => {
                             ? "bg-black border-white"
                             : "bg-white border-black"
                         }`}
-                      ></div>
+                      />
                       <div
                         className={`dot absolute right-0 top-0 w-6 h-6 rounded-md transition ${
                           theme.currentTheme === "dark"
                             ? "bg-white"
                             : "bg-black"
                         }`}
-                      ></div>
+                      />
                     </div>
                   </label>
                 </div>
@@ -215,12 +262,11 @@ const MainHeader = () => {
       >
         <div className="px-2 pt-2 pb-3 space-y-1 uppercase">
           <Link
-            className="block px-3 py-3 text-base font-medium"
+            className="link block px-3 py-3 text-base font-medium"
             to={"/notre-maison"}
           >
             {t("header.trad1")}
           </Link>
-
           <Link
             className="block px-3 py-3 text-base font-medium"
             to={"/trinite"}
@@ -233,7 +279,6 @@ const MainHeader = () => {
           >
             {t("header.trad2")}
           </Link>
-
           <Link className="block px-3 py-3 text-base font-medium" to="/contact">
             Contact
           </Link>
