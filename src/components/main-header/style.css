@@ -18,11 +18,6 @@ input:checked ~ .dot {
 }
 
 /*  */
-
-.active-link {
-  color: aqua;
-}
-
 /* hover animation */
 .link-dark {
   position: relative;
