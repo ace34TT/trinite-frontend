@@ -43,11 +43,11 @@ const MainHeader = () => {
   };
 
   function disableScroll() {
-    document.body.style.overflow = "hidden";
+    const bodyScroll = (document.body.style.overflow = "hidden");
   }
 
   function enableScroll() {
-    document.body.style.overflow = "auto";
+    const bodyScroll = (document.body.style.overflow = "auto");
   }
   function hideCanvas() {
     const canvas = document.querySelector("canvas");
@@ -70,11 +70,9 @@ const MainHeader = () => {
     }
   }, [showMenu]);
 
-  // enable scrolling
-
   return (
     <header className="z-50 bg-white text-black dark:bg-black dark:text-white pt-6 ">
-      {/* Menu Desktop */}
+      {/* Menu pour Desktop */}
       <div className="px-2 sm:px-6 lg:px-8 ">
         <div className="relative flex items-center justify-around h-16 pb-5 sm:pb-0 border-b-2  border-white sm:border-b-0">
           <div
@@ -254,35 +252,43 @@ const MainHeader = () => {
         className={`${
           showMenu ? "block" : "hidden"
         } sm:hidden pt-20 absolute bg-white dark:bg-black w-[100%] h-screen overscroll-none`}
-        onClick={() => {
-          toggleMenu();
-          enableScroll();
-        }}
         id="mobile-menu"
       >
         <div className="px-2 pt-2 pb-3 space-y-1 uppercase">
-          <Link
-            className="link block px-3 py-3 text-base font-medium"
-            to={"/notre-maison"}
+          <div
+            id="phone-header"
+            onClick={() => {
+              toggleMenu();
+              enableScroll();
+            }}
           >
-            {t("header.trad1")}
-          </Link>
-          <Link
-            className="block px-3 py-3 text-base font-medium"
-            to={"/trinite"}
-          >
-            Trinité
-          </Link>
-          <Link
-            className="block px-3 py-3 text-base font-medium"
-            to={"/atelier"}
-          >
-            {t("header.trad2")}
-          </Link>
-          <Link className="block px-3 py-3 text-base font-medium" to="/contact">
-            Contact
-          </Link>
+            <Link
+              className="block px-3 py-3 text-base font-medium"
+              to={"/notre-maison"}
+            >
+              {t("header.trad1")}
+            </Link>
 
+            <Link
+              className="block px-3 py-3 text-base font-medium"
+              to={"/trinite"}
+            >
+              Trinité
+            </Link>
+            <Link
+              className="block px-3 py-3 text-base font-medium"
+              to={"/atelier"}
+            >
+              {t("header.trad2")}
+            </Link>
+
+            <Link
+              className="block px-3 py-3 text-base font-medium"
+              to="/contact"
+            >
+              Contact
+            </Link>
+          </div>
           <div className="px-3 py-3">
             <button
               onClick={() => {
