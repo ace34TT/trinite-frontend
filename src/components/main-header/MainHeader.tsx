@@ -246,19 +246,19 @@ const MainHeader = () => {
                     setActiveLanguage(0);
                   }}
                 >
-                  <p className="uppercase">
+                  <div className="uppercase">
                     {activeLanguage === 0 ? (
-                      <div className="flex gap-4">
+                      <div className="flex items-center gap-4">
                         {languages[1].code}
                         <img className="h-8" src={languages[1].icon} alt="" />
                       </div>
                     ) : (
-                      <div className="flex gap-4">
+                      <div className="flex items-center gap-4">
                         {languages[0].code}
                         <img className="h-8" src={languages[0].icon} alt="" />
                       </div>
                     )}
-                  </p>
+                  </div>
                 </button>
               </li>
               <li>
