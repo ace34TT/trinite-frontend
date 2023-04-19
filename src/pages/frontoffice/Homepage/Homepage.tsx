@@ -22,7 +22,7 @@ export default function Homepage() {
         className="flex flex-col justify-center items-center pb-7"
         style={{ height: "calc(100vh - 200px)" }}
       >
-        <div className="w-[100%] h-[70%]">
+        <div className="w-[100%] h-[70%] mb-16">
           <Canvas>
             <PerspectiveCamera position={[0, 0, 0]} />
             <OrbitControls
@@ -36,7 +36,7 @@ export default function Homepage() {
             </Suspense>
           </Canvas>
         </div>
-        <div className="text-md sm:text-3xl text-center mb-5 px-5 font-roman">
+        <div className="text-md sm:text-3xl text-center -mb-44 px-5 font-roman">
           {t("home.trad1")}
           <br className="sr-only sm:not-sr-only" /> {t("home.trad2")}
         </div>
