@@ -302,7 +302,11 @@ const MainHeader = () => {
               }}
             >
               <p className="uppercase">
-                {activeLanguage === 0 ? languages[1].name : languages[0].name}
+                {activeLanguage === 0 ? (
+                  <img className="h-8" src={languages[1].icon} alt="" />
+                ) : (
+                  <img className="h-8" src={languages[0].icon} alt="" />
+                )}
               </p>
             </button>
           </div>
