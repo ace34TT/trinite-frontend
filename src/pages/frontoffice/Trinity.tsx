@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
+import "./../../assets/font/style.css";
 const images = [
   require("./../../assets/products/article_01.png"),
   require("./../../assets/products/article_02.png"),
@@ -14,7 +15,7 @@ export default function Trinity() {
       <Helmet>
         <title>Trinité - Trinité</title>
       </Helmet>
-      <div className="pt-0 sm:pt-16">
+      <div className="pt-0 sm:pt-16" style={{ fontFamily: 'CustomFont' }} >
         <div className="grid grid-cols-1 sm:grid-cols-3">
           <div className="h-[462px] sm:h-auto py-16 px-14 flex items-center justify-center border border-gray-300">
             {t("Trinite.trad1")}

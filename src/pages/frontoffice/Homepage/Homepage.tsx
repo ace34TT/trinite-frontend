@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
+import "../../../assets/font/style.css";
 import {
   Environment,
   OrbitControls,
@@ -42,7 +43,10 @@ export default function Homepage() {
             </Suspense>
           </Canvas>
         </div>
-        <div className="text-md sm:text-3xl text-center px-5 font-roman">
+        <div
+          style={{ fontFamily: "CustomFont" }}
+          className="text-md sm:text-3xl text-center px-5 font-roman"
+        >
           {t("home.trad1")}
           <br className="sr-only sm:not-sr-only" /> {t("home.trad2")}
         </div>
