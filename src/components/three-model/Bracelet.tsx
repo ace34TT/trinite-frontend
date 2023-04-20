@@ -32,24 +32,23 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
     if (width < 768) {
       setScale(2.5);
     } else {
-      setScale(3.09);
+      setScale(3);
     }
   }, [width]);
 
   useFrame(() => {
     if (groupRef.current) {
-      groupRef.current.rotation.y += 0.01; // adjust the rotation speed as needed
+      groupRef.current.rotation.y += 0.01;
     }
   });
 
   return (
     <group ref={groupRef} {...props} dispose={null}>
-      {/* <gridHelper args={[5, 5, `white`, `gray`]} position={[0, -0.5, 0]} /> */}
       <mesh
         geometry={nodes.Circle002.geometry}
         material={materials["Scratched Gold"]}
         position={[0, -0.2, 0]}
-        rotation={[2, 0, 1.2]}
+        rotation={[1.8, 0, 1.2]}
         scale={scale}
       />
     </group>

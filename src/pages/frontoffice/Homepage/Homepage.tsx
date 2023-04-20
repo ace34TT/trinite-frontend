@@ -1,10 +1,10 @@
-import { Suspense, useEffect, useState } from "react";
+import { Suspense } from "react";
 import { Helmet } from "react-helmet";
-import { useProgress } from "@react-three/drei";
 import { useTranslation } from "react-i18next";
 import {
   Environment,
   OrbitControls,
+  OrthographicCamera,
   PerspectiveCamera,
 } from "@react-three/drei";
 import { Canvas } from "react-three-fiber";
@@ -22,12 +22,19 @@ export default function Homepage() {
         className="flex flex-col justify-center items-center pb-7"
         style={{ height: "calc(100vh - 200px)" }}
       >
-        <div className="w-[100%] h-[70%] mb-16">
+        <div className="w-[100%] h-[80%] mb-10">
           <Canvas>
             <PerspectiveCamera position={[0, 0, 0]} />
+            <OrthographicCamera
+              position={[0, 0, 100]}
+              zoom={90}
+              near={0.1}
+              far={5000}
+              makeDefault // this line will make this camera the default camera for the scene
+            />
             <OrbitControls
               enableZoom={false}
-              enableRotate={false}
+              // enableRotate={false}
               enablePan={false}
             />
             <Suspense fallback={null}>
@@ -36,7 +43,7 @@ export default function Homepage() {
             </Suspense>
           </Canvas>
         </div>
-        <div className="text-md sm:text-3xl text-center -mb-44 px-5 font-roman">
+        <div className="text-md sm:text-3xl text-center -mb-24 px-5 font-roman">
           {t("home.trad1")}
           <br className="sr-only sm:not-sr-only" /> {t("home.trad2")}
         </div>

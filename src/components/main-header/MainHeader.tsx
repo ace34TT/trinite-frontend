@@ -5,6 +5,10 @@ import "./style.css";
 import { Link, NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { RootState } from "../../redux/store";
+import CircleSt from "../active-link/CircleSt";
+import CircleNd from "../active-link/CircleNd";
+import CircleRd from "../active-link/CircleRd";
+import CircleTh from "../active-link/CircleTh";
 const logo = [
   require("./../../assets/logo/logo-trinité.png"),
   require("./../../assets/logo/logo-w.png"),
@@ -26,27 +30,6 @@ interface ICircle {
   height: number;
   width: number;
 }
-const Circle = ({ height, width }: ICircle) => {
-  return (
-    <>
-      <svg
-        // width="182"
-        // height="83"
-        width={width}
-        height={height}
-        viewBox="0 0 182 83"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M65.9247 2C-6.41527 25.6869 17.6981 60.5594 30.0806 67.7971C48.1376 78.3516 82.8692 80.9565 97.2068 80.9565C108.938 80.9565 153.906 82.2724 169.547 70.429C174.341 66.7988 179.137 61.8635 179.974 50.0319C180.626 40.8203 168.873 32.9647 153.254 25.6869C127.837 13.8435 91.3411 13.1855 82.8688 13.1855C72.4415 13.1855 0.0840141 15.8174 2.03888 47.4"
-          stroke="white"
-          stroke-width="3"
-        />
-      </svg>
-    </>
-  );
-};
 
 const MainHeader = () => {
   const dispatch = useDispatch();
@@ -175,7 +158,7 @@ const MainHeader = () => {
                   {t("header.trad1")}
                   {activeLink === 1 && (
                     <div className="absolute -top-10 -left-11">
-                      <Circle height={82} width={183} />
+                      <CircleSt theme={theme.currentTheme}></CircleSt>
                     </div>
                   )}
                 </NavLink>
@@ -192,8 +175,8 @@ const MainHeader = () => {
                 >
                   Trinité
                   {activeLink === 2 && (
-                    <div className="absolute -top-10 -left-14">
-                      <Circle height={82} width={183} />
+                    <div className="absolute -top-7 -left-12">
+                      <CircleNd theme={theme.currentTheme}></CircleNd>
                     </div>
                   )}
                 </NavLink>
@@ -210,8 +193,8 @@ const MainHeader = () => {
                 >
                   {t("header.trad2")}
                   {activeLink === 3 && (
-                    <div className="absolute -top-10 -left-12">
-                      <Circle height={82} width={183} />
+                    <div className="absolute -top-10 -left-10">
+                      <CircleRd theme={theme.currentTheme}></CircleRd>
                     </div>
                   )}
                 </NavLink>
@@ -229,7 +212,7 @@ const MainHeader = () => {
                   Contact
                   {activeLink === 4 && (
                     <div className="absolute -top-10 -left-11">
-                      <Circle height={82} width={183} />
+                      <CircleTh theme={theme.currentTheme}></CircleTh>
                     </div>
                   )}
                 </NavLink>

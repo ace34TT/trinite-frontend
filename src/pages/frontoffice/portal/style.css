@@ -3,6 +3,7 @@
   src: url(./../../../assets/font/Hiragino\ Kaku\ Gothic\ StdN\ W8.otf);
 }
 
-.the-house {
+.the-house,
+.actions {
   font-family: myFirstFont;
 }
