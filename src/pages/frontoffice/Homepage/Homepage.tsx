@@ -12,17 +12,16 @@ import { Model } from "../../../components/three-model/Bracelet";
 import "./style.css";
 export default function Homepage() {
   const { t } = useTranslation();
-
   return (
     <>
       <Helmet>
         <title>Trinité - Accueil</title>
       </Helmet>
       <div
-        className="flex flex-col justify-center items-center pb-7"
+        className="flex flex-col justify-center items-center"
         style={{ height: "calc(100vh - 200px)" }}
       >
-        <div className="w-[100%] h-[80%] mb-10">
+        <div className="w-full h-[80%]">
           <Canvas>
             <PerspectiveCamera position={[0, 0, 0]} />
             <OrthographicCamera
@@ -43,7 +42,7 @@ export default function Homepage() {
             </Suspense>
           </Canvas>
         </div>
-        <div className="text-md sm:text-3xl text-center -mb-24 px-5 font-roman">
+        <div className="text-md sm:text-3xl text-center px-5 font-roman">
           {t("home.trad1")}
           <br className="sr-only sm:not-sr-only" /> {t("home.trad2")}
         </div>

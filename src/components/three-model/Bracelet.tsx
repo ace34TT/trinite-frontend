@@ -46,35 +46,9 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
     const { x, y } = mouse;
     if (groupRef.current) {
       groupRef.current.rotation.x = y * Math.PI * -0.05;
-      // groupRef.current.rotation.y = x * Math.PI * 0.2;
     }
   });
-  //
-  // const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 });
-  // const [prevMouseCoords, setPrevMouseCoords] = useState({ x: 0, y: 0 });
-  // useEffect(() => {
-  //   function handleMouseMove(event: { clientX: any; clientY: any }) {
-  //     const { clientX, clientY } = event;
-  //     setPrevMouseCoords(mouseCoords);
-  //     setMouseCoords({ x: clientX, y: clientY });
-  //   }
-  //   window.addEventListener("mousemove", handleMouseMove);
-  //   return () => {
-  //     window.removeEventListener("mousemove", handleMouseMove);
-  //   };
-  // }, [mouseCoords]);
 
-  // useFrame(() => {
-  //   const { y } = mouseCoords;
-  //   const { y: prevY } = prevMouseCoords;
-  //   const group = groupRef.current;
-
-  //   if (group) {
-  //     const newY = -(y / window.innerHeight) * 2 + 1;
-  //     const prevYNormalized = -(prevY / window.innerHeight) * 2 + 1;
-  //     group.rotation.x += -(newY - prevYNormalized) * 0.1;
-  //   }
-  // });
   return (
     <group ref={groupRef} {...props} dispose={null}>
       <mesh

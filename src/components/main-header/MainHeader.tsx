@@ -66,10 +66,10 @@ const MainHeader = () => {
   }, [showMenu]);
   const [activeLink, setActiveLink] = useState(1);
   return (
-    <header className="z-50 bg-white text-black dark:bg-black dark:text-white pt-16 ">
+    <header className="z-50 bg-white text-black dark:bg-black dark:text-white">
       {/* Menu pour Desktop */}
-      <div className="px-2 sm:px-6 lg:px-8 ">
-        <div className="relative flex items-center justify-around h-16 pb-5 sm:pb-0 border-b-2  border-white sm:border-b-0">
+      <div className="px-2 sm:px-6 lg:px-8 mt-10">
+        <div className="relative flex items-center justify-around h-24 pb-5 sm:pb-0 border-b-2  border-white sm:border-b-0">
           <div
             id="iconMobile"
             className="absolute inset-y-0 left-0 flex items-center sm:hidden "
