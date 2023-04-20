@@ -26,11 +26,6 @@ const languages = [
   },
 ];
 
-interface ICircle {
-  height: number;
-  width: number;
-}
-
 const MainHeader = () => {
   const dispatch = useDispatch();
   const theme = useSelector((state: RootState) => state.theme);
@@ -218,31 +213,85 @@ const MainHeader = () => {
                 </NavLink>
               </li>
               <li>
-                <button
-                  onClick={() => {
-                    if (activeLanguage === 0) {
+                <div className="flex items-center gap-2">
+                  <div
+                    className="flex items-center justify-center cursor-pointer"
+                    onClick={() => {
+                      i18n.changeLanguage(languages[0].code);
+                      setActiveLanguage(0);
+                    }}
+                  >
+                    <div
+                      className={`${
+                        activeLanguage === 0 && theme.currentTheme === "dark"
+                          ? "bg-white"
+                          : ""
+                      } 
+                      ${
+                        activeLanguage === 0 && theme.currentTheme === "light"
+                          ? "bg-black"
+                          : ""
+                      } rounded-full w-10 h-10 flex items-center justify-center`}
+                    >
+                      <span
+                        className={`${
+                          activeLanguage === 0 && theme.currentTheme === "dark"
+                            ? "text-black"
+                            : ""
+                        } 
+                        ${
+                          activeLanguage === 0 && theme.currentTheme === "light"
+                            ? "text-white"
+                            : ""
+                        }
+                          font-bold text-md`}
+                      >
+                        FR
+                      </span>
+                    </div>
+                  </div>
+                  <span>-</span>
+                  <div
+                    className="flex items-center justify-center cursor-pointer"
+                    onClick={() => {
                       i18n.changeLanguage(languages[1].code);
                       setActiveLanguage(1);
-                      return;
-                    }
-                    i18n.changeLanguage(languages[0].code);
-                    setActiveLanguage(0);
-                  }}
-                >
-                  <div className="uppercase">
-                    {activeLanguage === 0 ? (
-                      <div className="flex items-center gap-4">
-                        {languages[1].code}
-                        <img className="h-8" src={languages[1].icon} alt="" />
-                      </div>
-                    ) : (
-                      <div className="flex items-center gap-4">
-                        {languages[0].code}
-                        <img className="h-8" src={languages[0].icon} alt="" />
-                      </div>
-                    )}
+                    }}
+                  >
+                    <div
+                      className={`${
+                        activeLanguage === 1 && theme.currentTheme === "dark"
+                          ? "bg-white"
+                          : ""
+                      } 
+                        ${
+                          activeLanguage === 1 && theme.currentTheme === "light"
+                            ? "bg-black"
+                            : ""
+                        }
+                      
+                        rounded-full w-10 h-10 flex items-center justify-center`}
+                    >
+                      <span
+                        className={`${
+                          activeLanguage === 1 && theme.currentTheme === "dark"
+                            ? "text-black"
+                            : ""
+                        } 
+                          ${
+                            activeLanguage === 1 &&
+                            theme.currentTheme === "light"
+                              ? "text-white"
+                              : ""
+                          }
+                        
+                          font-bold text-md`}
+                      >
+                        En
+                      </span>
+                    </div>
                   </div>
-                </button>
+                </div>
               </li>
               <li>
                 <div className="flex items-center justify-center w-full">
@@ -260,14 +309,14 @@ const MainHeader = () => {
                         }}
                       />
                       <div
-                        className={`block w-14 h-6 border-2 rounded-md border-black  ${
+                        className={`block w-11 h-6 border-2 rounded-xl border-black  ${
                           theme.currentTheme === "dark"
                             ? "bg-black border-white"
                             : "bg-white border-black"
                         }`}
                       />
                       <div
-                        className={`dot absolute right-0 top-0 w-6 h-6 rounded-md transition ${
+                        className={`dot absolute right-0 top-0 w-6 h-6 rounded-full transition ${
                           theme.currentTheme === "dark"
                             ? "bg-white"
                             : "bg-black"
