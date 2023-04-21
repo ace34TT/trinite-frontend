@@ -14,7 +14,7 @@ i18n.use(initReactI18next).init({
       translation: {
         homepage_1: "Entrer",
         home: {
-          trad1: "Entre tradition et modernité symbole fort de",
+          trad1: "Entre tradition et modernité , symbole fort de",
           trad2: "liberté et d’émancipation.",
         },
 

@@ -16,16 +16,18 @@ const root = ReactDOM.createRoot(
 );
 let persistor = persistStore(store);
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter>
-          <Favicon url="https://i.ibb.co/0st12ck/1-transparent-logo-black-scroped.png" />
-          <App />
-        </BrowserRouter>
-      </PersistGate>
-    </Provider>
-  </React.StrictMode>
+  <div className="dark:bg-black bg-white">
+    <React.StrictMode>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <BrowserRouter>
+            <Favicon url="https://i.ibb.co/0st12ck/1-transparent-logo-black-scroped.png" />
+            <App />
+          </BrowserRouter>
+        </PersistGate>
+      </Provider>
+    </React.StrictMode>
+  </div>
 );
 
 // If you want to start measuring performance in your app, pass a function

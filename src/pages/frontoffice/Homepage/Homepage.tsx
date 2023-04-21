@@ -18,38 +18,33 @@ export default function Homepage() {
       <Helmet>
         <title>Trinité - Accueil</title>
       </Helmet>
+      <div className="flex flex-col justify-center items-center h-screen w-full absolute  top-0 left-0 min-h-[650px]">
+        <Canvas>
+          <PerspectiveCamera position={[0, 0, 0]} />
+          <OrthographicCamera
+            position={[0, 0, 100]}
+            zoom={90}
+            near={0.1}
+            far={5000}
+            makeDefault // this line will make this camera the default camera for the scene
+          />
+          <OrbitControls
+            enableZoom={false}
+            // enableRotate={false}
+            enablePan={false}
+          />
+          <Suspense fallback={null}>
+            <Model />
+            <Environment preset="warehouse" />
+          </Suspense>
+        </Canvas>
+      </div>
       <div
-        className="flex flex-col justify-center items-center"
-        style={{ height: "calc(100vh - 200px)" }}
+        style={{ fontFamily: "CustomFont" }}
+        className="text-md sm:text-3xl absolute bottom-24 w-full text-center"
       >
-        <div className="w-full h-[80%]">
-          <Canvas>
-            <PerspectiveCamera position={[0, 0, 0]} />
-            <OrthographicCamera
-              position={[0, 0, 100]}
-              zoom={90}
-              near={0.1}
-              far={5000}
-              makeDefault // this line will make this camera the default camera for the scene
-            />
-            <OrbitControls
-              enableZoom={false}
-              // enableRotate={false}
-              enablePan={false}
-            />
-            <Suspense fallback={null}>
-              <Model />
-              <Environment preset="warehouse" />
-            </Suspense>
-          </Canvas>
-        </div>
-        <div
-          style={{ fontFamily: "CustomFont" }}
-          className="text-md sm:text-3xl text-center px-5 font-roman"
-        >
-          {t("home.trad1")}
-          <br className="sr-only sm:not-sr-only" /> {t("home.trad2")}
-        </div>
+        {t("home.trad1")}
+        <br className="sr-only sm:not-sr-only" /> {t("home.trad2")}
       </div>
     </>
   );

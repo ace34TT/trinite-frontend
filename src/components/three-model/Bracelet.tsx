@@ -27,10 +27,10 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
   ) as GLTFResult;
 
   const groupRef = useRef<THREE.Group>(null);
-
+  const [cursorX, setCursorX] = useState(0);
   useEffect(() => {
     if (width < 768) {
-      setScale(2.5);
+      setScale(1.8);
     } else {
       setScale(3);
     }
@@ -43,12 +43,28 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
   });
 
   useFrame(({ mouse }) => {
-    const { x, y } = mouse;
+    const { y } = mouse;
     if (groupRef.current) {
-      groupRef.current.rotation.x = y * Math.PI * -0.05;
+      groupRef.current.rotation.x = y * Math.PI * -0.1;
     }
   });
 
+  useFrame(({ mouse }) => {
+    // Update the cursorX state based on the horizontal movement of the mouse
+    setCursorX(mouse.x);
+    // Calculate the target rotation speed based on the cursorX value
+    const targetRotationSpeed = cursorX * 0.2;
+    if (groupRef.current) {
+      const currentRotationSpeed = THREE.MathUtils.lerp(
+        groupRef.current.userData.rotationSpeed,
+        targetRotationSpeed,
+        0.1
+      );
+      groupRef.current.userData.rotationSpeed = currentRotationSpeed;
+      // Update the rotation of the group
+      // groupRef.current.rotation.y += currentRotationSpeed;
+    }
+  });
   return (
     <group ref={groupRef} {...props} dispose={null}>
       <mesh
