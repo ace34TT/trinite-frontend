@@ -63,7 +63,7 @@ const MainHeader = () => {
       appearCanvas();
     }
   }, [showMenu]);
-  const [activeLink, setActiveLink] = useState(1);
+  const [activeLink, setActiveLink] = useState(-1);
   return (
     <header className="z-10 bg-opacity-0 text-black bg-black dark:text-white">
       {/* Menu pour Desktop */}
@@ -154,7 +154,6 @@ const MainHeader = () => {
                 </NavLink>
               </li>
               <li>
-                n[]
                 <NavLink
                   className={`${
                     theme.currentTheme === "dark" ? "link-dark" : "link"
@@ -324,7 +323,10 @@ const MainHeader = () => {
               </li>
             </ul>
           </div>
-          <div id="text2" className="text-xl uppercase hidden sm:block">
+          <div
+            id="text2"
+            className="text-xl uppercase hidden sm:block leading-5"
+          >
             Maison <br /> de haute <br /> joaillerie
           </div>
         </div>

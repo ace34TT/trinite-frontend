@@ -33,7 +33,7 @@ export default function OurHouse() {
             <br />
             <span className="relative">
               <img
-                className="absolute top-0 -left-96 w-80 m-0 hidden sm:block"
+                className="absolute top-0 -left-96 2xl:-left-[600px] md w-11/12  m-0 hidden sm:block"
                 src={images[0]}
                 alt=""
               />
@@ -47,7 +47,7 @@ export default function OurHouse() {
           <p>
             <span className="relative">
               <img
-                className="absolute top-0 -left-96 w-[300px] m-0 hidden sm:block"
+                className="absolute top-0 -left-96 2xl:-left-[550px] w-[300px] 2xl:w-[500px] m-0 hidden sm:block"
                 src={images[2]}
                 alt=""
               />
@@ -59,7 +59,7 @@ export default function OurHouse() {
           <p>
             <span className="relative">
               <img
-                className="absolute -top-24 -right-[400px] 2xl:-right-[550px] w-96 m-0 hidden sm:block"
+                className="absolute -top-40 -right-[400px] 2xl:-right-[550px] w-96 2xl:w-[500px] m-0 hidden sm:block"
                 src={images[1]}
                 alt=""
               />

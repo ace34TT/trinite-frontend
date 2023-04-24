@@ -20,13 +20,25 @@ export default function Workshop() {
         <div className="w-10/12 sm:w-6/12 text-black dark:text-white leading-5 sm:leading-snug">
           <div className="flex justify-center gap-4 ">
             <div className="hidden sm:block">
-              <img className="m-0" src={images[0]} alt="" />
+              <img
+                className="cursor-pointer transition-transform duration-300 hover:scale-105 m-0"
+                src={images[0]}
+                alt=""
+              />
             </div>
             <div>
-              <img className="m-0" src={images[2]} alt="" />
+              <img
+                className="cursor-pointer transition-transform duration-300 hover:scale-105 m-0"
+                src={images[2]}
+                alt=""
+              />
             </div>
             <div className="hidden sm:block">
-              <img className="m-0" src={images[1]} alt="" />
+              <img
+                className="cursor-pointer transition-transform duration-300 hover:scale-105 m-0"
+                src={images[1]}
+                alt=""
+              />
             </div>
           </div>
           <p>{t("Studio.trad1")}</p>
