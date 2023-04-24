@@ -11,10 +11,7 @@ import CircleRd from "../active-link/CircleRd";
 import CircleTh from "../active-link/CircleTh";
 import DarkLogo from "../logo/DarkLogo";
 import LightLogo from "../logo/LightLogo";
-const logo = [
-  require("./../../assets/logo/logo-dark.svg"),
-  require("./../../assets/logo/logo-light.svg"),
-];
+
 const languages = [
   {
     code: "fr",
@@ -124,7 +121,12 @@ const MainHeader = () => {
             </button>
           </div>
           <div id="logo" className="">
-            <Link to={"/accueil"}>
+            <Link
+              to={"/accueil"}
+              onClick={() => {
+                setActiveLink(-1);
+              }}
+            >
               {theme.currentTheme === "dark" ? <DarkLogo /> : <LightLogo />}
             </Link>
           </div>
@@ -322,7 +324,7 @@ const MainHeader = () => {
             </ul>
           </div>
           <div id="text2" className="text-xl uppercase hidden sm:block">
-            Maison <br /> de haute <br /> joae llerie
+            Maison <br /> de haute <br /> joaillerie
           </div>
         </div>
       </div>

@@ -1,6 +1,11 @@
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import "./../../assets/font/style.css";
+const images = [
+  require("./../../assets/deco/Capture d’écran 2023-04-22 à 22.35.png"),
+  require("./../../assets/deco/Capture d’écran 2023-04-22 à 22.36.png"),
+  require("./../../assets/deco/Rectangle.png"),
+];
 export default function Workshop() {
   const { t } = useTranslation();
   return (
@@ -8,8 +13,22 @@ export default function Workshop() {
       <Helmet>
         <title>Trinité - Atelier</title>
       </Helmet>
-      <div style={{ fontFamily: 'CustomFont' }} className="flex justify-center py-0 sm:py-16 prose max-w-none text-base sm:text-2xl w-screen">
-        <div className="w-10/12 sm:w-4/12 text-black dark:text-white leading-5 sm:leading-snug">
+      <div
+        style={{ fontFamily: "CustomFont" }}
+        className="flex justify-center py-0 sm:py-16 prose max-w-none text-base sm:text-2xl w-screen"
+      >
+        <div className="w-10/12 sm:w-6/12 text-black dark:text-white leading-5 sm:leading-snug">
+          <div className="flex justify-center gap-4 ">
+            <div className="hidden sm:block">
+              <img className="m-0" src={images[0]} alt="" />
+            </div>
+            <div>
+              <img className="m-0" src={images[2]} alt="" />
+            </div>
+            <div className="hidden sm:block">
+              <img className="m-0" src={images[1]} alt="" />
+            </div>
+          </div>
           <p>{t("Studio.trad1")}</p>
           <br />
           <div>
