@@ -61,20 +61,20 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
         0.1
       );
       groupRef.current.userData.rotationSpeed = currentRotationSpeed;
-      // Update the rotation of the group
-      // groupRef.current.rotation.y += currentRotationSpeed;
     }
   });
   return (
-    <group ref={groupRef} {...props} dispose={null}>
-      <mesh
-        geometry={nodes.Circle002.geometry}
-        material={materials["Scratched Gold"]}
-        position={[0, -0.2, 0]}
-        rotation={[1.8, 0, 1.2]}
-        scale={scale}
-      />
-    </group>
+    <>
+      <group ref={groupRef} {...props} dispose={null}>
+        <mesh
+          geometry={nodes.Circle002.geometry}
+          material={materials["Scratched Gold"]}
+          position={[0, -0.2, 0]}
+          rotation={[1.8, 0, 1.2]}
+          scale={scale}
+        />
+      </group>
+    </>
   );
 }
 

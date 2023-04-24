@@ -124,7 +124,12 @@ const MainHeader = () => {
             </button>
           </div>
           <div id="logo" className="">
-            <Link to={"/accueil"}>
+            <Link
+              to={"/accueil"}
+              onClick={() => {
+                setActiveLink(-1);
+              }}
+            >
               {theme.currentTheme === "dark" ? <DarkLogo /> : <LightLogo />}
             </Link>
           </div>
@@ -152,6 +157,7 @@ const MainHeader = () => {
                 </NavLink>
               </li>
               <li>
+                n[]
                 <NavLink
                   className={`${
                     theme.currentTheme === "dark" ? "link-dark" : "link"
@@ -322,7 +328,7 @@ const MainHeader = () => {
             </ul>
           </div>
           <div id="text2" className="text-xl uppercase hidden sm:block">
-            Maison <br /> de haute <br /> joae llerie
+            Maison <br /> de haute <br /> joaillerie
           </div>
         </div>
       </div>
