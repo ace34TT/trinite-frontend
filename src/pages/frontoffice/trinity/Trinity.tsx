@@ -53,23 +53,21 @@ export default function Trinity() {
                 </div>
                 <div>
                   <div
+                    id="text-1"
                     className="flex flex-col gap-4 p-10  justify-center bg-cover bg-center text-black"
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
-                    <p className="text-center">Bracelet TRINITE</p>
-                    <p>Or jaune 750/1000</p>
-                    <p>Taille : S-M</p>
+                    <p className="text-center">{t("Trinite.text1.trad1")}</p>
+                    <p>{t("Trinite.text1.trad2")}</p>
+                    <p>{t("Trinite.text1.trad3")}</p>
                     <p>
-                      Tous nos bijoux sont fabriqués dans nos ateliers
-                      d'exception à partir de matériaux précieux recyclés.
+                    {t("Trinite.text1.trad4")}
                     </p>
                     <p>
-                      Un certificat d'authenticité est fourni avec chacun de nos
-                      bijoux.
+                    {t("Trinite.text1.trad5")}
                     </p>
                     <p>
-                      Tous les articles Trinité sont soigneusement conditionnés
-                      dans un emballage Trinité.
+                    {t("Trinite.text1.trad6")}
                     </p>
                   </div>
                 </div>
@@ -88,23 +86,21 @@ export default function Trinity() {
                 </div>
                 <div>
                   <div
+                    id="text-2"
                     className="flex flex-col gap-4 p-10  justify-center bg-cover bg-center text-black"
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
-                    <p className="text-center">Bracelet TRINITE</p>
-                    <p>Or jaune 750/1000</p>
-                    <p>Taille : S-M</p>
+                    <p className="text-center">  {t("Trinite.text2.trad1")}</p>
+                    <p> {t("Trinite.text2.trad2")}</p>
+                    <p> {t("Trinite.text2.trad3")}</p>
                     <p>
-                      Tous nos bijoux sont fabriqués dans nos ateliers
-                      d'exception à partir de matériaux précieux recyclés.
+                    {t("Trinite.text2.trad4")}
                     </p>
                     <p>
-                      Un certificat d'authenticité est fourni avec chacun de nos
-                      bijoux.
+                    {t("Trinite.text2.trad5")}
                     </p>
                     <p>
-                      Tous les articles Trinité sont soigneusement conditionnés
-                      dans un emballage Trinité.
+                    {t("Trinite.text2.trad6")}
                     </p>
                   </div>
                 </div>
@@ -129,23 +125,22 @@ export default function Trinity() {
                 </div>
                 <div>
                   <div
+                    id="text-3"
                     className="flex flex-col gap-4 p-10  justify-center bg-cover bg-center text-black"
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
-                    <p className="text-center">Bracelet TRINITE</p>
-                    <p>Or jaune 750/1000</p>
-                    <p>Taille : S-M</p>
+                    <p className="text-center"> {t("Trinite.text3.trad1")}</p>
+
+                    <p>{t("Trinite.text3.trad2")}</p>
+                    <br />
                     <p>
-                      Tous nos bijoux sont fabriqués dans nos ateliers
-                      d'exception à partir de matériaux précieux recyclés.
+                    {t("Trinite.text3.trad3")}
                     </p>
                     <p>
-                      Un certificat d'authenticité est fourni avec chacun de nos
-                      bijoux.
+                    {t("Trinite.text3.trad4")}
                     </p>
                     <p>
-                      Tous les articles Trinité sont soigneusement conditionnés
-                      dans un emballage Trinité.
+                    {t("Trinite.text3.trad5")}
                     </p>
                   </div>
                 </div>
@@ -166,23 +161,23 @@ export default function Trinity() {
                 </div>
                 <div>
                   <div
+                    id="text-4"
                     className="flex flex-col gap-4 p-10  justify-center bg-cover bg-center text-black"
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
-                    <p className="text-center">Bracelet TRINITE</p>
-                    <p>Or jaune 750/1000</p>
-                    <p>Taille : S-M</p>
+                    <p className="text-center"> {t("Trinite.text4.trad1")}</p>
                     <p>
-                      Tous nos bijoux sont fabriqués dans nos ateliers
-                      d'exception à partir de matériaux précieux recyclés.
+                    {t("Trinite.text4.trad2")}
+                    </p>
+                    <p>{t("Trinite.text4.trad3")}</p>
+                    <p>
+                    {t("Trinite.text4.trad4")}
                     </p>
                     <p>
-                      Un certificat d'authenticité est fourni avec chacun de nos
-                      bijoux.
+                    {t("Trinite.text4.trad5")}
                     </p>
                     <p>
-                      Tous les articles Trinité sont soigneusement conditionnés
-                      dans un emballage Trinité.
+                    {t("Trinite.text4.trad6")}
                     </p>
                   </div>
                 </div>
@@ -201,23 +196,21 @@ export default function Trinity() {
                 </div>
                 <div>
                   <div
+                    id="text-5"
                     className="flex flex-col gap-4 p-10  justify-center bg-cover bg-center text-black"
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
-                    <p className="text-center">Bracelet TRINITE</p>
-                    <p>Or jaune 750/1000</p>
-                    <p>Taille : S-M</p>
+                    <p className="text-center">   {t("Trinite.text5.trad1")}</p>
+                    <p> {t("Trinite.text5.trad2")}</p>
+                    <p> {t("Trinite.text5.trad3")}</p>
                     <p>
-                      Tous nos bijoux sont fabriqués dans nos ateliers
-                      d'exception à partir de matériaux précieux recyclés.
+                    {t("Trinite.text5.trad4")}
                     </p>
                     <p>
-                      Un certificat d'authenticité est fourni avec chacun de nos
-                      bijoux.
+                    {t("Trinite.text5.trad5")}
                     </p>
                     <p>
-                      Tous les articles Trinité sont soigneusement conditionnés
-                      dans un emballage Trinité.
+                    {t("Trinite.text5.trad6")}
                     </p>
                   </div>
                 </div>
@@ -242,23 +235,21 @@ export default function Trinity() {
                 </div>
                 <div>
                   <div
+                    id="text-6"
                     className="flex flex-col gap-4 p-10  justify-center bg-cover bg-center text-black"
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
-                    <p className="text-center">Bracelet TRINITE</p>
-                    <p>Or jaune 750/1000</p>
-                    <p>Taille : S-M</p>
+                    <p className="text-center">{t("Trinite.text6.trad1")}</p>
+                    <p>{t("Trinite.text6.trad2")}</p>
+                    <p>{t("Trinite.text6.trad3")}</p>
                     <p>
-                      Tous nos bijoux sont fabriqués dans nos ateliers
-                      d'exception à partir de matériaux précieux recyclés.
+                    {t("Trinite.text6.trad4")}
                     </p>
                     <p>
-                      Un certificat d'authenticité est fourni avec chacun de nos
-                      bijoux.
+                    {t("Trinite.text6.trad5")}
                     </p>
                     <p>
-                      Tous les articles Trinité sont soigneusement conditionnés
-                      dans un emballage Trinité.
+                    {t("Trinite.text6.trad6")}
                     </p>
                   </div>
                 </div>
@@ -279,23 +270,23 @@ export default function Trinity() {
                 </div>
                 <div>
                   <div
+                    id="text-7"
                     className="flex flex-col gap-4 p-10  justify-center bg-cover bg-center text-black"
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
-                    <p className="text-center">Bracelet TRINITE</p>
-                    <p>Or jaune 750/1000</p>
-                    <p>Taille : S-M</p>
+                    <p className="text-center">{t("Trinite.text7.trad1")}</p>
                     <p>
-                      Tous nos bijoux sont fabriqués dans nos ateliers
-                      d'exception à partir de matériaux précieux recyclés.
+                    {t("Trinite.text7.trad2")}
+                    </p>
+                    <p>{t("Trinite.text7.trad3")}</p>
+                    <p>
+                    {t("Trinite.text7.trad4")}
                     </p>
                     <p>
-                      Un certificat d'authenticité est fourni avec chacun de nos
-                      bijoux.
+                    {t("Trinite.text7.trad5")}
                     </p>
                     <p>
-                      Tous les articles Trinité sont soigneusement conditionnés
-                      dans un emballage Trinité.
+                    {t("Trinite.text7.trad6")}
                     </p>
                   </div>
                 </div>
