@@ -43,12 +43,14 @@ const MainHeader = () => {
   function enableScroll() {
     document.body.style.overflow = "auto";
   }
+
   function hideCanvas() {
     const canvas = document.querySelector("canvas");
     if (canvas) {
       canvas.style.display = "none";
     }
   }
+
   function appearCanvas() {
     const canvas = document.querySelector("canvas");
     if (canvas) {
@@ -63,6 +65,7 @@ const MainHeader = () => {
       appearCanvas();
     }
   }, [showMenu]);
+
   const [activeLink, setActiveLink] = useState(-1);
   return (
     <header className="z-10 bg-opacity-0 text-black bg-black dark:text-white">

@@ -1,31 +1,40 @@
 import * as THREE from "three";
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useFrame } from "react-three-fiber";
 import { useWindowSize } from "react-use";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import { setRotation } from "../../features/rotation.feature";
 
 type GLTFResult = GLTF & {
   nodes: {
     Circle002: THREE.Mesh;
-    Circle003: THREE.Mesh;
-    Circle004: THREE.Mesh;
+    Circle002_1: THREE.Mesh;
+    Circle002_2: THREE.Mesh;
   };
   materials: {
+    ["Scratched Gold.001"]: THREE.MeshStandardMaterial;
     ["Scratched Gold"]: THREE.MeshStandardMaterial;
     ["Scratched Gold.002"]: THREE.MeshStandardMaterial;
-    ["Scratched Gold.001"]: THREE.MeshStandardMaterial;
   };
 };
 
-export function Model(props: JSX.IntrinsicElements["group"]) {
+export const Model = forwardRef((props, ref) => {
   const { nodes, materials } = useGLTF(
     "models/model-2/Bracelet-2-compressed-transformed.glb"
   ) as GLTFResult;
-
+  const rotation = useSelector((state: RootState) => state.rotation);
+  const dispatch = useDispatch();
   const [scale, setScale] = useState(3.5);
   const { width } = useWindowSize();
-
   const groupRef = useRef<THREE.Group>(null);
   useEffect(() => {
     if (width < 768) {
@@ -47,32 +56,40 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
       groupRef.current.rotation.x = y * Math.PI * -0.1;
     }
   });
-
+  //
+  useImperativeHandle(ref, () => ({
+    getAlert() {
+      dispatch(
+        setRotation({
+          x: groupRef!.current!.rotation.x,
+          y: groupRef!.current!.rotation.y,
+          z: groupRef!.current!.rotation.z,
+        })
+      );
+    },
+  }));
   return (
     <group ref={groupRef} {...props} dispose={null}>
-      <mesh
-        geometry={nodes.Circle004.geometry}
-        material={materials["Scratched Gold.001"]}
-        position={[0.03, 0.595, -0.01]}
-        rotation={[1.61, 0, -1.91]}
+      <group
+        position={[0, -0.2, 0]}
+        rotation={[rotation.x, rotation.y, rotation.z]}
         scale={scale}
-      />
-      <mesh
-        geometry={nodes.Circle002.geometry}
-        material={materials["Scratched Gold"]}
-        position={[0.03, 0.295, -0.02]}
-        rotation={[1.61, 0, -1.91]}
-        scale={scale}
-      />
-      <mesh
-        geometry={nodes.Circle003.geometry}
-        material={materials["Scratched Gold.002"]}
-        position={[0.03, 0, -0.02]}
-        rotation={[1.61, 0, -1.91]}
-        scale={scale}
-      />
+      >
+        <mesh
+          geometry={nodes.Circle002.geometry}
+          material={materials["Scratched Gold.001"]}
+        />
+        <mesh
+          geometry={nodes.Circle002_1.geometry}
+          material={materials["Scratched Gold"]}
+        />
+        <mesh
+          geometry={nodes.Circle002_2.geometry}
+          material={materials["Scratched Gold.002"]}
+        />
+      </group>
     </group>
   );
-}
+});
 
 useGLTF.preload("models/model-2/Bracelet-2-compressed-transformed.glb");

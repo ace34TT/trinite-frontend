@@ -1,14 +1,16 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import ThemeReducer from "../features/theme.feature";
+import RotationReducer from "./../features/rotation.feature";
 import storage from "redux-persist/lib/storage";
 import { persistReducer } from "redux-persist";
 const reducers = combineReducers({
   theme: ThemeReducer,
+  rotation: RotationReducer,
 });
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["theme"],
+  blacklist: ["theme", "rotation"],
 };
 const persistedReducer = persistReducer(persistConfig, reducers);
 export const store = configureStore({
@@ -17,7 +19,7 @@ export const store = configureStore({
     getDefaultMiddleware({
       serializableCheck: false,
       ignoredActions: [""],
-      ignoredPaths: ["theme"],
+      ignoredPaths: ["theme", "rotation"],
     }),
 });
 

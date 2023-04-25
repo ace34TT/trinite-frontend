@@ -4,11 +4,20 @@ Command: npx gltfjsx@6.1.4 Bracelet-compressed.glb --types
 */
 
 import * as THREE from "three";
-import { useEffect, useRef, useState } from "react";
+import {
+  forwardRef,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useFrame } from "react-three-fiber";
 import { useWindowSize } from "react-use";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import { setRotation } from "../../features/rotation.feature";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -19,15 +28,16 @@ type GLTFResult = GLTF & {
   };
 };
 
-export function Model(props: JSX.IntrinsicElements["group"]) {
+export const Model = forwardRef((props, ref) => {
+  const rotation = useSelector((state: RootState) => state.rotation);
+  const dispatch = useDispatch();
   const [scale, setScale] = useState(3.5);
   const { width } = useWindowSize();
   const { nodes, materials } = useGLTF(
     "models/final/Bracelet-compressed.glb"
-    // "models/final/Bracelet2.glb"
   ) as GLTFResult;
-
   const groupRef = useRef<THREE.Group>(null);
+  //
   useEffect(() => {
     if (width < 768) {
       setScale(1.8);
@@ -35,20 +45,30 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
       setScale(3);
     }
   }, [width]);
-
+  //
   useFrame(() => {
     if (groupRef.current) {
       groupRef.current.rotation.y += 0.01;
     }
   });
-
   useFrame(({ mouse }) => {
     const { y } = mouse;
     if (groupRef.current) {
       groupRef.current.rotation.x = y * Math.PI * -0.1;
     }
   });
-
+  //
+  useImperativeHandle(ref, () => ({
+    getAlert() {
+      dispatch(
+        setRotation({
+          x: groupRef!.current!.rotation.x,
+          y: groupRef!.current!.rotation.y,
+          z: groupRef!.current!.rotation.z,
+        })
+      );
+    },
+  }));
   return (
     <>
       <group ref={groupRef} {...props} dispose={null}>
@@ -56,12 +76,12 @@ export function Model(props: JSX.IntrinsicElements["group"]) {
           geometry={nodes.Circle002.geometry}
           material={materials["Scratched Gold"]}
           position={[0, -0.2, 0]}
-          rotation={[1.8, 0, 1.2]}
+          rotation={[rotation.x, rotation.y, rotation.z]}
           scale={scale}
         />
       </group>
     </>
   );
-}
+});
 
 useGLTF.preload("models/final/Bracelet-compressed.glb");

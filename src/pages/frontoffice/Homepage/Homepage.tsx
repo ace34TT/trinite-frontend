@@ -19,9 +19,8 @@ export default function Homepage() {
   const handleActiveModel = () => {
     activeModel === 0 ? setActiveModel(1) : setActiveModel(0);
   };
-  //
-  const groupRef = useRef<THREE.Group>(null);
 
+  const childRef = useRef<any>(null);
   return (
     <>
       <Helmet>
@@ -39,14 +38,14 @@ export default function Homepage() {
             makeDefault // this line will make this camera the default camera for the scene
           />
           <OrbitControls enablePan={false} maxZoom={150} minZoom={50} />
-          <group ref={groupRef}>
-            {activeModel === 0 ? <Model /> : <Model2 />}
+          <Suspense fallback={null}>
+            {activeModel === 0 ? (
+              <Model ref={childRef} />
+            ) : (
+              <Model2 ref={childRef} />
+            )}
             <Environment preset="warehouse" />
-          </group>
-          {/* <Suspense fallback={null}>
-            {activeModel === 0 ? <Model /> : <Model2 />}
-            <Environment preset="warehouse" />
-          </Suspense> */}
+          </Suspense>
         </Canvas>
       </div>
       <div
@@ -58,6 +57,7 @@ export default function Homepage() {
             <div
               onClick={() => {
                 handleActiveModel();
+                childRef!.current!.getAlert();
               }}
               className="w-7 h-7 rounded-full border-4 border-white bg-yellow-100 transition-transform duration-300 hover:scale-110"
             ></div>
