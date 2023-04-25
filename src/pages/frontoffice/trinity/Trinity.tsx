@@ -1,8 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation } from "swiper";
-
 import "./style.css";
 import "swiper/swiper.min.css";
 import "./../../../assets/font/style.css";
