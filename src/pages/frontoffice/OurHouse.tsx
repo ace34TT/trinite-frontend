@@ -69,7 +69,7 @@ export default function OurHouse() {
           <p>
             <span className="relative">
               <img
-                className="absolute -top-40 -right-[450px] 2xl:-right-[550px] w-96 2xl:w-[500px] m-0 hidden sm:block"
+                className="absolute -top-40 -right-[450px] 2xl:-right-[620px] w-96 2xl:w-[500px] m-0 hidden sm:block"
                 src={images[1]}
                 alt=""
               />
