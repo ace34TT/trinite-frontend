@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { data } from "./data";
+
 import "./../../../assets/font/style.css";
 const images = [
   require("./../../../assets/products/bracelet 1.png"),
