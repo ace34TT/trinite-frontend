@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-
+import "swiper/swiper-bundle.min.css";
 import MainLayout from "./pages/frontoffice/MainLayout";
 import OurHouse from "./pages/frontoffice/OurHouse";
 import Trinity from "./pages/frontoffice/trinity/Trinity";

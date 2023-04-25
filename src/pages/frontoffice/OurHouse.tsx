@@ -41,8 +41,18 @@ export default function OurHouse() {
             </span>
           </p>
           <br />
+
           <p>{t("OurHouse.trad3")}</p>
-          <p>{t("OurHouse.trad4")}</p>
+          <p>
+            <span className="relative">
+              <img
+                className="absolute top-0 -left-96 2xl:-left-[600px] md w-11/12  m-0 hidden sm:block"
+                src={images[0]}
+                alt=""
+              />
+            </span>
+            {t("OurHouse.trad4")}
+          </p>
           <br />
           <p>
             <span className="relative">
@@ -59,7 +69,7 @@ export default function OurHouse() {
           <p>
             <span className="relative">
               <img
-                className="absolute -top-40 -right-[400px] 2xl:-right-[550px] w-96 2xl:w-[500px] m-0 hidden sm:block"
+                className="absolute -top-40 -right-[450px] 2xl:-right-[550px] w-96 2xl:w-[500px] m-0 hidden sm:block"
                 src={images[1]}
                 alt=""
               />

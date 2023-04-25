@@ -1,0 +1,16 @@
+.swiper-button-prev,
+.swiper-button-next {
+  color: rgb(255, 255, 255);
+}
+
+/* .swiper-button-prev {
+  left: -20px;
+}
+
+.swiper-button-next {
+  right: 20px;
+} */
+
+/* .swiper-slide > div {
+  z-index: 10;
+} */
