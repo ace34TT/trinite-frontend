@@ -1,7 +1,9 @@
+import { useRef, useEffect } from "react";
 import { Suspense } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import "../../../assets/font/style.css";
+import { gsap } from "gsap";
 import {
   Environment,
   OrbitControls,
@@ -13,6 +15,21 @@ import { Model } from "../../../components/three-model/Bracelet";
 import "./style.css";
 export default function Homepage() {
   const { t } = useTranslation();
+  const hiddenText = useRef(null);
+  useEffect(() => {
+    const el = hiddenText.current;
+    gsap.fromTo(
+      el,
+      {
+        y: "360",
+      },
+      {
+        y: "100",
+        duration: 3,
+        ease: "none",
+      }
+    );
+  }, []);
   return (
     <>
       <Helmet>
@@ -43,8 +60,18 @@ export default function Homepage() {
         style={{ fontFamily: "CustomFont" }}
         className="text-md sm:text-3xl absolute bottom-24 w-full text-center"
       >
-        {t("home.trad1")}
-        <br className="sr-only sm:not-sr-only" /> {t("home.trad2")}
+        <div
+          id="text-1"
+          className="bg-lime-500 "
+          style={{ zIndex: -1 }}
+          ref={hiddenText}
+        >
+          {t("home.trad1")}
+          <br className="sr-only sm:not-sr-only absolute" /> {t("home.trad2")}
+        </div>
+        <div id="cache" className="bg-red-800 h-16" style={{ zIndex: 2 }}>
+          rouge rouge
+        </div>
       </div>
     </>
   );
