@@ -25,7 +25,6 @@ export default function Homepage() {
     const el = textHiddenRef.current;
     const hider = document.getElementById("hider");
     if (hider) {
-      // type guard
       gsap.fromTo(
         el,
         {
@@ -104,7 +103,7 @@ export default function Homepage() {
         </div>
         <div
           id="hider"
-          className="bg-black h-40 w-full absolute  left-0 z-10"
+          className="bg-white dark:bg-black  h-40 w-full absolute  left-0 z-10"
         ></div>
       </div>
     </>
