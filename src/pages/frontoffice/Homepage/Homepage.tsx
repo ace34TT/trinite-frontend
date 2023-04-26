@@ -63,11 +63,16 @@ export default function Homepage() {
           <OrbitControls enablePan={false} maxZoom={150} minZoom={50} />
           <Suspense fallback={null}>
             {activeModel === 0 ? (
-              <Model ref={childRef} />
+              <>
+                <Model ref={childRef} />
+                <Environment preset="warehouse" />
+              </>
             ) : (
-              <Model2 ref={childRef} />
+              <>
+                <Model2 ref={childRef} />
+                <Environment preset="studio" />
+              </>
             )}
-            <Environment preset="warehouse" />
           </Suspense>
         </Canvas>
       </div>
@@ -75,7 +80,7 @@ export default function Homepage() {
         style={{ fontFamily: "CustomFont" }}
         className="text-md sm:text-3xl absolute bottom-28 w-full text-center"
       >
-        <div className=" flex justify-center ">
+        <div className="mb-10 flex justify-center ">
           {activeModel === 0 ? (
             <div
               onClick={() => {

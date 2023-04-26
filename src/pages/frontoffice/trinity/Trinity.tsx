@@ -1,25 +1,42 @@
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import SwiperCore, { Navigation } from "swiper";
 import "./style.css";
-import "swiper/swiper.min.css";
 import "./../../../assets/font/style.css";
 import bg from "./../../../assets/background/Capture d’écran 2023-04-21 à 22.24 1.png";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 const images = [
   require("./../../../assets/products/bracelet 1.png"),
   require("./../../../assets/products/Group 3.png"),
   require("./../../../assets/products/bracelet 4.png"),
 ];
 
-SwiperCore.use([Navigation]);
+function CustomPrevArrow(props: { onClick: any }) {
+  const { onClick } = props;
+  return (
+    <div
+      className="slick-arrow custom-prev-arrow absolute top-1/2 -left-10 transform -translate-y-1/2 cursor-pointer z-10"
+      onClick={onClick}
+    >
+      <MdKeyboardArrowLeft size={42} />
+    </div>
+  );
+}
+
+function CustomNextArrow(props: { onClick: any }) {
+  const { onClick } = props;
+  return (
+    <div
+      className="slick-arrow custom-next-arrow absolute top-1/2 -right-10 transform -translate-y-1/2 cursor-pointer z-10"
+      onClick={onClick}
+    >
+      <MdKeyboardArrowRight size={42} />
+    </div>
+  );
+}
+
 export default function Trinity() {
   const { t } = useTranslation();
   const settings = {
@@ -28,6 +45,8 @@ export default function Trinity() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    prevArrow: <CustomPrevArrow onClick={() => {}} />,
+    nextArrow: <CustomNextArrow onClick={() => {}} />,
   };
   return (
     <>
@@ -60,15 +79,9 @@ export default function Trinity() {
                     <p className="text-center">{t("Trinite.text1.trad1")}</p>
                     <p>{t("Trinite.text1.trad2")}</p>
                     <p>{t("Trinite.text1.trad3")}</p>
-                    <p>
-                    {t("Trinite.text1.trad4")}
-                    </p>
-                    <p>
-                    {t("Trinite.text1.trad5")}
-                    </p>
-                    <p>
-                    {t("Trinite.text1.trad6")}
-                    </p>
+                    <p>{t("Trinite.text1.trad4")}</p>
+                    <p>{t("Trinite.text1.trad5")}</p>
+                    <p>{t("Trinite.text1.trad6")}</p>
                   </div>
                 </div>
               </Slider>
@@ -90,18 +103,12 @@ export default function Trinity() {
                     className="flex flex-col gap-4 p-10  justify-center bg-cover bg-center text-black"
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
-                    <p className="text-center">  {t("Trinite.text2.trad1")}</p>
+                    <p className="text-center">{t("Trinite.text2.trad1")}</p>
                     <p> {t("Trinite.text2.trad2")}</p>
                     <p> {t("Trinite.text2.trad3")}</p>
-                    <p>
-                    {t("Trinite.text2.trad4")}
-                    </p>
-                    <p>
-                    {t("Trinite.text2.trad5")}
-                    </p>
-                    <p>
-                    {t("Trinite.text2.trad6")}
-                    </p>
+                    <p>{t("Trinite.text2.trad4")}</p>
+                    <p>{t("Trinite.text2.trad5")}</p>
+                    <p>{t("Trinite.text2.trad6")}</p>
                   </div>
                 </div>
               </Slider>
@@ -133,15 +140,9 @@ export default function Trinity() {
 
                     <p>{t("Trinite.text3.trad2")}</p>
                     <br />
-                    <p>
-                    {t("Trinite.text3.trad3")}
-                    </p>
-                    <p>
-                    {t("Trinite.text3.trad4")}
-                    </p>
-                    <p>
-                    {t("Trinite.text3.trad5")}
-                    </p>
+                    <p>{t("Trinite.text3.trad3")}</p>
+                    <p>{t("Trinite.text3.trad4")}</p>
+                    <p>{t("Trinite.text3.trad5")}</p>
                   </div>
                 </div>
               </Slider>
@@ -166,19 +167,11 @@ export default function Trinity() {
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
                     <p className="text-center"> {t("Trinite.text4.trad1")}</p>
-                    <p>
-                    {t("Trinite.text4.trad2")}
-                    </p>
+                    <p>{t("Trinite.text4.trad2")}</p>
                     <p>{t("Trinite.text4.trad3")}</p>
-                    <p>
-                    {t("Trinite.text4.trad4")}
-                    </p>
-                    <p>
-                    {t("Trinite.text4.trad5")}
-                    </p>
-                    <p>
-                    {t("Trinite.text4.trad6")}
-                    </p>
+                    <p>{t("Trinite.text4.trad4")}</p>
+                    <p>{t("Trinite.text4.trad5")}</p>
+                    <p>{t("Trinite.text4.trad6")}</p>
                   </div>
                 </div>
               </Slider>
@@ -200,18 +193,12 @@ export default function Trinity() {
                     className="flex flex-col gap-4 p-10  justify-center bg-cover bg-center text-black"
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
-                    <p className="text-center">   {t("Trinite.text5.trad1")}</p>
+                    <p className="text-center"> {t("Trinite.text5.trad1")}</p>
                     <p> {t("Trinite.text5.trad2")}</p>
                     <p> {t("Trinite.text5.trad3")}</p>
-                    <p>
-                    {t("Trinite.text5.trad4")}
-                    </p>
-                    <p>
-                    {t("Trinite.text5.trad5")}
-                    </p>
-                    <p>
-                    {t("Trinite.text5.trad6")}
-                    </p>
+                    <p>{t("Trinite.text5.trad4")}</p>
+                    <p>{t("Trinite.text5.trad5")}</p>
+                    <p>{t("Trinite.text5.trad6")}</p>
                   </div>
                 </div>
               </Slider>
@@ -242,15 +229,9 @@ export default function Trinity() {
                     <p className="text-center">{t("Trinite.text6.trad1")}</p>
                     <p>{t("Trinite.text6.trad2")}</p>
                     <p>{t("Trinite.text6.trad3")}</p>
-                    <p>
-                    {t("Trinite.text6.trad4")}
-                    </p>
-                    <p>
-                    {t("Trinite.text6.trad5")}
-                    </p>
-                    <p>
-                    {t("Trinite.text6.trad6")}
-                    </p>
+                    <p>{t("Trinite.text6.trad4")}</p>
+                    <p>{t("Trinite.text6.trad5")}</p>
+                    <p>{t("Trinite.text6.trad6")}</p>
                   </div>
                 </div>
               </Slider>
@@ -275,19 +256,11 @@ export default function Trinity() {
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
                     <p className="text-center">{t("Trinite.text7.trad1")}</p>
-                    <p>
-                    {t("Trinite.text7.trad2")}
-                    </p>
+                    <p>{t("Trinite.text7.trad2")}</p>
                     <p>{t("Trinite.text7.trad3")}</p>
-                    <p>
-                    {t("Trinite.text7.trad4")}
-                    </p>
-                    <p>
-                    {t("Trinite.text7.trad5")}
-                    </p>
-                    <p>
-                    {t("Trinite.text7.trad6")}
-                    </p>
+                    <p>{t("Trinite.text7.trad4")}</p>
+                    <p>{t("Trinite.text7.trad5")}</p>
+                    <p>{t("Trinite.text7.trad6")}</p>
                   </div>
                 </div>
               </Slider>

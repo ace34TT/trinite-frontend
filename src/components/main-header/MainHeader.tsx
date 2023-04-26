@@ -211,7 +211,23 @@ const MainHeader = () => {
                 </NavLink>
               </li>
               <li>
-                <div className="flex items-center gap-2">
+                <button
+                  onClick={() => {
+                    if (activeLanguage === 0) {
+                      i18n.changeLanguage(languages[1].code);
+                      setActiveLanguage(1);
+                      return;
+                    }
+                    i18n.changeLanguage(languages[0].code);
+                    setActiveLanguage(0);
+                  }}
+                  className="uppercase"
+                >
+                  {activeLanguage === 0 ? languages[1].name : languages[0].name}
+                </button>
+                {/* <div className="flex items-center gap-2">
+                  <div>{}</div>
+
                   <div
                     className="flex items-center justify-center cursor-pointer"
                     onClick={() => {
@@ -289,7 +305,7 @@ const MainHeader = () => {
                       </span>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </li>
               <li>
                 <div className="flex items-center justify-center w-full">
@@ -407,7 +423,21 @@ const MainHeader = () => {
             </Link>
           </div>
           <div className="px-3 py-3">
-            <div className="flex items-center gap-2">
+            <button
+              onClick={() => {
+                if (activeLanguage === 0) {
+                  i18n.changeLanguage(languages[1].code);
+                  setActiveLanguage(1);
+                  return;
+                }
+                i18n.changeLanguage(languages[0].code);
+                setActiveLanguage(0);
+              }}
+              className="uppercase"
+            >
+              {activeLanguage === 0 ? languages[1].name : languages[0].name}
+            </button>
+            {/* <div className="flex items-center gap-2">
               <div
                 className="flex items-center justify-center cursor-pointer"
                 onClick={() => {
@@ -484,7 +514,7 @@ const MainHeader = () => {
                   </span>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="px-3 py-3">
             <div className="flex items-center w-full">
