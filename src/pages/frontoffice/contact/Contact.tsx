@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 import { Helmet } from "react-helmet";
 import bg from "./../../../assets/background/Capture d’écran 2023-04-21 à 22.24 1.png";
+import element from "./../../../assets/element/image 53.png";
 export default function Contact() {
   return (
     <>
@@ -12,7 +13,8 @@ export default function Contact() {
         className="flex flex-1 flex-col items-center justify-center"
         style={{ height: "calc(100vh - 200px)" }}
       >
-        <div
+        <img src={element} alt="" />
+        {/* <div
           className="p-4 py-8 2xl:p-40 bg-cover bg-center"
           style={{ backgroundImage: `url('${bg}')` }}
         >
@@ -25,7 +27,7 @@ export default function Contact() {
             <p className="m-3">0622007168</p>
             <p className="m-3">www.trinite.jewelry.com</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

@@ -35,7 +35,7 @@ export default function OurHouse() {
               <motion.img
                 whileHover={{
                   scale: 1.05,
-                  transition: { duration: 0.5, ease: "easeInOut" },
+                  transition: { duration: 0.3, ease: "easeInOut" },
                 }}
                 initial={{
                   x: -500,
@@ -46,11 +46,12 @@ export default function OurHouse() {
                   x: 0,
                   y: 0,
                   rotate: 0,
+                  transition: { duration: 1, ease: "linear" },
                 }}
-                transition={{ duration: 2, ease: "easeInOut" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
                 //
                 style={{ transformOrigin: "50% 50%" }}
-                className="absolute top-0 -left-96 2xl:-left-[600px] md w-11/12  m-0 hidden sm:block"
+                className="absolute top-0 -left-96 2xl:-left-[500px] md w-11/12  m-0 hidden sm:block z-20"
                 src={images[0]}
                 alt=""
               />
@@ -65,8 +66,10 @@ export default function OurHouse() {
           <p>
             <span className="relative">
               <motion.img
-                whileHover={{ scale: 1.2 }}
-                ref={ref}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.3, ease: "easeInOut" },
+                }}
                 initial={{
                   x: -500,
                   y: 1000,
@@ -76,11 +79,12 @@ export default function OurHouse() {
                   x: 0,
                   y: 0,
                   rotate: 0,
+                  transition: { duration: 2, ease: "easeInOut" },
                 }}
-                transition={{ duration: 2, ease: "easeInOut" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
                 //
                 style={{ transformOrigin: "50% 50%" }}
-                className="absolute top-0 -left-96 2xl:-left-[550px] w-[300px] 2xl:w-[500px] m-0 hidden sm:block"
+                className="absolute top-0 -left-96 2xl:-left-[450px] w-[300px] 2xl:w-[400px] m-0 hidden sm:block"
                 src={images[2]}
                 alt=""
               />
@@ -93,10 +97,9 @@ export default function OurHouse() {
             <span className="relative">
               <motion.img
                 whileHover={{
-                  scale: 1.2,
-                  transition: { duration: 0.5, ease: "easeInOut" },
+                  scale: 1.05,
+                  transition: { duration: 0.3, ease: "easeInOut" },
                 }}
-                whileTap={{ scale: 0.8 }}
                 initial={{
                   x: 500,
                   y: -100,
@@ -106,8 +109,9 @@ export default function OurHouse() {
                   x: 0,
                   y: 0,
                   rotate: 0,
+                  transition: { duration: 2, ease: "easeInOut" },
                 }}
-                transition={{ duration: 2, ease: "easeInOut" }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
                 //
                 style={{ transformOrigin: "50% 50%" }}
                 className="absolute -top-40 -right-[450px] 2xl:-right-[620px] w-96 2xl:w-[500px] m-0 hidden sm:block"

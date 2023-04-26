@@ -56,11 +56,16 @@ export default function Homepage() {
           <OrbitControls enablePan={false} maxZoom={150} minZoom={50} />
           <Suspense fallback={null}>
             {activeModel === 0 ? (
-              <Model ref={childRef} />
+              <>
+                <Model ref={childRef} />
+                <Environment preset="warehouse" />
+              </>
             ) : (
-              <Model2 ref={childRef} />
+              <>
+                <Model2 ref={childRef} />
+                <Environment preset="studio" />
+              </>
             )}
-            <Environment preset="studio" />
           </Suspense>
         </Canvas>
       </div>
