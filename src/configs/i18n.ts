@@ -43,75 +43,111 @@ i18n.use(initReactI18next).init({
         Trinite: {
           trad1:
             "La collection Trinité est une rencontre. Entre héritage et innovation. Entre des siécles de savoir-faire et le désir de penser le bijoux autrement. Entre l'expertise des meilleurs ateliers de Madagascar et la vision créative de la nouvelle génération.",
-          trad2:
-            "Bracelet en or 18 CARATS de Madagascar Or Rose, Or et Or blanc",
-          trad3:
-            "Boucles d’oreilles en or 18 CARATS de Madagascar Or Rose, Or et Or blanc",
-          trad4: "Bague en or 18 CARATS de Madagascar Or Rose, Or et Or blanc",
-          trad5:
-            "Bracelet en or 18 CARATS de Madagascar Or Rose, Or et Or blanc orné de 6 diamants",
-          trad6:
-            "La collection Trinité est une rencontre. Entre héritage et innovation. Entre des siécles de savoir-faire et le désir de penser le bijoux autrement. Entre l'expertise des meilleurs ateliers de Madagascar et la vision créative de la nouvelle génération.",
-          trad7:
-            "La collection Trinité est une rencontre. Entre héritage et innovation. Entre des siécles de savoir-faire et le désir de penser le bijoux autrement. Entre l'expertise des meilleurs ateliers de Madagascar et la vision créative de la nouvelle génération.",
-          trad8:
-            "La collection Trinité est une rencontre. Entre héritage et innovation. Entre des siécles de savoir-faire et le désir de penser le bijoux autrement. Entre l'expertise des meilleurs ateliers de Madagascar et la vision créative de la nouvelle génération.",
+          trad2: {
+            txt1: "Bracelet TRINITE",
+            txt2: "Or jaune",
+          },
+          trad3: {
+            txt1: "Bracelet TRINITE",
+            txt2: "Or jaune et diamants",
+          },
+          trad4: {
+            txt1: "Bracelet TRINITE",
+            txt2: "Or jaune et saphir cabochon bleu",
+          },
+          trad5: {
+            txt1: "Bracelet TRINITE 3 or",
+            txt2: "Or rose ,Or jaune et Or blanc",
+          },
+          trad6: {
+            txt1: "Bracelet TRINITE",
+            txt2: "Or jaune",
+          },
+          trad7: {
+            txt1: "Bracelet TRINITE 3 or",
+            txt2: "Or jaune ,diamants",
+          },
+          trad8: {
+            txt1: "Bracelet TRINITE 3 or",
+            txt2: "Or rose ,Or jaune et Or blanc",
+          },
           trad9:
             "La collection Trinité est une rencontre. Entre héritage et innovation. Entre des siécles de savoir-faire et le désir de penser le bijoux autrement. Entre l'expertise des meilleurs ateliers de Madagascar et la vision créative de la nouvelle génération.",
           text1: {
             trad1: "Bracelet TRINITE",
             trad2: "Or jaune 750/1000",
             trad3: "Taille : S-M",
-            trad4: "Tous nos bijoux sont fabriqués dans nos ateliers d'exception à partir de matériaux précieux recyclés.",
-            trad5: "Un certificat d'authenticité est fourni avec chacun de nos bijoux.",
-            trad6: "Tous les articles Trinité sont soigneusement conditionnés dans un emballage Trinité.",
+            trad4:
+              "Tous nos bijoux sont fabriqués dans nos ateliers d'exception à partir de matériaux précieux recyclés.",
+            trad5:
+              "Un certificat d'authenticité est fourni avec chacun de nos bijoux.",
+            trad6:
+              "Tous les articles Trinité sont soigneusement conditionnés dans un emballage Trinité.",
           },
           text2: {
             trad1: "Bracelet TRINITE",
             trad2: "Or jaune 750/1000 serti de 48 diamants DE 0,01 carat",
             trad3: "Taille : S-M",
-            trad4: "Tous nos bijoux sont fabriqués dans nos ateliers d'exception à partir de matériaux précieux recyclés.",
-            trad5: "Un certificat d'authenticité est fourni avec chacun de nos bijoux.",
-            trad6: "Tous les articles Trinité sont soigneusement conditionnés dans un emballage Trinité.",
+            trad4:
+              "Tous nos bijoux sont fabriqués dans nos ateliers d'exception à partir de matériaux précieux recyclés.",
+            trad5:
+              "Un certificat d'authenticité est fourni avec chacun de nos bijoux.",
+            trad6:
+              "Tous les articles Trinité sont soigneusement conditionnés dans un emballage Trinité.",
           },
           text3: {
             trad1: "Bracelet TRINITE",
             trad2: "Or jaune 750/1000 serti de 48 saphirs cabochon bleu",
-            trad3: "Tous nos bijoux sont fabriqués dans nos ateliers d'exception à partir de matériaux précieux recyclés.",
-            trad4: "Un certificat d'authenticité est fourni avec chacun de nos bijoux.",
-            trad5: "Tous les articles Trinité sont soigneusement conditionnés dans un emballage Trinité.",
+            trad3:
+              "Tous nos bijoux sont fabriqués dans nos ateliers d'exception à partir de matériaux précieux recyclés.",
+            trad4:
+              "Un certificat d'authenticité est fourni avec chacun de nos bijoux.",
+            trad5:
+              "Tous les articles Trinité sont soigneusement conditionnés dans un emballage Trinité.",
           },
           text4: {
             trad1: "Bracelet TRINITE 3 or",
             trad2: "Or rose 750/1000, or jaune 750/1000, or blanc 750/1000",
             trad3: "Taille : S-M",
-            trad4: "Tous nos bijoux sont fabriqués dans nos ateliers d'exception à partir de matériaux précieux recyclés.",
-            trad5: "Un certificat d'authenticité est fourni avec chacun de nos bijoux.",
-            trad6: "Tous les articles Trinité sont soigneusement conditionnés dans un emballage Trinité.",
+            trad4:
+              "Tous nos bijoux sont fabriqués dans nos ateliers d'exception à partir de matériaux précieux recyclés.",
+            trad5:
+              "Un certificat d'authenticité est fourni avec chacun de nos bijoux.",
+            trad6:
+              "Tous les articles Trinité sont soigneusement conditionnés dans un emballage Trinité.",
           },
           text5: {
             trad1: "Bague TRINITE",
             trad2: "Or jaune 750/1000",
             trad3: "Toutes les tailles entre dispo 41 et 62.",
-            trad4: "Tous nos bijoux sont fabriqués dans nos ateliers d'exception à partir de matériaux précieux recyclés.",
-            trad5: "Un certificat d'authenticité est fourni avec chacun de nos bijoux.",
-            trad6: "Tous les articles Trinité sont soigneusement conditionnés dans un emballage Trinité.",
+            trad4:
+              "Tous nos bijoux sont fabriqués dans nos ateliers d'exception à partir de matériaux précieux recyclés.",
+            trad5:
+              "Un certificat d'authenticité est fourni avec chacun de nos bijoux.",
+            trad6:
+              "Tous les articles Trinité sont soigneusement conditionnés dans un emballage Trinité.",
           },
           text6: {
             trad1: "Bague TRINITE",
             trad2: "Or jaune 750/1000 serti de 6 diamants",
             trad3: "Toutes les tailles entre dispo 41 et 62.",
-            trad4: "Tous nos bijoux sont fabriqués dans nos ateliers d'exception à partir de matériaux précieux recyclés.",
-            trad5: "Un certificat d'authenticité est fourni avec chacun de nos bijoux.",
-            trad6: "Tous les articles Trinité sont soigneusement conditionnés dans un emballage Trinité.",
+            trad4:
+              "Tous nos bijoux sont fabriqués dans nos ateliers d'exception à partir de matériaux précieux recyclés.",
+            trad5:
+              "Un certificat d'authenticité est fourni avec chacun de nos bijoux.",
+            trad6:
+              "Tous les articles Trinité sont soigneusement conditionnés dans un emballage Trinité.",
           },
           text7: {
             trad1: "Bague TRINITE 3 or",
             trad2: "Or rose 750/1000, or jaune 750/1000, or blanc 750/1000",
             trad3: "Toutes les tailles entre dispo 41 et 62.",
-            trad4: "Tous nos bijoux sont fabriqués dans nos ateliers d'exception à partir de matériaux précieux recyclés.",
-            trad5: "Un certificat d'authenticité est fourni avec chacun de nos bijoux.",
-            trad6: "Tous les articles Trinité sont soigneusement conditionnés dans un emballage Trinité.",
+            trad4:
+              "Tous nos bijoux sont fabriqués dans nos ateliers d'exception à partir de matériaux précieux recyclés.",
+            trad5:
+              "Un certificat d'authenticité est fourni avec chacun de nos bijoux.",
+            trad6:
+              "Tous les articles Trinité sont soigneusement conditionnés dans un emballage Trinité.",
           },
         },
 
@@ -173,76 +209,113 @@ i18n.use(initReactI18next).init({
         Trinite: {
           trad1:
             "The Trinity collection is an encounter. Between heritage and innovation. Between centuries of know-how and the desire to think of jewelry differently. Between the expertise of the best workshops in Madagascar and the creative vision of the new generation.",
-          trad2:
-            "18 CARAT gold bracelet from Madagascar Rose Gold, Gold and White Gold",
-          trad3:
-            "18 CARAT gold earrings from Madagascar Rose Gold, Gold and White Gold",
-          trad4:
-            "18 CARAT gold ring from Madagascar Rose gold, Gold and White gold",
-          trad5:
-            "18 CARAT gold bracelet from Madagascar Rose Gold, Gold and White Gold adorned with 6 diamonds",
-          trad6:
-            "The Trinity collection is an encounter. Between inheritance and innovation. Between centuries of know-how and the desire to think jewelry otherwise. Between the expertise of the best workshops of Madagascar and the creative vision of the new generation.",
-          trad7:
-            "The Trinity collection is an encounter. Between inheritance and innovation. Between centuries of know-how and the desire to think jewelry otherwise. Between the expertise of the best workshops of Madagascar and the creative vision of the new generation.",
-          trad8:
-            "The Trinity collection is an encounter. Between inheritance and innovation. Between centuries of know-how and the desire to think jewelry otherwise. Between the expertise of the best workshops of Madagascar and the creative vision of the new generation.",
+          trad2: {
+            txt1: "TRINITE Bracelet",
+            txt2: "Yellow gold",
+          },
+          trad3: {
+            txt1: "TRINITE Bracelet",
+            txt2: "Yellow gold and diamonds",
+          },
+          trad4: {
+            txt1: "TRINITE Bracelet",
+            txt2: "Or jaune et saphir cabochon bleu",
+          },
+          trad5: {
+            txt1: "Bracelet TRINITE 3 gold",
+            txt2: "Yellow gold and blue sapphire cabochon",
+          },
+          trad6: {
+            txt1: "TRINITE Bracelet",
+            txt2: "Yellow gold",
+          },
+          trad7: {
+            txt1: "Bracelet TRINITE 3 gold",
+            txt2: "Yellow gold, diamonds",
+          },
+          trad8: {
+            txt1: "Bracelet TRINITE 3 gold",
+            txt2: "Pink gold, yellow gold and white gold",
+          },
           trad9:
             "The Trinity collection is an encounter. Between inheritance and innovation. Between centuries of know-how and the desire to think jewelry otherwise. Between the expertise of the best workshops of Madagascar and the creative vision of the new generation.",
           text1: {
             trad1: "TRINITY bracelet",
             trad2: "750/1000 yellow gold",
             trad3: "Size: S-M",
-            trad4: "All our jewelry is made in our exceptional workshops from recycled precious materials.",
-            trad5: "A certificate of authenticity is provided with each of our jewelry.",
-            trad6: "All Trinity items are carefully packaged in Trinity packaging.",
+            trad4:
+              "All our jewelry is made in our exceptional workshops from recycled precious materials.",
+            trad5:
+              "A certificate of authenticity is provided with each of our jewelry.",
+            trad6:
+              "All Trinity items are carefully packaged in Trinity packaging.",
           },
           text2: {
             trad1: "TRINITY bracelet",
             trad2: "750/1000 yellow gold set with 48 0.01 carat diamonds",
             trad3: "Size: S-M",
-            trad4: "All our jewelry is made in our exceptional workshops from recycled precious materials.",
-            trad5: "A certificate of authenticity is provided with each of our jewelry.",
-            trad6: "All Trinity items are carefully packaged in Trinity packaging.",
+            trad4:
+              "All our jewelry is made in our exceptional workshops from recycled precious materials.",
+            trad5:
+              "A certificate of authenticity is provided with each of our jewelry.",
+            trad6:
+              "All Trinity items are carefully packaged in Trinity packaging.",
           },
           text3: {
             trad1: "TRINITY bracelet",
             trad2: "750/1000 yellow gold set with 48 blue cabochon sapphires",
-            trad3: "All our jewelry is made in our exceptional workshops from recycled precious materials.",
-            trad4: "A certificate of authenticity is provided with each of our jewelry.",
-            trad5: "All Trinity items are carefully packaged in Trinity packaging.",
+            trad3:
+              "All our jewelry is made in our exceptional workshops from recycled precious materials.",
+            trad4:
+              "A certificate of authenticity is provided with each of our jewelry.",
+            trad5:
+              "All Trinity items are carefully packaged in Trinity packaging.",
           },
           text4: {
             trad1: "Bracelet TRINITE 3 gold",
-            trad2: "750/1000 pink gold, 750/1000 yellow gold, 750/1000 white gold",
+            trad2:
+              "750/1000 pink gold, 750/1000 yellow gold, 750/1000 white gold",
             trad3: "Size: S-M",
-            trad4: "All our jewelry is made in our exceptional workshops from recycled precious materials.",
-            trad5: "A certificate of authenticity is provided with each of our jewelry.",
-            trad6: "All Trinity items are carefully packaged in Trinity packaging.",
+            trad4:
+              "All our jewelry is made in our exceptional workshops from recycled precious materials.",
+            trad5:
+              "A certificate of authenticity is provided with each of our jewelry.",
+            trad6:
+              "All Trinity items are carefully packaged in Trinity packaging.",
           },
           text5: {
             trad1: "TRINITY ring",
             trad2: "750/1000 yellow gold",
             trad3: "All sizes between available 41 and 62.",
-            trad4: "All our jewelry is made in our exceptional workshops from recycled precious materials.",
-            trad5: "A certificate of authenticity is provided with each of our jewelry.",
-            trad6: "All Trinity items are carefully packaged in Trinity packaging.",
+            trad4:
+              "All our jewelry is made in our exceptional workshops from recycled precious materials.",
+            trad5:
+              "A certificate of authenticity is provided with each of our jewelry.",
+            trad6:
+              "All Trinity items are carefully packaged in Trinity packaging.",
           },
           text6: {
             trad1: "TRINITY ring",
             trad2: "750/1000 yellow gold set with 6 diamonds",
             trad3: "All sizes between available 41 and 62.",
-            trad4: "All our jewelry is made in our exceptional workshops from recycled precious materials.",
-            trad5: "Un certificat d'authenticité est fourni avec chacun de nos bijoux.",
-            trad6: "All Trinity items are carefully packaged in Trinity packaging.",
+            trad4:
+              "All our jewelry is made in our exceptional workshops from recycled precious materials.",
+            trad5:
+              "Un certificat d'authenticité est fourni avec chacun de nos bijoux.",
+            trad6:
+              "All Trinity items are carefully packaged in Trinity packaging.",
           },
           text7: {
             trad1: "TRINITE 3 gold ring",
-            trad2: "750/1000 pink gold, 750/1000 yellow gold, 750/1000 white gold",
+            trad2:
+              "750/1000 pink gold, 750/1000 yellow gold, 750/1000 white gold",
             trad3: "All sizes between available 41 and 62.",
-            trad4: "All our jewelry is made in our exceptional workshops from recycled precious materials.",
-            trad5: "A certificate of authenticity is provided with each of our jewelry.",
-            trad6: "All Trinity items are carefully packaged in Trinity packaging.",
+            trad4:
+              "All our jewelry is made in our exceptional workshops from recycled precious materials.",
+            trad5:
+              "A certificate of authenticity is provided with each of our jewelry.",
+            trad6:
+              "All Trinity items are carefully packaged in Trinity packaging.",
           },
         },
         Studio: {
