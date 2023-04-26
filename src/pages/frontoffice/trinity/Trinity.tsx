@@ -46,7 +46,7 @@ export default function Trinity() {
                   <div className="h-full flex flex-col items-center">
                     <div className="flex justify-between gap-10">
                       <p>{t("Trinite.trad2")}</p>
-                      <p>2300€</p>
+                      <p>3200€</p>
                     </div>
                     <img src={images[0]} className="items-s" alt="" />
                   </div>
@@ -80,7 +80,7 @@ export default function Trinity() {
                 <div className="h-full">
                   <div className="flex justify-between gap-10">
                     <p>{t("Trinite.trad3")}</p>
-                    <p>660€</p>
+                    <p>5300€</p>
                   </div>
                   <img className="self-center" src={images[1]} alt="" />
                 </div>
@@ -114,7 +114,7 @@ export default function Trinity() {
                   <div className="flex flex-col items-center">
                     <div className="flex justify-between gap-10">
                       <p>{t("Trinite.trad4")}</p>
-                      <p>940€</p>
+                      <p>3900€</p>
                     </div>
                     <img
                       className="self-center justify-self-center"
@@ -154,7 +154,7 @@ export default function Trinity() {
                   <div className="flex flex-col items-center">
                     <div className="flex justify-between gap-10">
                       <p>{t("Trinite.trad5")}</p>
-                      <p>4200€</p>
+                      <p>3400€</p>
                     </div>
                     <img src={images[0]} alt="" />
                   </div>
@@ -190,7 +190,7 @@ export default function Trinity() {
                 <div className="h-full">
                   <div className="flex justify-between gap-10">
                     <p>{t("Trinite.trad3")}</p>
-                    <p>660€</p>
+                    <p>5300€</p>
                   </div>
                   <img className="self-center" src={images[1]} alt="" />
                 </div>
@@ -224,7 +224,7 @@ export default function Trinity() {
                   <div className="flex flex-col items-center">
                     <div className="flex justify-between gap-10">
                       <p>{t("Trinite.trad4")}</p>
-                      <p>940€</p>
+                      <p>3200€</p>
                     </div>
                     <img
                       className="self-center justify-self-center"
@@ -263,7 +263,7 @@ export default function Trinity() {
                   <div className="flex flex-col items-center">
                     <div className="flex justify-between gap-10">
                       <p>{t("Trinite.trad5")}</p>
-                      <p>4200€</p>
+                      <p>3200€</p>
                     </div>
                     <img src={images[0]} alt="" />
                   </div>
