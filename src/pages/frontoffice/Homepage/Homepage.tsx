@@ -22,18 +22,25 @@ export default function Homepage() {
     activeModel === 0 ? setActiveModel(1) : setActiveModel(0);
   };
   useEffect(() => {
-    const element = textHiddenRef.current;
-    gsap.fromTo(
-      element,
-      {
-        y: "100",
-      },
-      {
-        y: "0",
-        duration: 0.5,
-        ease: "none",
-      }
-    );
+    const el = textHiddenRef.current;
+    const hider = document.getElementById("hider");
+    if (hider) {
+      // type guard
+      gsap.fromTo(
+        el,
+        {
+          y: "100",
+        },
+        {
+          y: "0",
+          duration: 3,
+          ease: "none",
+          onComplete: () => {
+            hider.style.display = "none";
+          },
+        }
+      );
+    }
   }, []);
 
   const childRef = useRef<any>(null);
