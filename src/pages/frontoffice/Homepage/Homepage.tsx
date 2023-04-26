@@ -1,4 +1,4 @@
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useRef, useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import "../../../assets/font/style.css";
@@ -12,13 +12,29 @@ import { Canvas } from "react-three-fiber";
 import { Model } from "../../../components/three-model/Bracelet";
 import { Model as Model2 } from "./../../../components/three-model/Braccelet2";
 import "./style.css";
+import { gsap } from "gsap";
 
 export default function Homepage() {
   const { t } = useTranslation();
   const [activeModel, setActiveModel] = useState(0);
+  const textHiddenRef = useRef(null);
   const handleActiveModel = () => {
     activeModel === 0 ? setActiveModel(1) : setActiveModel(0);
   };
+  useEffect(() => {
+    const el = textHiddenRef.current;
+    gsap.fromTo(
+      el,
+      {
+        y: "100",
+      },
+      {
+        y: "0",
+        duration: 3,
+        ease: "none",
+      }
+    );
+  }, []);
 
   const childRef = useRef<any>(null);
   return (
@@ -70,8 +86,14 @@ export default function Homepage() {
             ></div>
           )}
         </div>
-        {t("home.trad1")}
-        <br className="sr-only sm:not-sr-only" /> {t("home.trad2")}
+        <div id="text-hidden" ref={textHiddenRef}>
+          {t("home.trad1")}
+          <br className="sr-only sm:not-sr-only" /> {t("home.trad2")}
+        </div>
+        <div
+          id="hider"
+          className="bg-black h-40 w-full absolute  left-0 z-10"
+        ></div>
       </div>
     </>
   );
