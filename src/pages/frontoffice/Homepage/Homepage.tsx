@@ -87,11 +87,11 @@ export default function Homepage() {
                 handleActiveModel();
                 childRef!.current!.getAlert();
               }}
-              className="w-7 h-7 rounded-full border-4 border-white bg-yellow-100 transition-transform duration-300 hover:scale-110"
+              className="w-7 h-7 rounded-full border-1 border-white bg-yellow-100 transition-transform duration-300 hover:scale-110"
             ></div>
           ) : (
             <div
-              className="w-7 h-7 rounded-full border-4 border-white bg-gradient-to-br from-pink-400 via-yellow-100 to-gray-300 transition-transform duration-300 hover:scale-110"
+              className="w-7 h-7 rounded-full border-1 border-white bg-gradient-to-br from-pink-400 via-yellow-100 to-gray-300 transition-transform duration-300 hover:scale-110"
               onClick={() => {
                 handleActiveModel();
               }}
