@@ -23,17 +23,24 @@ export default function Homepage() {
   };
   useEffect(() => {
     const el = textHiddenRef.current;
-    gsap.fromTo(
-      el,
-      {
-        y: "100",
-      },
-      {
-        y: "0",
-        duration: 3,
-        ease: "none",
-      }
-    );
+    const hider = document.getElementById("hider");
+    if (hider) {
+      // type guard
+      gsap.fromTo(
+        el,
+        {
+          y: "100",
+        },
+        {
+          y: "0",
+          duration: 3,
+          ease: "none",
+          onComplete: () => {
+            hider.style.display = "none";
+          },
+        }
+      );
+    }
   }, []);
 
   const childRef = useRef<any>(null);
