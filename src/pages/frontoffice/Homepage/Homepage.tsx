@@ -44,7 +44,7 @@ export default function Homepage() {
             ) : (
               <Model2 ref={childRef} />
             )}
-            <Environment preset="warehouse" />
+            <Environment preset="studio" />
           </Suspense>
         </Canvas>
       </div>
@@ -52,7 +52,7 @@ export default function Homepage() {
         style={{ fontFamily: "CustomFont" }}
         className="text-md sm:text-3xl absolute bottom-28 w-full text-center"
       >
-        <div className=" flex justify-center ">
+        <div className="mb-10 flex justify-center ">
           {activeModel === 0 ? (
             <div
               onClick={() => {
