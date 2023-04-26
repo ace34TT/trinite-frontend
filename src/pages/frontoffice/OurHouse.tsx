@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import "./../../assets/font/style.css";
-
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
