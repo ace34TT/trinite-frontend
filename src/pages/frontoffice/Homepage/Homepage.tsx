@@ -33,7 +33,7 @@ export default function Homepage() {
         },
         {
           y: "0",
-          duration: 3,
+          duration: 1,
           ease: "none",
           onComplete: () => {
             hider.style.display = "none";
@@ -78,7 +78,7 @@ export default function Homepage() {
       </div>
       <div
         style={{ fontFamily: "CustomFont" }}
-        className="text-md sm:text-3xl absolute bottom-28 w-full text-center"
+        className="text-md sm:text-3xl absolute bottom-20 w-full text-center"
       >
         <div className="mb-10 flex justify-center ">
           {activeModel === 0 ? (

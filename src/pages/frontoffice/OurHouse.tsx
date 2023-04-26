@@ -39,7 +39,7 @@ export default function OurHouse() {
                 }}
                 initial={{
                   x: -500,
-                  y: -1000,
+                  y: -250,
                   rotate: 320,
                 }}
                 animate={{
