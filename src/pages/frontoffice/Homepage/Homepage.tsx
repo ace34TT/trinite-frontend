@@ -22,15 +22,15 @@ export default function Homepage() {
     activeModel === 0 ? setActiveModel(1) : setActiveModel(0);
   };
   useEffect(() => {
-    const el = textHiddenRef.current;
+    const element = textHiddenRef.current;
     gsap.fromTo(
-      el,
+      element,
       {
         y: "100",
       },
       {
         y: "0",
-        duration: 3,
+        duration: 0.5,
         ease: "none",
       }
     );
