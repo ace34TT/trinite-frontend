@@ -1,9 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
 import "./../../assets/font/style.css";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 const images = [
   require("./../../assets/deco/image 40.png"),
@@ -13,11 +11,6 @@ const images = [
 
 export default function OurHouse() {
   const { t } = useTranslation();
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    threshold: 1, // trigger animation when element is 50% visible
-    triggerOnce: true, // only trigger animation once
-  });
 
   return (
     <>
@@ -32,41 +25,40 @@ export default function OurHouse() {
           <p className="">
             {t("OurHouse.trad1")}
             <br />
-            <span className="relative">
-              <motion.img
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.3, ease: "easeInOut" },
-                }}
-                initial={{
-                  x: -500,
-                  y: -250,
-                  rotate: 320,
-                }}
-                animate={{
-                  x: 0,
-                  y: 0,
-                  rotate: 0,
-                  transition: { duration: 1, ease: "linear" },
-                }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                //
-                style={{ transformOrigin: "50% 50%" }}
-                className="absolute top-0 -left-96 2xl:-left-[500px] md w-11/12  m-0 hidden sm:block z-20"
-                src={images[0]}
-                alt=""
-              />
-              {t("OurHouse.trad2")}
-            </span>
+
+            {t("OurHouse.trad2")}
           </p>
           <br />
-          <p>{t("OurHouse.trad3")}</p>
+          <p className="relative">
+            <motion.div
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.3, ease: "easeInOut" },
+              }}
+              initial={{
+                x: -500,
+                y: -250,
+                rotate: 50,
+              }}
+              animate={{
+                x: 0,
+                y: 0,
+                rotate: 0,
+                transition: { duration: 0.5, ease: "linear" },
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="absolute top-0 -left-96 2xl:-left-[400px] hidden sm:block z-20"
+            >
+              <img src={images[0]} className="m-0" alt="" />
+            </motion.div>
+
+            {t("OurHouse.trad3")}
+          </p>
           <p>{t("OurHouse.trad4")}</p>
           <br />
           <p>
             <span className="relative">
-              <motion.img
-                ref={ref}
+              <motion.div
                 whileHover={{
                   scale: 1.05,
                   transition: { duration: 0.3, ease: "easeInOut" },
@@ -74,21 +66,19 @@ export default function OurHouse() {
                 initial={{
                   x: -250,
                   y: -100,
-                  rotate: 250,
+                  rotate: 25,
                 }}
                 whileInView={{
                   x: 0,
                   y: 0,
                   rotate: 0,
-                  transition: { duration: 1, ease: "easeInOut" },
+                  transition: { duration: 0.5, ease: "easeInOut" },
                 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                //
-                style={{ transformOrigin: "50% 50%" }}
-                className="absolute top-0 -left-96 2xl:-left-[450px] w-[300px] 2xl:w-[400px] m-0 hidden sm:block"
-                src={images[2]}
-                alt=""
-              />
+                className="absolute top-0 -left-[375px] 2xl:-left-[450px] hidden sm:block w-[300px] z-20"
+              >
+                <img src={images[2]} className="m-0" alt="" />
+              </motion.div>
               {t("OurHouse.trad2")} {t("OurHouse.trad5")}
             </span>
           </p>
@@ -96,30 +86,27 @@ export default function OurHouse() {
           <br />
           <p>
             <span className="relative">
-              <motion.img
-                ref={ref}
+              <motion.div
                 whileHover={{
                   scale: 1.05,
                   transition: { duration: 0.3, ease: "easeInOut" },
                 }}
                 initial={{
-                  x: 500,
-                  y: -100,
+                  x: 250,
+                  y: -300,
                   rotate: 40,
                 }}
                 whileInView={{
                   x: 0,
                   y: 0,
                   rotate: 0,
-                  transition: { duration: 1, ease: "easeInOut" },
+                  transition: { duration: 0.5, ease: "easeInOut" },
                 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                //
-                style={{ transformOrigin: "50% 50%" }}
-                className="absolute -top-40 -right-[450px] 2xl:-right-[620px] w-96 2xl:w-[500px] m-0 hidden sm:block"
-                src={images[1]}
-                alt=""
-              />
+                className="absolute top-0 -right-[450px] hidden sm:block w-[400px] z-20"
+              >
+                <img src={images[1]} className="m-0" alt="" />
+              </motion.div>
               {t("OurHouse.trad7")}
             </span>
           </p>
