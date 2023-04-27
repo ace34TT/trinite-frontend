@@ -100,7 +100,7 @@ export default function OurHouse() {
                   x: 0,
                   y: 0,
                   rotate: 0,
-                  transition: { duration: 0.5, ease: "easeInOut" },
+                  transition: { duration: 1, ease: "easeInOut" },
                 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 className="absolute top-0 -right-[450px] hidden sm:block w-[400px] z-20"
