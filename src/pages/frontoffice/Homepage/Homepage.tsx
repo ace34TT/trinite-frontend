@@ -28,10 +28,10 @@ export default function Homepage() {
       gsap.fromTo(
         el,
         {
-          y: "100",
+          y: 100,
         },
         {
-          y: "0",
+          y: 0,
           duration: 1,
           ease: "none",
           onComplete: () => {
@@ -62,16 +62,11 @@ export default function Homepage() {
           <OrbitControls enablePan={false} maxZoom={150} minZoom={50} />
           <Suspense fallback={null}>
             {activeModel === 0 ? (
-              <>
-                <Model ref={childRef} />
-                <Environment preset="warehouse" />
-              </>
+              <Model ref={childRef} />
             ) : (
-              <>
-                <Model2 ref={childRef} />
-                <Environment preset="studio" />
-              </>
+              <Model2 ref={childRef} />
             )}
+            <Environment preset="warehouse" />
           </Suspense>
         </Canvas>
       </div>

@@ -20,7 +20,7 @@ const languages = [
   },
   {
     code: "en",
-    name: "Anglais",
+    name: "English",
     icon: require("./../../assets/icon/united-kingdom.png"),
   },
 ];

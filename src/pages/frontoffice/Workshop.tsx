@@ -41,9 +41,9 @@ export default function Workshop() {
               />
             </div>
           </div>
-          <p>{t("Studio.trad1")}</p>
+          <p className="text-justify">{t("Studio.trad1")}</p>
           <br />
-          <div>
+          <div className="text-justify">
             {t("Studio.trad2")}
             <ul className="m-0">
               <li className="m-0">{t("Studio.trad3")}</li>

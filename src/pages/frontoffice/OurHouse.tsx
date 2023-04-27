@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import "./../../assets/font/style.css";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
 
 const images = [
   require("./../../assets/deco/image 40.png"),
@@ -17,6 +18,7 @@ export default function OurHouse() {
     threshold: 1, // trigger animation when element is 50% visible
     triggerOnce: true, // only trigger animation once
   });
+
   return (
     <>
       <Helmet>
@@ -26,8 +28,8 @@ export default function OurHouse() {
         style={{ fontFamily: "CustomFont" }}
         className="flex justify-center py-0 sm:py-16 prose max-w-none text-md sm:text-2xl w-screen overflow-hidden"
       >
-        <div className="w-10/12 sm:w-4/12 text-black dark:text-white leading-5 sm:leading-snug ">
-          <p>
+        <div className="text-justify w-10/12 sm:w-4/12 text-black dark:text-white leading-5 sm:leading-snug ">
+          <p className="">
             {t("OurHouse.trad1")}
             <br />
             <span className="relative">
@@ -58,27 +60,27 @@ export default function OurHouse() {
             </span>
           </p>
           <br />
-
           <p>{t("OurHouse.trad3")}</p>
           <p>{t("OurHouse.trad4")}</p>
           <br />
           <p>
             <span className="relative">
               <motion.img
+                ref={ref}
                 whileHover={{
                   scale: 1.05,
                   transition: { duration: 0.3, ease: "easeInOut" },
                 }}
                 initial={{
-                  x: -500,
-                  y: 1000,
+                  x: -250,
+                  y: -100,
                   rotate: 250,
                 }}
-                animate={{
+                whileInView={{
                   x: 0,
                   y: 0,
                   rotate: 0,
-                  transition: { duration: 2, ease: "easeInOut" },
+                  transition: { duration: 1, ease: "easeInOut" },
                 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 //
@@ -95,6 +97,7 @@ export default function OurHouse() {
           <p>
             <span className="relative">
               <motion.img
+                ref={ref}
                 whileHover={{
                   scale: 1.05,
                   transition: { duration: 0.3, ease: "easeInOut" },
@@ -104,11 +107,11 @@ export default function OurHouse() {
                   y: -100,
                   rotate: 40,
                 }}
-                animate={{
+                whileInView={{
                   x: 0,
                   y: 0,
                   rotate: 0,
-                  transition: { duration: 2, ease: "easeInOut" },
+                  transition: { duration: 1, ease: "easeInOut" },
                 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
                 //

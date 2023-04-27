@@ -1,0 +1,2 @@
+npx gltfjsx Bracelet-2-compressed.glb --transform --types
+gltf-transform meshopt Bracelet.glb Bracelet-2-compressed.glb --level high

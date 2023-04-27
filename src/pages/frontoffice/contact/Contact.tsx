@@ -13,7 +13,7 @@ export default function Contact() {
         className="flex flex-1 flex-col items-center justify-center"
         style={{ height: "calc(100vh - 200px)" }}
       >
-        <img src={element} alt="" />
+        <img src={element} className="h-[450px]" alt="" />
         {/* <div
           className="p-4 py-8 2xl:p-40 bg-cover bg-center"
           style={{ backgroundImage: `url('${bg}')` }}

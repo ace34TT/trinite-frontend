@@ -29,7 +29,7 @@ type GLTFResult = GLTF & {
 
 export const Model = forwardRef((props, ref) => {
   const { nodes, materials } = useGLTF(
-    "models/model-2/Bracelet-2-compressed-transformed.glb"
+    "models/final-result/model-2/Bracelet-transformed.glb"
   ) as GLTFResult;
   const rotation = useSelector((state: RootState) => state.rotation);
   const dispatch = useDispatch();
@@ -40,7 +40,7 @@ export const Model = forwardRef((props, ref) => {
     if (width < 768) {
       setScale(1.8);
     } else {
-      setScale(3);
+      setScale(0.15);
     }
   }, [width]);
 

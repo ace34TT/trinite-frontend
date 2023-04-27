@@ -24,25 +24,25 @@ i18n.use(initReactI18next).init({
         },
         OurHouse: {
           trad1:
-            "Plongez dans l'univers intemporel des bijoux Trinité, une véritable ode à l'histoire et à l'artisanat d'antan.Chacune des pièces de notre collection évoque un trésor ancien comme déniché par un archéologue passionné.",
+            "Plongez dans l'univers intemporel des bijoux Trinité, une véritable ode à l'histoire et à l'artisanat d'antan.",
           trad2:
             "Chacune des pièces de notre collection évoque un trésor ancien comme déniché par un archéologue passionné.",
           trad3:
-            "Créée en 2022 par Antsa Gaëlle, notre marque est profondément inspirée des bijoux traditionnels de Madagascar, reflétant la richesse du pays où l'histoire culturelle, la durabilité et le savoir-faire artisanal sont mis en avant pour vous offrir des créations d'exception.",
+            "Créée en 2022 par Antsa Gaëlle, la maison est profondément inspirée des bijoux traditionnels “Vango Vango” de Madagascar, dont elle est originaire. reflétant la richesse du pays où l'histoire culturelle et le savoir-faire artisanal sont mis en avant pour vous offrir des créations d'exception.",
           trad4:
-            "Notre emblématique bracelet Vango Vango est plus qu'un simple bijou, c'est un symbole de l'histoire et de la culture de Madagascar, fruit d'un savoir-faire ancestral transmis de génération en génération. Avec son design unique et son charme intemporel, il est l'accessoire parfait pour les clients les plus exigeants, qui cherchent à se démarquer avec style et élégance.",
+            "Notre emblématique bracelet Trinité est plus qu'un simple bijou, c'est un symbole de l'histoire et de la culture de Madagascar,   transmis de génération en génération dans la culture malgache.",
           trad5:
             "Chez Trintée, chaque bijoux est une pièce unique, créée avec passion et savoir-faire artisanal, pour vous offrir une expérience unique et intemporelle, où la qualité, l'éthique et la durabilité sont au cœur de notre engagement.",
           trad6:
             "Nous sommes fiers de mettre en lumière les traditions malgaches tout en apportant notre touche personnelle à chacune de nos créations.",
           trad7:
-            " Plongez dans notre univers d'élégance et de raffinement, où le temps semble suspendu et où chaque bijou est chargé d'une symbolique forte et émotionnelle.",
+            "Plongez dans notre univers d'élégance et de raffinement, où le temps semble suspendu et où chaque bijou est chargé d'une symbolique forte et émotionnelle.",
           trad8:
-            " Rejoignez-nous dans cette aventure hors du temps et découvrez notre collection de bijoux inspirée par l'histoire et la culture malgaches.",
+            "Rejoignez-nous dans cette aventure hors du temps et découvrez notre collection de bijoux inspirée par l'histoire et la culture malgaches.",
         },
         Trinite: {
           trad1:
-            "La collection Trinité est une rencontre. Entre héritage et innovation. Entre des siécles de savoir-faire et le désir de penser le bijoux autrement. Entre l'expertise des meilleurs ateliers de Madagascar et la vision créative de la nouvelle génération.",
+            "La collection Trinité incarne la fusion exquise entre l'héritage ancestral et l'audace de l'innovation. La collection allie la sagesse d'un savoir-faire séculaire aux aspirations novatrices d'une nouvelle génération, pour offrir des créations uniques et intemporelles.",
           trad2: {
             txt1: "Bracelet TRINITE",
             txt2: "Or jaune",
@@ -190,25 +190,25 @@ i18n.use(initReactI18next).init({
         },
         OurHouse: {
           trad1:
-            "Dive into the timeless universe of Trinitée jewelry, a true ode to history and ancient craftsmanship.",
+            "Immerse yourself in the timeless universe of Trinité jewelry, a true ode to the history and craftsmanship of yesteryear.",
           trad2:
-            "Each piece in our collection evokes an ancient treasure unearthed by a passionate archaeologist.",
+            "Each of the pieces in our collection evokes an ancient treasure unearthed by a passionate archaeologist.",
           trad3:
-            "Founded in 2022 by Antsa Gaëlle, our brand is deeply inspired by traditional Malagasy jewelry,reflecting the richness of a country where cultural history, sustainability, and artisanal expertise are emphasized to offer you exceptional creations.",
+            'Created in 2022 by Antsa Gaëlle, the house is inspired by traditional "Vango Vango" jewelry from Madagascar, where it is from. reflecting the wealth of the country where cultural history and craftsmanship are put forward to offer you exceptional creations.',
           trad4:
-            "Our iconic Vango Vango bracelet is more than just jewelry, it's a symbol of Madagascar's history and culture, the fruit of ancestral know- how passed down from generation to generation. With its unique design and timeless charm, it's the perfect accessory for discerning clients seeking to stand out with style and elegance.",
+            "Our iconic Trinity bracelet is more than just a piece of jewelry, it's a symbol of Madagascar's history and culture, passed down from generation to generation in Malagasy culture.",
           trad5:
-            "At Trinitée, each piece of jewelry is a unique creation made with passion and artisanal expertise to offer you a unique and timeless experience, where quality, ethics, and sustainability are at the heart of our commitment.",
+            "At Trintée, each jewel is a unique piece, created with passion and craftsmanship, to offer you a unique and timeless experience, where quality, ethics and sustainability are at the heart of our commitment.",
           trad6:
-            "We are proud to highlight Malagasy traditions while bringing our own personal touch to each of our creations.",
+            "We are proud to highlight Malagasy traditions while bringing our personal touch to each of our creations.Immerse yourself in our world of elegance and refinement, where time seems suspended and where each jewel is charged with a strong and emotional symbolism.",
           trad7:
             "Immerse yourself in our universe of elegance and refinement, where time seems to stand still and each piece of jewelry is charged with strong emotional symbolism.",
           trad8:
-            "Join us on this timeless adventure and discover our collection of jewelry inspired by Malagasy history and culture.",
+            "Join us in this timeless adventure and discover our jewelry collection inspired by Malagasy history and culture.",
         },
         Trinite: {
           trad1:
-            "The Trinity collection is an encounter. Between heritage and innovation. Between centuries of know-how and the desire to think of jewelry differently. Between the expertise of the best workshops in Madagascar and the creative vision of the new generation.",
+            "The Trinité collection is a meeting point. Between heritage and innovation. Between centuries of craftsmanship and the desire to think of jewelry differently. Between the expertise of the best workshops in Madagascar and the creative vision of the new generation.",
           trad2: {
             txt1: "TRINITE Bracelet",
             txt2: "Yellow gold",
