@@ -24,7 +24,7 @@ i18n.use(initReactI18next).init({
         },
         OurHouse: {
           trad1:
-            "Plongez dans l'univers intemporel des bijoux Trinité, une véritable ode à l'histoire et à l'artisanat d'antan.",
+            "Bienvenue dans l'univers intemporel des bijoux Trinité, une véritable ode à l'histoire et à l'artisanat d'antan.",
           trad2:
             "Chacune des pièces de notre collection évoque un trésor ancien comme déniché par un archéologue passionné.",
           trad3:
@@ -38,7 +38,7 @@ i18n.use(initReactI18next).init({
           trad7:
             "Plongez dans notre univers d'élégance et de raffinement, où le temps semble suspendu et où chaque bijou est chargé d'une symbolique forte et émotionnelle.",
           trad8:
-            "Rejoignez-nous dans cette aventure hors du temps et découvrez notre collection de bijoux inspirée par l'histoire et la culture malgaches.",
+            "Rejoignez-nous dans cette aventure hors du temps et découvrez notre collection de bijoux qui est chargée d'une symbolique forte et émotionnelle.",
         },
         Trinite: {
           trad1:

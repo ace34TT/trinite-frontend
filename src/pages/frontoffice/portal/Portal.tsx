@@ -11,7 +11,7 @@ export default function Portal() {
   const { t } = useTranslation();
   //
   const { progress } = useProgress();
-  useGLTF.preload("/Bracelet-compressed.glb");
+  useGLTF.preload("models/final-result/model-1/Bracelet-Gold-transformed.glb");
   const [percentage, setPercentage] = useState(0);
   useEffect(() => {
     for (let i = 0; i < 100; i++) {

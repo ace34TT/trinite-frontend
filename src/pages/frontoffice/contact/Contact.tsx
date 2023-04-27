@@ -1,9 +1,13 @@
-import React from "react";
 import "./style.css";
 import { Helmet } from "react-helmet";
-import bg from "./../../../assets/background/Capture d’écran 2023-04-21 à 22.24 1.png";
-import element from "./../../../assets/element/image 53.png";
+import { useTranslation } from "react-i18next";
+const elements = [
+  require("./../../../assets/element/image 53.png"),
+  require("./../../../assets/element/image 54.png"),
+];
 export default function Contact() {
+  const { i18n } = useTranslation();
+  const language = i18n.language;
   return (
     <>
       <Helmet>
@@ -13,7 +17,11 @@ export default function Contact() {
         className="flex flex-1 flex-col items-center justify-center"
         style={{ height: "calc(100vh - 200px)" }}
       >
-        <img src={element} className="h-[450px]" alt="" />
+        <img
+          src={language === "fr" ? elements[0] : elements[1]}
+          className="h-[450px]"
+          alt=""
+        />
         {/* <div
           className="p-4 py-8 2xl:p-40 bg-cover bg-center"
           style={{ backgroundImage: `url('${bg}')` }}

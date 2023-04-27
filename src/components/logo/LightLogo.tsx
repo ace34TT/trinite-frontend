@@ -3,7 +3,7 @@ import React from "react";
 export default function LightLogo() {
   return (
     <svg
-      width="175"
+      width="150"
       height="117"
       viewBox="0 0 342 117"
       fill="none"

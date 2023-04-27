@@ -47,7 +47,7 @@ export default function OurHouse() {
                 transition: { duration: 0.5, ease: "linear" },
               }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="absolute top-0 -left-96 2xl:-left-[400px] hidden sm:block z-20"
+              className="absolute top-0 -left-96 2xl:-left-[400px] hidden w-[300px] sm:block z-20"
             >
               <img src={images[0]} className="m-0" alt="" />
             </motion.div>
@@ -56,60 +56,62 @@ export default function OurHouse() {
           </p>
           <p>{t("OurHouse.trad4")}</p>
           <br />
-          <p>
-            <span className="relative">
-              <motion.div
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.3, ease: "easeInOut" },
-                }}
-                initial={{
-                  x: -250,
-                  y: -100,
-                  rotate: 25,
-                }}
-                whileInView={{
-                  x: 0,
-                  y: 0,
-                  rotate: 0,
-                  transition: { duration: 0.5, ease: "easeInOut" },
-                }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="absolute top-0 -left-[375px] 2xl:-left-[450px] hidden sm:block w-[300px] z-20"
-              >
-                <img src={images[2]} className="m-0" alt="" />
-              </motion.div>
+          <div className="relative">
+            <motion.div
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.3, ease: "easeInOut" },
+              }}
+              initial={{
+                x: -250,
+                y: -100,
+                rotate: 25,
+              }}
+              whileInView={{
+                x: 0,
+                y: 0,
+                rotate: 0,
+                transition: { duration: 0.5, ease: "easeInOut" },
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="absolute top-0 -left-[400px] 2xl:-left-[450px] hidden sm:block w-[350px] z-20"
+            >
+              <img src={images[2]} className="m-0" alt="" />
+            </motion.div>
+            <p>
               {t("OurHouse.trad2")} {t("OurHouse.trad5")}
-            </span>
-          </p>
-          <p>{t("OurHouse.trad6")}</p>
+            </p>
+          </div>
+          <div className="relative">
+            <p>{t("OurHouse.trad6")}</p>
+            <motion.div
+              whileHover={{
+                scale: 1.05,
+                transition: { duration: 0.3, ease: "easeInOut" },
+              }}
+              initial={{
+                x: 250,
+                y: -300,
+                rotate: 40,
+              }}
+              whileInView={{
+                x: 0,
+                y: 0,
+                rotate: 0,
+                transition: { duration: 1, ease: "easeInOut" },
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="absolute top-0 -right-[450px] hidden sm:block w-[400px] z-20"
+            >
+              <img src={images[1]} className="m-0" alt="" />
+            </motion.div>
+          </div>
           <br />
-          <p>
-            <span className="relative">
-              <motion.div
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.3, ease: "easeInOut" },
-                }}
-                initial={{
-                  x: 250,
-                  y: -300,
-                  rotate: 40,
-                }}
-                whileInView={{
-                  x: 0,
-                  y: 0,
-                  rotate: 0,
-                  transition: { duration: 1, ease: "easeInOut" },
-                }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                className="absolute top-0 -right-[450px] hidden sm:block w-[400px] z-20"
-              >
-                <img src={images[1]} className="m-0" alt="" />
-              </motion.div>
-              {t("OurHouse.trad7")}
-            </span>
-          </p>
+          {/* <div>
+            <p>
+              <span className="relative">{t("OurHouse.trad7")}</span>
+            </p>
+          </div> */}
           <p>{t("OurHouse.trad8")}</p>
         </div>
       </div>

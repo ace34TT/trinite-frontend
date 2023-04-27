@@ -3,7 +3,7 @@ import React from "react";
 export default function DarkLogo() {
   return (
     <svg
-      width="175"
+      width="150"
       height="115"
       viewBox="0 0 338 115"
       fill="none"
