@@ -11,6 +11,8 @@ const images = [
   require("./../../../assets/products/10.png"),
   require("./../../../assets/products/12.png"),
   require("./../../../assets/products/11.png"),
+  require("./../../../assets/products/13.png"),
+  require("./../../../assets/products/14.png"),
 ];
 
 function CustomPrevArrow(props: { onClick: any }) {
@@ -84,6 +86,58 @@ export default function Trinity() {
                       }}
                     >
                       <img src={images[0]} alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div className="h-full">
+                  <div
+                    className="h-full flex flex-col items-center"
+                    style={{ position: "relative" }}
+                  >
+                    <div className="w-full flex justify-between gap-10">
+                      <p className="flex-grow">
+                        {t("Trinite.trad2.txt1")}
+                        <br />
+                        {t("Trinite.trad2.txt2")}
+                      </p>
+                      <p>3200€</p>
+                    </div>
+                    <div
+                      className="h-full w-full flex items-center justify-center"
+                      style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                      }}
+                    >
+                      <img src={images[3]} alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div className="h-full">
+                  <div
+                    className="h-full flex flex-col items-center"
+                    style={{ position: "relative" }}
+                  >
+                    <div className="w-full flex justify-between gap-10">
+                      <p className="flex-grow">
+                        {t("Trinite.trad2.txt1")}
+                        <br />
+                        {t("Trinite.trad2.txt2")}
+                      </p>
+                      <p>3200€</p>
+                    </div>
+                    <div
+                      className="h-full w-full flex items-center justify-center"
+                      style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                      }}
+                    >
+                      <img src={images[4]} alt="" />
                     </div>
                   </div>
                 </div>

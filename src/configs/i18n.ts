@@ -60,15 +60,15 @@ i18n.use(initReactI18next).init({
             txt2: "Or rose ,Or jaune et Or blanc",
           },
           trad6: {
-            txt1: "Bracelet TRINITE",
+            txt1: "Bague TRINITE",
             txt2: "Or jaune",
           },
           trad7: {
-            txt1: "Bracelet TRINITE 3 or",
+            txt1: "Bague TRINITE 3 or",
             txt2: "Or jaune ,diamants",
           },
           trad8: {
-            txt1: "Bracelet TRINITE 3 or",
+            txt1: "Bague TRINITE 3 or",
             txt2: "Or rose ,Or jaune et Or blanc",
           },
           trad9:
@@ -226,15 +226,15 @@ i18n.use(initReactI18next).init({
             txt2: "Yellow gold and blue sapphire cabochon",
           },
           trad6: {
-            txt1: "TRINITE Bracelet",
+            txt1: "Ring Bracelet",
             txt2: "Yellow gold",
           },
           trad7: {
-            txt1: "Bracelet TRINITE 3 gold",
+            txt1: "Ring TRINITE 3 gold",
             txt2: "Yellow gold, diamonds",
           },
           trad8: {
-            txt1: "Bracelet TRINITE 3 gold",
+            txt1: "Ring TRINITE 3 gold",
             txt2: "Pink gold, yellow gold and white gold",
           },
           trad9:

@@ -49,15 +49,15 @@ export const Model = forwardRef((props, ref) => {
   }, [width]);
   //
   useFrame(() => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y += 0.01;
-    }
+    // if (groupRef.current) {
+    //   groupRef.current.rotation.y += 0.01;
+    // }
   });
   useFrame(({ mouse }) => {
-    const { y } = mouse;
-    if (groupRef.current) {
-      groupRef.current.rotation.x = y * Math.PI * -0.1;
-    }
+    // const { y } = mouse;
+    // if (groupRef.current) {
+    //   groupRef.current.rotation.x = y * Math.PI * -0.1;
+    // }
   });
   //
   useImperativeHandle(ref, () => ({
