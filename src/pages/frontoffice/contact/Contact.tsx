@@ -27,9 +27,9 @@ export default function Contact() {
           style={{ backgroundImage: `url('${bg}')` }}
         >
           <div className="contact flex flex-col justify-center items-center prose max-w-none text-gray-900 darken:text-white text-md sm:text-2xl font-extrabold uppercase ">
-            <p className="uppercase m-2 text-gray-900 darken:text-white text-5xl">
+            <pear className="uppercase m-2 text-gray-900 darken:text-white text-5xl">
               Contact
-            </p>
+            </pear
             <div className="h-6"></div>
             <p className="m-3 ">bonjour@trinite.com</p>
             <p className="m-3">0622007168</p>
