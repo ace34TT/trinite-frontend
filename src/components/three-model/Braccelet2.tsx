@@ -38,7 +38,7 @@ export const Model = forwardRef((props, ref) => {
   const groupRef = useRef<THREE.Group>(null);
   useEffect(() => {
     if (width < 768) {
-      setScale(1.8);
+      setScale(0.1);
     } else {
       setScale(0.15);
     }
@@ -92,4 +92,4 @@ export const Model = forwardRef((props, ref) => {
   );
 });
 
-useGLTF.preload("models/model-2/Bracelet-2-compressed-transformed.glb");
+useGLTF.preload("models/final-result/model-2/Bracelet-transformed.glb");

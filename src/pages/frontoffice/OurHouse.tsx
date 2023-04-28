@@ -47,7 +47,7 @@ export default function OurHouse() {
                 transition: { duration: 0.5, ease: "linear" },
               }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="absolute top-0 -left-96 2xl:-left-[400px] hidden w-[300px] sm:block z-20"
+              className="absolute top-0 -left-96 2xl:-left-[400px] hidden w-[250px] sm:block z-20"
             >
               <img src={images[0]} className="m-0" alt="" />
             </motion.div>

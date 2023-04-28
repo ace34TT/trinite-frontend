@@ -42,7 +42,7 @@ export const Model = forwardRef((props, ref) => {
   //
   useEffect(() => {
     if (width < 768) {
-      setScale(1.8);
+      setScale(0.1);
     } else {
       setScale(0.15);
     }

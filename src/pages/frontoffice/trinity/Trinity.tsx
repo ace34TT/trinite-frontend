@@ -8,9 +8,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 const images = [
-  require("./../../../assets/products/bracelet 1.png"),
-  require("./../../../assets/products/Group 3.png"),
-  require("./../../../assets/products/bracelet 4.png"),
+  require("./../../../assets/products/10.png"),
+  require("./../../../assets/products/12.png"),
+  require("./../../../assets/products/11.png"),
 ];
 
 function CustomPrevArrow(props: { onClick: any }) {
@@ -172,7 +172,7 @@ export default function Trinity() {
                         transform: "translate(-50%, -50%)",
                       }}
                     >
-                      <img src={images[2]} alt="" />
+                      <img src={images[2]} className="w-44" alt="" />
                     </div>
                   </div>
                 </div>
@@ -304,7 +304,7 @@ export default function Trinity() {
                         transform: "translate(-50%, -50%)",
                       }}
                     >
-                      <img src={images[2]} alt="" />
+                      <img src={images[2]} className="w-44" alt="" />
                     </div>
                   </div>
                 </div>
@@ -368,7 +368,6 @@ export default function Trinity() {
               </Slider>
             </div>
           </div>
-          {/* <div className="h-[700px] sm:h-auto py-16 px-14 flex items-center justify-center border border-gray-300"></div> */}
         </div>
       </div>
     </>
