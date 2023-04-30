@@ -21,26 +21,26 @@ export default function Homepage() {
   const handleActiveModel = () => {
     activeModel === 0 ? setActiveModel(1) : setActiveModel(0);
   };
-  // useEffect(() => {
-  //   const el = textHiddenRef.current;
-  //   const hider = document.getElementById("hider");
-  //   if (hider) {
-  //     gsap.fromTo(
-  //       el,
-  //       {
-  //         y: 100,
-  //       },
-  //       {
-  //         y: 0,
-  //         duration: 1,
-  //         ease: "none",
-  //         onComplete: () => {
-  //           hider.style.display = "none";
-  //         },
-  //       }
-  //     );
-  //   }
-  // }, []);
+  useEffect(() => {
+    const el = textHiddenRef.current;
+    const hider = document.getElementById("hider");
+    if (hider) {
+      gsap.fromTo(
+        el,
+        {
+          y: 100,
+        },
+        {
+          y: 0,
+          duration: 1,
+          ease: "none",
+          onComplete: () => {
+            hider.style.display = "none";
+          },
+        }
+      );
+    }
+  }, []);
 
   const childRef = useRef<any>(null);
   return (
