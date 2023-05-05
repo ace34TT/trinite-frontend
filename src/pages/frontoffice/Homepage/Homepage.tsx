@@ -1,4 +1,4 @@
-import { Suspense, useRef, useState, useEffect } from "react";
+import { Suspense, useRef, useState, useEffect, RefAttributes } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import "../../../assets/font/style.css";
@@ -7,20 +7,26 @@ import {
   OrbitControls,
   OrthographicCamera,
   PerspectiveCamera,
+  Reflector,
+  ReflectorProps,
+  useTexture,
 } from "@react-three/drei";
 import { Canvas } from "react-three-fiber";
 import { Model } from "../../../components/three-model/Bracelet";
-import { Model as Model2 } from "../../../components/three-model/Bracelet2";
-import { Model as Model3 } from "../../../components/three-model/Bracelet3";
+import { Model as Model2 } from "../../../components/three-model/TricolorBracelet";
+import { Model as Model3 } from "../../../components/three-model/DiamondBracelet";
 import "./style.css";
 import { gsap } from "gsap";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../redux/store";
+import { EventHandlers } from "@react-three/fiber/dist/declarations/src/core/events";
+import { Mesh, BufferGeometry, Material } from "three";
+
 export default function Homepage() {
   const { t } = useTranslation();
   const [activeModel, setActiveModel] = useState(0);
   const textHiddenRef = useRef(null);
-  const handleActiveModel = () => {
-    activeModel === 0 ? setActiveModel(1) : setActiveModel(0);
-  };
+  const theme = useSelector((state: RootState) => state.theme);
   useEffect(() => {
     const el = textHiddenRef.current;
     const hider = document.getElementById("hider");
@@ -45,22 +51,7 @@ export default function Homepage() {
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
     );
-
   const childRef = useRef<THREE.Group>(null);
-  //
-  useEffect(() => {
-    // Start measuring time
-    const t0 = performance.now();
-
-    // Simulate fetching data
-    setTimeout(() => {
-      // Stop measuring time
-      const t1 = performance.now();
-      // Calculate and log the time it took to update the component
-      console.log(`Component update took ${t1 - t0} milliseconds.`);
-    }, 1000);
-  }, []);
-
   return (
     <>
       <Helmet>
@@ -76,19 +67,21 @@ export default function Homepage() {
             far={5000}
             makeDefault // this line will make this camera the default camera for the scene
           />
-          <OrbitControls enablePan={false} />
+          <OrbitControls enablePan={false} maxZoom={150} minZoom={90} />
           <Suspense fallback={null}>
-            {/* {!isMobile ? ( */}
-            <>
-              {activeModel === 0 ? (
-                <Model ref={childRef} />
-              ) : (
-                <Model3 ref={childRef} />
-              )}
-            </>
-            {/* // ) : (
-            //   <Model ref={childRef} />
-            // )} */}
+            {!isMobile ? (
+              <>
+                {activeModel === 0 ? (
+                  <Model ref={childRef} />
+                ) : activeModel === 1 ? (
+                  <Model2 ref={childRef} />
+                ) : activeModel === 2 ? (
+                  <Model3 ref={childRef} />
+                ) : null}
+              </>
+            ) : (
+              <Model ref={childRef} />
+            )}
             <Environment preset="warehouse" />
           </Suspense>
         </Canvas>
@@ -98,22 +91,49 @@ export default function Homepage() {
         className="text-md sm:text-3xl absolute bottom-20 w-full text-center"
       >
         {!isMobile ? (
-          <div className="mb-10 flex justify-center ">
-            {activeModel === 0 ? (
-              <div
-                onClick={() => {
-                  handleActiveModel();
-                }}
-                className="w-7 h-7 rounded-full border-2 border-yellow-900 bg-yellow-100 transition-transform duration-300 hover:scale-110"
-              ></div>
-            ) : (
-              <div
-                className="w-7 h-7 rounded-full border-2 border-pink-900 bg-gradient-to-br from-pink-400 via-yellow-100 to-gray-300 transition-transform duration-300 hover:scale-110"
-                onClick={() => {
-                  handleActiveModel();
-                }}
-              ></div>
-            )}
+          <div className="mb-10 flex justify-center gap-4">
+            <div
+              onClick={() => {
+                setActiveModel(0);
+              }}
+              className={`w-7 h-7 rounded-full border-2 ${
+                theme.currentTheme === "dark"
+                  ? activeModel === 0
+                    ? "border-white"
+                    : "border-black"
+                  : activeModel === 0
+                  ? "border-black"
+                  : "border-white"
+              } bg-yellow-900 transition-transform duration-300 hover:scale-110`}
+            ></div>
+            <div
+              className={`w-7 h-7 rounded-full border-2 ${
+                theme.currentTheme === "dark"
+                  ? activeModel === 1
+                    ? "border-white"
+                    : "border-black"
+                  : activeModel === 1
+                  ? "border-black"
+                  : "border-white"
+              } bg-gradient-to-br from-pink-400 via-yellow-100 to-gray-300 transition-transform duration-300 hover:scale-110`}
+              onClick={() => {
+                setActiveModel(1);
+              }}
+            ></div>
+            <div
+              className={`w-7 h-7 rounded-full border-2 ${
+                theme.currentTheme === "dark"
+                  ? activeModel === 2
+                    ? "border-white"
+                    : "border-black"
+                  : activeModel === 2
+                  ? "border-black"
+                  : "border-white"
+              } bg-gradient-to-br  from-yellow-100 to-gray-300 transition-transform duration-300 hover:scale-110`}
+              onClick={() => {
+                setActiveModel(2);
+              }}
+            ></div>
           </div>
         ) : (
           <></>
