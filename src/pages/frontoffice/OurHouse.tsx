@@ -63,15 +63,15 @@ export default function OurHouse() {
                 transition: { duration: 0.3, ease: "easeInOut" },
               }}
               initial={{
-                x: -250,
-                y: -100,
+                x: -600,
+                y: -50,
                 rotate: 25,
               }}
               whileInView={{
                 x: 0,
                 y: 0,
                 rotate: 0,
-                transition: { duration: 0.5, ease: "easeInOut" },
+                transition: { delay: 0.75, duration: 0.5, ease: "easeInOut" },
               }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="absolute top-0 -left-[400px] 2xl:-left-[450px] hidden sm:block w-[350px] z-20"

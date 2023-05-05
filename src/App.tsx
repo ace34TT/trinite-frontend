@@ -16,6 +16,7 @@ function App() {
       <Route path="/" element={<Portal />} />
       <Route path="/" element={<MainLayout />}>
         <Route path="accueil" element={<Homepage />}></Route>
+        {/* <Route path="accueil" element={<></>}></Route> */}
         <Route path="notre-maison" element={<OurHouse />} />
         <Route path="trinite" element={<Trinity />} />
         <Route path="atelier" element={<Workshop />} />

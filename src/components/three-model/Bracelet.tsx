@@ -48,29 +48,18 @@ export const Model = forwardRef((props, ref) => {
     }
   }, [width]);
   //
-  useFrame(() => {
-    // if (groupRef.current) {
-    //   groupRef.current.rotation.y += 0.01;
-    // }
-  });
-  useFrame(({ mouse }) => {
-    // const { y } = mouse;
-    // if (groupRef.current) {
-    //   groupRef.current.rotation.x = y * Math.PI * -0.1;
-    // }
-  });
+  // useFrame(() => {
+  //   if (groupRef.current) {
+  //     groupRef.current.rotation.y += 0.01;
+  //   }
+  // });
+  // useFrame(({ mouse }) => {
+  //   const { y } = mouse;
+  //   if (groupRef.current) {
+  //     groupRef.current.rotation.x = y * Math.PI * -0.1;
+  //   }
+  // });
   //
-  useImperativeHandle(ref, () => ({
-    getAlert() {
-      dispatch(
-        setRotation({
-          x: groupRef!.current!.rotation.x,
-          y: groupRef!.current!.rotation.y,
-          z: groupRef!.current!.rotation.z,
-        })
-      );
-    },
-  }));
   return (
     <>
       <group ref={groupRef} {...props} dispose={null}>
