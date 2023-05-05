@@ -14,7 +14,6 @@ import { Model as Model2 } from "../../../components/three-model/Bracelet2";
 import { Model as Model3 } from "../../../components/three-model/Bracelet3";
 import "./style.css";
 import { gsap } from "gsap";
-import { RectAreaLight } from "three";
 export default function Homepage() {
   const { t } = useTranslation();
   const [activeModel, setActiveModel] = useState(0);
@@ -73,7 +72,6 @@ export default function Homepage() {
       <div className="flex flex-col justify-center items-center h-screen w-full absolute  top-0 left-0 min-h-[650px]">
         <Canvas>
           <PerspectiveCamera position={[0, 0, 0]} />
-
           <OrthographicCamera
             position={[0, 0, 100]}
             zoom={90}
