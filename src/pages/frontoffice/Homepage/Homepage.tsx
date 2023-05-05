@@ -1,4 +1,4 @@
-import { Suspense, useRef, useState, useEffect, RefAttributes } from "react";
+import { Suspense, useRef, useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import "../../../assets/font/style.css";
@@ -7,9 +7,6 @@ import {
   OrbitControls,
   OrthographicCamera,
   PerspectiveCamera,
-  Reflector,
-  ReflectorProps,
-  useTexture,
 } from "@react-three/drei";
 import { Canvas } from "react-three-fiber";
 import { Model } from "../../../components/three-model/Bracelet";
@@ -19,8 +16,6 @@ import "./style.css";
 import { gsap } from "gsap";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
-import { EventHandlers } from "@react-three/fiber/dist/declarations/src/core/events";
-import { Mesh, BufferGeometry, Material } from "three";
 
 export default function Homepage() {
   const { t } = useTranslation();
