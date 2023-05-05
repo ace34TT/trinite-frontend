@@ -15,8 +15,6 @@ import { Model as Model3 } from "../../../components/three-model/Bracelet3";
 import "./style.css";
 import { gsap } from "gsap";
 import { RectAreaLight } from "three";
-import { Diamond } from "../../../components/three-model/Diamond";
-
 export default function Homepage() {
   const { t } = useTranslation();
   const [activeModel, setActiveModel] = useState(0);
@@ -85,9 +83,7 @@ export default function Homepage() {
           />
           <OrbitControls enablePan={false} />
           <Suspense fallback={null}>
-            {/* <Model3></Model3> */}
-            <Diamond></Diamond>
-            {/* {!isMobile ? (
+            {!isMobile ? (
               <>
                 {activeModel === 0 ? (
                   <Model ref={childRef} />
@@ -97,8 +93,8 @@ export default function Homepage() {
               </>
             ) : (
               <Model ref={childRef} />
-            )} */}
-            <Environment preset="forest" background />
+            )}
+            <Environment preset="warehouse" background />
           </Suspense>
         </Canvas>
       </div>
