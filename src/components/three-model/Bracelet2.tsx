@@ -1,11 +1,4 @@
-import * as THREE from "three";
-import React, {
-  forwardRef,
-  useEffect,
-  useImperativeHandle,
-  useRef,
-  useState,
-} from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useFrame } from "react-three-fiber";
@@ -32,7 +25,6 @@ export const Model = forwardRef((props, ref) => {
     "models/final-result/model-2/Bracelet-transformed.glb"
   ) as GLTFResult;
   const rotation = useSelector((state: RootState) => state.rotation);
-  const dispatch = useDispatch();
   const [scale, setScale] = useState(3.5);
   const { width } = useWindowSize();
   const groupRef = useRef<THREE.Group>(null);
@@ -44,19 +36,18 @@ export const Model = forwardRef((props, ref) => {
     }
   }, [width]);
 
-  // useFrame(() => {
-  //   if (groupRef.current) {
-  //     groupRef.current.rotation.y += 0.01;
-  //   }
-  // });
+  useFrame(() => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y += 0.01;
+    }
+  });
 
-  // useFrame(({ mouse }) => {
-  //   const { y } = mouse;
-  //   if (groupRef.current) {
-  //     groupRef.current.rotation.x = y * Math.PI * -0.1;
-  //   }
-  // });
-  //
+  useFrame(({ mouse }) => {
+    const { y } = mouse;
+    if (groupRef.current) {
+      groupRef.current.rotation.x = y * Math.PI * -0.1;
+    }
+  });
 
   return (
     <group ref={groupRef} {...props} dispose={null}>

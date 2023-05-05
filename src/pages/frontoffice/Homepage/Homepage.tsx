@@ -46,17 +46,14 @@ export default function Homepage() {
       navigator.userAgent
     );
 
-  const childRef = useRef<any>(null);
+  const childRef = useRef<THREE.Group>(null);
   //
-  const [data, setData] = useState<any>(null);
-
   useEffect(() => {
     // Start measuring time
     const t0 = performance.now();
 
     // Simulate fetching data
     setTimeout(() => {
-      setData("Data loaded");
       // Stop measuring time
       const t1 = performance.now();
       // Calculate and log the time it took to update the component
@@ -81,18 +78,18 @@ export default function Homepage() {
           />
           <OrbitControls enablePan={false} />
           <Suspense fallback={null}>
-            {!isMobile ? (
-              <>
-                {activeModel === 0 ? (
-                  <Model ref={childRef} />
-                ) : (
-                  <Model2 ref={childRef} />
-                )}
-              </>
-            ) : (
-              <Model ref={childRef} />
-            )}
-            <Environment preset="warehouse" background />
+            {/* {!isMobile ? ( */}
+            <>
+              {activeModel === 0 ? (
+                <Model ref={childRef} />
+              ) : (
+                <Model3 ref={childRef} />
+              )}
+            </>
+            {/* // ) : (
+            //   <Model ref={childRef} />
+            // )} */}
+            <Environment preset="warehouse" />
           </Suspense>
         </Canvas>
       </div>
@@ -106,7 +103,6 @@ export default function Homepage() {
               <div
                 onClick={() => {
                   handleActiveModel();
-                  childRef!.current!.getAlert();
                 }}
                 className="w-7 h-7 rounded-full border-2 border-yellow-900 bg-yellow-100 transition-transform duration-300 hover:scale-110"
               ></div>
