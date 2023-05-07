@@ -9,14 +9,15 @@ import {
   PerspectiveCamera,
 } from "@react-three/drei";
 import { Canvas } from "react-three-fiber";
-import { Model } from "../../../components/three-model/Bracelet";
-import { Model as Model2 } from "../../../components/three-model/TricolorBracelet";
-import { Model as Model3 } from "../../../components/three-model/DiamondBracelet";
+
 import "./style.css";
 import { gsap } from "gsap";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
-
+import { Bloom, EffectComposer, SSAO } from "@react-three/postprocessing";
+import { KernelSize } from "postprocessing";
+import MainModel from "../../../components/three-model/MainModel";
+import { Model } from "../../../components/three-model/Bracelet";
 export default function Homepage() {
   const { t } = useTranslation();
   const [activeModel, setActiveModel] = useState(0);
@@ -47,11 +48,15 @@ export default function Homepage() {
       navigator.userAgent
     );
   const childRef = useRef<THREE.Group>(null);
+  const ref = useRef<any>(null);
+  //
+  // const [showCustomCursor, setShowCustomCursor] = useState(false);
   return (
     <>
       <Helmet>
         <title>Trinité - Accueil</title>
       </Helmet>
+      {/* {showCustomCursor ? <CustomCursor /> : <></>} */}
       <div className="flex flex-col justify-center items-center h-screen w-full absolute  top-0 left-0 min-h-[650px]">
         <Canvas>
           <PerspectiveCamera position={[0, 0, 0]} />
@@ -64,16 +69,16 @@ export default function Homepage() {
           />
           <OrbitControls enablePan={false} maxZoom={150} minZoom={90} />
           <Suspense fallback={null}>
+            <EffectComposer>
+              <Bloom
+                luminanceThreshold={0.5}
+                luminanceSmoothing={1}
+                intensity={2}
+              />
+              {/* <SSAO /> */}
+            </EffectComposer>
             {!isMobile ? (
-              <>
-                {activeModel === 0 ? (
-                  <Model ref={childRef} />
-                ) : activeModel === 1 ? (
-                  <Model2 ref={childRef} />
-                ) : activeModel === 2 ? (
-                  <Model3 ref={childRef} />
-                ) : null}
-              </>
+              <MainModel ref={ref}></MainModel>
             ) : (
               <Model ref={childRef} />
             )}
@@ -90,6 +95,7 @@ export default function Homepage() {
             <div
               onClick={() => {
                 setActiveModel(0);
+                if (ref.current) ref.current.log(0);
               }}
               className={`w-7 h-7 rounded-full border-2 ${
                 theme.currentTheme === "dark"
@@ -113,6 +119,7 @@ export default function Homepage() {
               } bg-gradient-to-br from-pink-400 via-yellow-100 to-gray-300 transition-transform duration-300 hover:scale-110`}
               onClick={() => {
                 setActiveModel(1);
+                if (ref.current) ref.current.log(1);
               }}
             ></div>
             <div
@@ -127,6 +134,7 @@ export default function Homepage() {
               } bg-gradient-to-br  from-yellow-100 to-gray-300 transition-transform duration-300 hover:scale-110`}
               onClick={() => {
                 setActiveModel(2);
+                if (ref.current) ref.current.log(2);
               }}
             ></div>
           </div>

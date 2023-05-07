@@ -4,12 +4,13 @@ Command: npx gltfjsx@6.1.4 Bracelet-compressed.glb --types
 */
 
 import { forwardRef, useEffect, useRef, useState } from "react";
-import { useGLTF } from "@react-three/drei";
+import { useCubeTexture, useGLTF, useTexture } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useFrame } from "react-three-fiber";
 import { useWindowSize } from "react-use";
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
+import { MeshStandardMaterial } from "three";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -23,7 +24,6 @@ type GLTFResult = GLTF & {
 };
 
 export const Model = forwardRef((props, ref) => {
-  const rotation = useSelector((state: RootState) => state.rotation);
   const [scale, setScale] = useState(3.5);
   const { width } = useWindowSize();
   const { nodes, materials } = useGLTF(
@@ -31,6 +31,7 @@ export const Model = forwardRef((props, ref) => {
   ) as GLTFResult;
   const groupRef = useRef<THREE.Group>(null);
   //
+
   useEffect(() => {
     if (width < 768) {
       setScale(0.1);
@@ -52,28 +53,23 @@ export const Model = forwardRef((props, ref) => {
   });
 
   return (
-    <>
-      <group ref={groupRef} {...props} dispose={null}>
-        <group
-          position={[0, -0.2, 0]}
-          rotation={[rotation.x, rotation.y, rotation.z]}
-          scale={scale}
-        >
-          <mesh
-            geometry={nodes.Circle001.geometry}
-            material={materials["Scratched Gold"]}
-          />
-          <mesh
-            geometry={nodes.Circle001_1.geometry}
-            material={materials["Scratched Gold"]}
-          />
-          <mesh
-            geometry={nodes.Circle001_2.geometry}
-            material={materials["Scratched Gold"]}
-          />
-        </group>
+    <group ref={groupRef} {...props} dispose={null}>
+      <group position={[0, -0.2, 0]} rotation={[1.8, 0, 1.2]} scale={scale}>
+        <mesh
+          geometry={nodes.Circle001.geometry}
+          material={materials["Scratched Gold"]}
+          // material={reflectiveMaterial}
+        />
+        <mesh
+          geometry={nodes.Circle001_1.geometry}
+          material={materials["Scratched Gold"]}
+        />
+        <mesh
+          geometry={nodes.Circle001_2.geometry}
+          material={materials["Scratched Gold"]}
+        />
       </group>
-    </>
+    </group>
   );
 });
 
