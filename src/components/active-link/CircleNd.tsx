@@ -6,10 +6,11 @@ interface IProps {
 export default function CircleNd({ theme }: IProps) {
   return (
     <svg
-      width="165"
-      height="68"
-      viewBox="0 0 165 68"
-      fill="none"
+      width="87.178154mm"
+      height="37.769657mm"
+      viewBox="0 0 87.178154 37.769657"
+      version="1.1"
+      id="svg5"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
