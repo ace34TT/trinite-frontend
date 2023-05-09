@@ -13,6 +13,7 @@ const images = [
   require("./../../../assets/products/11.png"),
   require("./../../../assets/products/13.png"),
   require("./../../../assets/products/14.png"),
+  require("./../../../assets/products/9.png"),
 ];
 
 function CustomPrevArrow(props: { onClick: any }) {
@@ -61,21 +62,22 @@ export default function Trinity() {
             <p className="text-justify text-xl">{t("Trinite.trad1")}</p>
           </div>
           <div className="h-[700px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border border-gray-300">
-            <div className="w-full h-full">
+            <div className="w-full h-full flex flex-col gap-4">
+              <div className="w-full flex justify-between gap-10">
+                <p className="flex-grow">
+                  {t("Trinite.trad2.txt1")}
+                  <br />
+                  {t("Trinite.trad2.txt2")}
+                </p>
+                <p>3200€</p>
+              </div>{" "}
+              <br />
               <Slider {...settings}>
                 <div className="h-full">
                   <div
                     className="h-full flex flex-col items-center"
                     style={{ position: "relative" }}
                   >
-                    <div className="w-full flex justify-between gap-10">
-                      <p className="flex-grow">
-                        {t("Trinite.trad2.txt1")}
-                        <br />
-                        {t("Trinite.trad2.txt2")}
-                      </p>
-                      <p>3200€</p>
-                    </div>
                     <div
                       className="h-full w-full flex items-center justify-center"
                       style={{
@@ -85,7 +87,7 @@ export default function Trinity() {
                         transform: "translate(-50%, -50%)",
                       }}
                     >
-                      <img src={images[0]} alt="" />
+                      <img src={images[5]} alt="" />
                     </div>
                   </div>
                 </div>
@@ -94,14 +96,14 @@ export default function Trinity() {
                     className="h-full flex flex-col items-center"
                     style={{ position: "relative" }}
                   >
-                    <div className="w-full flex justify-between gap-10">
+                    {/* <div className="w-full flex justify-between gap-10">
                       <p className="flex-grow">
                         {t("Trinite.trad2.txt1")}
                         <br />
                         {t("Trinite.trad2.txt2")}
                       </p>
                       <p>3200€</p>
-                    </div>
+                    </div> */}
                     <div
                       className="h-full w-full flex items-center justify-center"
                       style={{
@@ -120,14 +122,14 @@ export default function Trinity() {
                     className="h-full flex flex-col items-center"
                     style={{ position: "relative" }}
                   >
-                    <div className="w-full flex justify-between gap-10">
+                    {/* <div className="w-full flex justify-between gap-10">
                       <p className="flex-grow">
                         {t("Trinite.trad2.txt1")}
                         <br />
                         {t("Trinite.trad2.txt2")}
                       </p>
                       <p>3200€</p>
-                    </div>
+                    </div> */}
                     <div
                       className="h-full w-full flex items-center justify-center"
                       style={{
@@ -141,10 +143,10 @@ export default function Trinity() {
                     </div>
                   </div>
                 </div>
-                <div className="h-full">
+                <div className="h-[400px]">
                   <div
                     id="text-1"
-                    className="flex flex-col gap-4 p-10 justify-center bg-cover bg-center text-black h-full"
+                    className="flex flex-col gap-4 p-10 justify-start bg-cover bg-center text-black h-full"
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
                     <p className="text-center">{t("Trinite.text1.trad1")}</p>
@@ -159,21 +161,22 @@ export default function Trinity() {
             </div>
           </div>
           <div className="h-[700px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border border-gray-300">
-            <div className="w-full h-full">
+            <div className="w-full h-full flex flex-col gap-4">
+              <div className="w-full flex justify-between gap-10">
+                <p>
+                  {t("Trinite.trad3.txt1")}
+                  <br></br>
+                  {t("Trinite.trad3.txt2")}
+                </p>
+                <p>5300€</p>
+              </div>
+              <br />
               <Slider {...settings}>
                 <div className="h-full">
                   <div
                     className="h-full flex flex-col items-center"
                     style={{ position: "relative" }}
                   >
-                    <div className="w-full flex justify-between gap-10">
-                      <p>
-                        {t("Trinite.trad3.txt1")}
-                        <br></br>
-                        {t("Trinite.trad3.txt2")}
-                      </p>
-                      <p>5300€</p>
-                    </div>
                     <div
                       className="h-full w-full flex items-center justify-center"
                       style={{
@@ -187,10 +190,10 @@ export default function Trinity() {
                     </div>
                   </div>
                 </div>
-                <div className="h-full">
+                <div className="h-[400px]">
                   <div
                     id="text-2"
-                    className="h-full flex flex-col gap-4 p-10  justify-center bg-cover bg-center text-black"
+                    className="h-full flex flex-col gap-4 p-10  justify-start bg-cover bg-center text-black"
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
                     <p className="text-center">{t("Trinite.text2.trad1")}</p>
@@ -205,18 +208,19 @@ export default function Trinity() {
             </div>
           </div>
           <div className="h-[700px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border border-gray-300 relative">
-            <div className="w-full h-full">
-              <Slider {...settings} className="h-full">
+            <div className="w-full h-full flex flex-col gap-4">
+              <div className="w-full flex justify-between gap-10">
+                <p>
+                  {t("Trinite.trad4.txt1")}
+                  <br></br>
+                  {t("Trinite.trad4.txt2")}
+                </p>
+                <p>3900€</p>
+              </div>
+              <br />
+              <Slider {...settings}>
                 <div className="h-full w-full">
                   <div className="h-full flex flex-col items-center relative">
-                    <div className="w-full flex justify-between gap-10">
-                      <p>
-                        {t("Trinite.trad4.txt1")}
-                        <br></br>
-                        {t("Trinite.trad4.txt2")}
-                      </p>
-                      <p>3900€</p>
-                    </div>
                     <div
                       className="h-full w-full flex items-center justify-center"
                       style={{
@@ -230,10 +234,10 @@ export default function Trinity() {
                     </div>
                   </div>
                 </div>
-                <div className="h-full w-full">
+                <div className="h-[400px] w-full">
                   <div
                     id="text-3"
-                    className="h-full flex flex-col gap-4 p-10  justify-center bg-cover bg-center text-black"
+                    className="h-full flex flex-col gap-4 p-10  justify-start bg-cover bg-center text-black"
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
                     <p className="text-center"> {t("Trinite.text3.trad1")}</p>
@@ -248,21 +252,22 @@ export default function Trinity() {
             </div>
           </div>
           <div className="h-[700px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border border-gray-300">
-            <div className="container">
+            <div className="w-full h-full flex flex-col gap-4">
+              <div className="w-full flex justify-between gap-10">
+                <p>
+                  {t("Trinite.trad5.txt1")}
+                  <br></br>
+                  {t("Trinite.trad5.txt2")}
+                </p>
+                <p>3400€</p>
+              </div>
+              <br />
               <Slider {...settings}>
                 <div className="h-full">
                   <div
                     className="h-full flex flex-col items-center"
                     style={{ position: "relative" }}
                   >
-                    <div className="w-full flex justify-between gap-10">
-                      <p>
-                        {t("Trinite.trad5.txt1")}
-                        <br></br>
-                        {t("Trinite.trad5.txt2")}
-                      </p>
-                      <p>3400€</p>
-                    </div>
                     <div
                       className="h-full w-full flex items-center justify-center"
                       style={{
@@ -276,10 +281,10 @@ export default function Trinity() {
                     </div>
                   </div>
                 </div>
-                <div>
+                <div className="h-[400px]">
                   <div
-                    id="text-4"
-                    className="flex flex-col gap-4 p-10 justify-center bg-cover bg-center text-black"
+                    id="text-2"
+                    className="h-full flex flex-col gap-4 p-10  justify-start bg-cover bg-center text-black"
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
                     <p className="text-center"> {t("Trinite.text4.trad1")}</p>
@@ -294,18 +299,19 @@ export default function Trinity() {
             </div>
           </div>
           <div className="h-[700px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border border-gray-300">
-            <div className="h-full w-full">
+            <div className="h-full w-full flex flex-col gap-4">
+              <div className="w-full flex justify-between gap-10">
+                <p>
+                  {t("Trinite.trad6.txt1")}
+                  <br></br>
+                  {t("Trinite.trad6.txt2")}
+                </p>
+                <p>5300€</p>
+              </div>
+              <br />
               <Slider {...settings}>
                 <div className="h-full">
                   <div className="h-full relative flex flex-col items-center">
-                    <div className="w-full flex justify-between gap-10">
-                      <p>
-                        {t("Trinite.trad6.txt1")}
-                        <br></br>
-                        {t("Trinite.trad6.txt2")}
-                      </p>
-                      <p>5300€</p>
-                    </div>
                     <div
                       className="h-full w-full flex items-center justify-center"
                       style={{
@@ -319,10 +325,10 @@ export default function Trinity() {
                     </div>
                   </div>
                 </div>
-                <div>
+                <div className="h-[400px]">
                   <div
-                    id="text-5"
-                    className="flex flex-col gap-4 p-10  justify-center bg-cover bg-center text-black"
+                    id="text-2"
+                    className="h-full flex flex-col gap-4 p-10 justify-start bg-cover bg-center text-black"
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
                     <p className="text-center"> {t("Trinite.text5.trad1")}</p>
@@ -337,18 +343,19 @@ export default function Trinity() {
             </div>
           </div>
           <div className="h-[700px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border border-gray-300">
-            <div className="h-full w-full">
+            <div className="h-full w-full flex flex-col gap-4">
+              <div className="w-full flex justify-between gap-10">
+                <p>
+                  {t("Trinite.trad7.txt1")}
+                  <br></br>
+                  {t("Trinite.trad7.txt2")}
+                </p>
+                <p>3200€</p>
+              </div>
+              <br />
               <Slider {...settings}>
                 <div className="h-full">
                   <div className=" h-full relative flex flex-col items-center">
-                    <div className="w-full flex justify-between gap-10">
-                      <p>
-                        {t("Trinite.trad7.txt1")}
-                        <br></br>
-                        {t("Trinite.trad7.txt2")}
-                      </p>
-                      <p>3200€</p>
-                    </div>
                     <div
                       className="h-full w-full flex items-center justify-center"
                       style={{
@@ -362,10 +369,10 @@ export default function Trinity() {
                     </div>
                   </div>
                 </div>
-                <div className="h-full">
+                <div className="h-[400px]">
                   <div
-                    id="text-6"
-                    className="h-full flex flex-col gap-4 p-10  justify-center bg-cover bg-center text-black"
+                    id="text-2"
+                    className="h-full flex flex-col gap-4 p-10  justify-start bg-cover bg-center text-black"
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
                     <p className="text-center">{t("Trinite.text6.trad1")}</p>
@@ -380,18 +387,19 @@ export default function Trinity() {
             </div>
           </div>
           <div className="h-[700px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border border-gray-300">
-            <div className="h-full w-full">
+            <div className="h-full w-full flex flex-col gap-4">
+              <div className="w-full flex justify-between gap-10">
+                <p>
+                  {t("Trinite.trad8.txt1")}
+                  <br></br>
+                  {t("Trinite.trad8.txt2")}
+                </p>
+                <p>3200€</p>
+              </div>
+              <br />
               <Slider {...settings}>
                 <div className="h-full">
                   <div className="h-full relative flex flex-col items-center">
-                    <div className="w-full flex justify-between gap-10">
-                      <p>
-                        {t("Trinite.trad8.txt1")}
-                        <br></br>
-                        {t("Trinite.trad8.txt2")}
-                      </p>
-                      <p>3200€</p>
-                    </div>
                     <div
                       className="h-full w-full flex items-center justify-center"
                       style={{
@@ -405,10 +413,10 @@ export default function Trinity() {
                     </div>
                   </div>
                 </div>
-                <div>
+                <div className="h-[400px]">
                   <div
-                    id="text-7"
-                    className="flex flex-col gap-4 p-10  justify-center bg-cover bg-center text-black"
+                    id="text-2"
+                    className="h-full flex flex-col gap-4 p-10  justify-start bg-cover bg-center text-black"
                     style={{ backgroundImage: `url('${bg}')` }}
                   >
                     <p className="text-center">{t("Trinite.text7.trad1")}</p>

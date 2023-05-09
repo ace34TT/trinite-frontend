@@ -22,7 +22,6 @@ type GLTFResult = GLTF & {
     ["Scratched Gold"]: THREE.MeshStandardMaterial;
   };
 };
-
 export const Model = forwardRef((props, ref) => {
   const [scale, setScale] = useState(3.5);
   const { width } = useWindowSize();
@@ -31,26 +30,6 @@ export const Model = forwardRef((props, ref) => {
   ) as GLTFResult;
   const groupRef = useRef<THREE.Group>(null);
   //
-
-  useEffect(() => {
-    if (width < 768) {
-      setScale(0.1);
-    } else {
-      setScale(0.15);
-    }
-  }, [width]);
-
-  useFrame(() => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y += 0.005;
-    }
-  });
-  useFrame(({ mouse }) => {
-    const { y } = mouse;
-    if (groupRef.current) {
-      groupRef.current.rotation.x = y * Math.PI * -0.1;
-    }
-  });
 
   return (
     <group ref={groupRef} {...props} dispose={null}>

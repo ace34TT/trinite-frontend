@@ -90,7 +90,7 @@ export default function OurHouse() {
                 transition: { duration: 0.3, ease: "easeInOut" },
               }}
               initial={{
-                x: 250,
+                x: 175,
                 y: -300,
                 rotate: 40,
               }}

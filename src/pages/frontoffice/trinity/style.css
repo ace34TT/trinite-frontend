@@ -1,10 +1,16 @@
 .slick-slider,
-.slick-initialized, /*  */ 
+.slick-initialized,
 .slick-list,
 .slick-track {
   height: 100%;
 }
 
+/* .slick-list {
+  height: 100%;
+} */
+.slick-slide,
+.slick-active,
+.slick-current,
 .slick-slide > div:first-child,
 .slick-active > div:first-child,
 .slick-current > div:first-child,

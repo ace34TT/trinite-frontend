@@ -14,7 +14,12 @@ import "./style.css";
 import { gsap } from "gsap";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
-import { Bloom, EffectComposer, SSAO } from "@react-three/postprocessing";
+import {
+  Bloom,
+  DepthOfField,
+  EffectComposer,
+  SSAO,
+} from "@react-three/postprocessing";
 import { KernelSize } from "postprocessing";
 import MainModel from "../../../components/three-model/MainModel";
 import { Model } from "../../../components/three-model/Bracelet";
@@ -67,14 +72,23 @@ export default function Homepage() {
             far={5000}
             makeDefault // this line will make this camera the default camera for the scene
           />
+          {/* <ambientLight intensity={1} /> */}
+          {/* <OrbitControls enablePan={false} /> */}
           <OrbitControls enablePan={false} maxZoom={150} minZoom={90} />
+
           <Suspense fallback={null}>
             <EffectComposer>
               <Bloom
-                luminanceThreshold={0.5}
+                luminanceThreshold={0.9}
                 luminanceSmoothing={1}
                 intensity={2}
               />
+              {/* <DepthOfField
+                focusDistance={0.02}
+                focalLength={0.8}
+                bokehScale={2}
+                height={480}
+              /> */}
               {/* <SSAO /> */}
             </EffectComposer>
             {!isMobile ? (
@@ -105,7 +119,7 @@ export default function Homepage() {
                   : activeModel === 0
                   ? "border-black"
                   : "border-white"
-              } bg-yellow-900 transition-transform duration-300 hover:scale-110`}
+              } bg-yellow-100 transition-transform duration-300 hover:scale-110`}
             ></div>
             <div
               className={`w-7 h-7 rounded-full border-2 ${

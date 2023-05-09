@@ -150,7 +150,7 @@ const MainHeader = () => {
                 >
                   {t("header.trad1")}
                   {activeLink === 1 && (
-                    <div className="absolute -top-10 -left-11">
+                    <div className="absolute -top-14 -left-10">
                       <CircleSt theme={theme.currentTheme}></CircleSt>
                     </div>
                   )}
@@ -168,7 +168,7 @@ const MainHeader = () => {
                 >
                   Trinité
                   {activeLink === 2 && (
-                    <div className="absolute -top-7 -left-12">
+                    <div className="absolute -top-12 -left-14">
                       <CircleNd theme={theme.currentTheme}></CircleNd>
                     </div>
                   )}
@@ -365,186 +365,116 @@ const MainHeader = () => {
               enableScroll();
             }}
           >
-            <Link
-              className="block px-3 py-3 text-base font-medium relative"
-              to={"/notre-maison"}
-              onClick={() => {
-                setActiveLink(1);
-              }}
-            >
-              {t("header.trad1")}
-              {activeLink === 1 && (
-                <div className="absolute -top-6 -left-6">
-                  <CircleSt theme={theme.currentTheme}></CircleSt>
-                </div>
-              )}
-            </Link>
-            <Link
-              className="block px-3 py-3 text-base font-medium relative"
-              to={"/trinite"}
-              onClick={() => {
-                setActiveLink(2);
-              }}
-            >
-              Trinité
-              {activeLink === 2 && (
-                <div className="absolute -top-3 -left-6">
-                  <CircleNd theme={theme.currentTheme}></CircleNd>
-                </div>
-              )}
-            </Link>
-            <Link
-              className="block px-3 py-3 text-base font-medium relative"
-              to={"/atelier"}
-              onClick={() => {
-                setActiveLink(3);
-              }}
-            >
-              {t("header.trad2")}
-              {activeLink === 3 && (
-                <div className="absolute -top-6 -left-6">
-                  <CircleRd theme={theme.currentTheme}></CircleRd>
-                </div>
-              )}
-            </Link>
-            <Link
-              className="block px-3 py-3 text-base font-medium relative "
-              to="/contact"
-              onClick={() => {
-                setActiveLink(4);
-              }}
-            >
-              Contact
-              {activeLink === 4 && (
-                <div className="absolute -top-6 -left-8">
-                  <CircleTh theme={theme.currentTheme}></CircleTh>
-                </div>
-              )}
-            </Link>
-          </div>
-          <div className="px-3 py-3">
-            <button
-              onClick={() => {
-                if (activeLanguage === 0) {
-                  i18n.changeLanguage(languages[1].code);
-                  setActiveLanguage(1);
-                  return;
-                }
-                i18n.changeLanguage(languages[0].code);
-                setActiveLanguage(0);
-              }}
-              className="uppercase"
-            >
-              {activeLanguage === 0 ? languages[1].name : languages[0].name}
-            </button>
-            {/* <div className="flex items-center gap-2">
-              <div
-                className="flex items-center justify-center cursor-pointer"
+            <div className="flex flex-col gap-10 pl-4">
+              <div className="relative">
+                {activeLink === 1 && (
+                  <div className="absolute -top-14 -left-6">
+                    <CircleSt theme={theme.currentTheme}></CircleSt>
+                  </div>
+                )}
+                <Link
+                  className="block  text-base font-medium relative"
+                  to={"/notre-maison"}
+                  onClick={() => {
+                    setActiveLink(1);
+                  }}
+                >
+                  {t("header.trad1")}
+                </Link>
+              </div>
+              <div className="relative">
+                {activeLink === 2 && (
+                  <div className="absolute -top-11 -left-12">
+                    <CircleNd theme={theme.currentTheme}></CircleNd>
+                  </div>
+                )}
+                <Link
+                  className="block  text-base font-medium relative"
+                  to={"/trinite"}
+                  onClick={() => {
+                    setActiveLink(2);
+                  }}
+                >
+                  Trinité
+                </Link>
+              </div>
+              <Link
+                className="block  text-base font-medium relative"
+                to={"/atelier"}
                 onClick={() => {
-                  i18n.changeLanguage(languages[0].code);
-                  setActiveLanguage(0);
+                  setActiveLink(3);
                 }}
               >
-                <div
-                  className={`${
-                    activeLanguage === 0 && theme.currentTheme === "dark"
-                      ? "bg-white"
-                      : ""
-                  } 
-                      ${
-                        activeLanguage === 0 && theme.currentTheme === "light"
-                          ? "bg-black"
-                          : ""
-                      } rounded-full w-10 h-10 flex items-center justify-center`}
-                >
-                  <span
-                    className={`${
-                      activeLanguage === 0 && theme.currentTheme === "dark"
-                        ? "text-black"
-                        : ""
-                    } 
-                        ${
-                          activeLanguage === 0 && theme.currentTheme === "light"
-                            ? "text-white"
-                            : ""
-                        }
-                          font-bold text-md`}
-                  >
-                    FR
-                  </span>
-                </div>
-              </div>
-              <span>-</span>
-              <div
-                className="flex items-center justify-center cursor-pointer"
+                {t("header.trad2")}
+                {activeLink === 3 && (
+                  <div className="absolute -top-10 -left-8">
+                    <CircleRd theme={theme.currentTheme}></CircleRd>
+                  </div>
+                )}
+              </Link>
+              <Link
+                className="block  text-base font-medium relative "
+                to="/contact"
                 onClick={() => {
-                  i18n.changeLanguage(languages[1].code);
-                  setActiveLanguage(1);
+                  setActiveLink(4);
                 }}
               >
-                <div
-                  className={`${
-                    activeLanguage === 1 && theme.currentTheme === "dark"
-                      ? "bg-white"
-                      : ""
-                  } 
-                        ${
-                          activeLanguage === 1 && theme.currentTheme === "light"
-                            ? "bg-black"
-                            : ""
-                        }
-                        rounded-full w-10 h-10 flex items-center justify-center`}
+                Contact
+                {activeLink === 4 && (
+                  <div className="absolute -top-9 -left-10">
+                    <CircleTh theme={theme.currentTheme}></CircleTh>
+                  </div>
+                )}
+              </Link>
+              <div className="">
+                <button
+                  onClick={() => {
+                    if (activeLanguage === 0) {
+                      i18n.changeLanguage(languages[1].code);
+                      setActiveLanguage(1);
+                      return;
+                    }
+                    i18n.changeLanguage(languages[0].code);
+                    setActiveLanguage(0);
+                  }}
+                  className="uppercase"
                 >
-                  <span
-                    className={`${
-                      activeLanguage === 1 && theme.currentTheme === "dark"
-                        ? "text-black"
-                        : ""
-                    } 
-                          ${
-                            activeLanguage === 1 &&
-                            theme.currentTheme === "light"
-                              ? "text-white"
-                              : ""
-                          }
-                        
-                          font-bold text-md`}
+                  {activeLanguage === 0 ? languages[1].name : languages[0].name}
+                </button>
+              </div>
+              <div className="">
+                <div className="flex items-center w-full">
+                  <label
+                    htmlFor="toggleB"
+                    className="flex items-center cursor-pointer"
                   >
-                    En
-                  </span>
+                    <div className="relative">
+                      <input
+                        type="checkbox"
+                        id="toggleB"
+                        className="sr-only"
+                        onClick={() => {
+                          dispatch(toggleTheme());
+                        }}
+                      />
+                      <div
+                        className={`block w-11 h-6 border-2 rounded-xl border-black  ${
+                          theme.currentTheme === "dark"
+                            ? "bg-black border-white"
+                            : "bg-white border-black"
+                        }`}
+                      />
+                      <div
+                        className={`dot absolute right-0 top-0 w-6 h-6 rounded-full transition ${
+                          theme.currentTheme === "dark"
+                            ? "bg-white"
+                            : "bg-black"
+                        }`}
+                      />
+                    </div>
+                  </label>
                 </div>
               </div>
-            </div> */}
-          </div>
-          <div className="px-3 py-3">
-            <div className="flex items-center w-full">
-              <label
-                htmlFor="toggleB"
-                className="flex items-center cursor-pointer"
-              >
-                <div className="relative">
-                  <input
-                    type="checkbox"
-                    id="toggleB"
-                    className="sr-only"
-                    onClick={() => {
-                      dispatch(toggleTheme());
-                    }}
-                  />
-                  <div
-                    className={`block w-11 h-6 border-2 rounded-xl border-black  ${
-                      theme.currentTheme === "dark"
-                        ? "bg-black border-white"
-                        : "bg-white border-black"
-                    }`}
-                  />
-                  <div
-                    className={`dot absolute right-0 top-0 w-6 h-6 rounded-full transition ${
-                      theme.currentTheme === "dark" ? "bg-white" : "bg-black"
-                    }`}
-                  />
-                </div>
-              </label>
             </div>
           </div>
         </div>
