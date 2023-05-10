@@ -5,6 +5,7 @@ import logo from "./../../../assets/logo/logo-trinité.png";
 import { Helmet } from "react-helmet";
 import { useGLTF, useProgress } from "@react-three/drei";
 import { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 
 export default function Portal() {
   const navigate = useNavigate();
@@ -20,12 +21,35 @@ export default function Portal() {
       }, i * 600);
     }
   }, []);
+
+  const controls = useAnimation();
+  const onAnimationComplete = () => {
+    console.log("Animation completed");
+    navigate("/accueil");
+    // Add your action here
+  };
+  const handleClick = async () => {
+    console.log("starting animation");
+    // await controls.start({ scale: 50 });
+    controls.start({
+      opacity: 1,
+      scale: 50,
+      transition: { onComplete: onAnimationComplete },
+    }); // Scale back down to 1
+  };
   return (
     <>
       <Helmet>
         <title>Trinité</title>
       </Helmet>
-      <div>
+
+      <motion.div
+      // initial="initial"
+      // animate="in"
+      // exit="out"
+      // variants={pageVariants}
+      // transition={pageTransition}
+      >
         {progress < 100 ? (
           // Show loading screen when isLoading is true
           <div className="h-screen w-screen flex items-center justify-center  text-9xl bg-black text-white">
@@ -44,7 +68,9 @@ export default function Portal() {
             <div className="actions flex items-center gap-5 text-white font-light text-3xl">
               <div
                 className="p-4 cursor-pointer hover:scale-110 transform transition duration-300 ease-in-out"
-                onClick={() => navigate("/accueil")}
+                onClick={() => {
+                  handleClick();
+                }}
               >
                 {t("homepage_1")}
               </div>
@@ -55,7 +81,12 @@ export default function Portal() {
             </div>
           </div>
         )}
-      </div>
+      </motion.div>
+      <motion.div
+        initial={{ scale: 1, opacity: 0 }}
+        animate={controls}
+        className="absolute bottom-0 left-1/2 w-32 h-32 rounded-full bg-white transform -translate-x-1/2"
+      ></motion.div>
     </>
   );
 }

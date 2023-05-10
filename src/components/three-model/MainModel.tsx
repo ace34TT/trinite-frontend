@@ -6,14 +6,13 @@ import {
   useRef,
   useState,
 } from "react";
-import { useFrame, useLoader } from "react-three-fiber";
+import { useFrame } from "react-three-fiber";
 import { useWindowSize } from "react-use";
 import {
   GLTFResultDiamond,
   GLTFResultStandard,
   GLTFResultTricolor,
 } from "./GLTFResults.type";
-import { TextureLoader } from "three";
 
 const MainModel = forwardRef((props: JSX.IntrinsicElements["group"], ref) => {
   const [scale, setScale] = useState(3.5);
@@ -28,10 +27,7 @@ const MainModel = forwardRef((props: JSX.IntrinsicElements["group"], ref) => {
   const diamondModel = useGLTF(
     "models/model-3/Bracelet-with-diamond-transformed.glb"
   ) as GLTFResultDiamond;
-  //
-  // if (standardModel.materials["Scratched Gold"] && envMap) {
-  //   standardModel.materials["Scratched Gold"].envMap = envMap;
-  // }
+
   const groupRef = useRef<THREE.Group>(null);
   //
   useEffect(() => {
@@ -59,13 +55,7 @@ const MainModel = forwardRef((props: JSX.IntrinsicElements["group"], ref) => {
       setActiveModel(activeModel);
     },
   }));
-  // const [colorMap, normalMap, roughnessMap, aoMap] = useLoader(TextureLoader, [
-  //   "textures/gold/gold powder coated_baseColor.jpeg",
-  //   // "PavingStones092_1K_Displacement.jpg",
-  //   "textures/gold/gold powder coated_normal.jpeg",
-  //   "textures/gold/gold powder coated_roughness.jpeg",
-  //   "textures/gold/gold powder coated_ambientOcclusion.jpeg",
-  // ]);
+
   return (
     <group ref={groupRef} {...props} dispose={null}>
       <>
@@ -74,15 +64,7 @@ const MainModel = forwardRef((props: JSX.IntrinsicElements["group"], ref) => {
             <mesh
               geometry={standardModel.nodes.Circle001.geometry}
               material={standardModel.materials["Scratched Gold"]}
-            >
-              {/* <sphereGeometry args={[10, 100, 100]} /> */}
-              {/* <meshStandardMaterial
-                map={colorMap}
-                normalMap={normalMap}
-                roughnessMap={roughnessMap}
-                aoMap={aoMap}
-              /> */}
-            </mesh>
+            ></mesh>
             <mesh
               geometry={standardModel.nodes.Circle001_1.geometry}
               material={standardModel.materials["Scratched Gold"]}
