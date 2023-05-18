@@ -13,9 +13,9 @@ import {
   GLTFResultStandard,
   GLTFResultTricolor,
 } from "./GLTFResults.type";
-
+import { isMobile } from "react-device-detect";
 const MainModel = forwardRef((props: JSX.IntrinsicElements["group"], ref) => {
-  const [scale, setScale] = useState(3.5);
+  const [scale, setScale] = useState(0.15);
   const { width } = useWindowSize();
 
   const standardModel = useGLTF(
@@ -55,16 +55,17 @@ const MainModel = forwardRef((props: JSX.IntrinsicElements["group"], ref) => {
       setActiveModel(activeModel);
     },
   }));
+  //
 
   return (
-    <group ref={groupRef} {...props} dispose={null}>
+    <group ref={groupRef} {...props}>
       <>
         {activeModel === 0 ? (
           <group position={[0, -0.2, 0]} rotation={[1.8, 0, 1.2]} scale={scale}>
             <mesh
               geometry={standardModel.nodes.Circle001.geometry}
               material={standardModel.materials["Scratched Gold"]}
-            ></mesh>
+            />
             <mesh
               geometry={standardModel.nodes.Circle001_1.geometry}
               material={standardModel.materials["Scratched Gold"]}
@@ -121,13 +122,16 @@ const MainModel = forwardRef((props: JSX.IntrinsicElements["group"], ref) => {
               />
             </group>
           </>
-        ) : null}
+        ) : (
+          <></>
+        )}
       </>
     </group>
   );
 });
-
 export default MainModel;
-useGLTF.preload("models/model-1/Bracelet-Gold-transformed.glb");
-useGLTF.preload("models/model-2/Bracelet-tricolor-transformed.glb");
-useGLTF.preload("models/model-3/Bracelet-with-diamond-transformed.glb");
+if (!isMobile) {
+  // useGLTF.preload("models/model-1/Bracelet-Gold-transformed.glb");
+  // useGLTF.preload("models/model-2/Bracelet-tricolor-transformed.glb");
+  // useGLTF.preload("models/model-3/Bracelet-with-diamond-transformed.glb");
+}

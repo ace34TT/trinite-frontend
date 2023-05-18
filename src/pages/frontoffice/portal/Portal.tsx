@@ -6,13 +6,15 @@ import { Helmet } from "react-helmet";
 import { useGLTF, useProgress } from "@react-three/drei";
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { useDispatch } from "react-redux";
+import { setPreloading } from "../../../features/preloading.feature";
 
 export default function Portal() {
   const navigate = useNavigate();
   const { t } = useTranslation();
+  const dispatch = useDispatch();
   //
   const { progress } = useProgress();
-  useGLTF.preload("models/final-result/model-1/Bracelet-Gold-transformed.glb");
   const [percentage, setPercentage] = useState(0);
   useEffect(() => {
     for (let i = 0; i < 100; i++) {
@@ -21,20 +23,15 @@ export default function Portal() {
       }, i * 600);
     }
   }, []);
-
   const controls = useAnimation();
   const onAnimationComplete = () => {
-    console.log("Animation completed");
     navigate("/accueil");
-    // Add your action here
   };
   const handleClick = async () => {
-    console.log("starting animation");
-    // await controls.start({ scale: 50 });
     controls.start({
       opacity: 1,
       scale: 50,
-      transition: { onComplete: onAnimationComplete },
+      transition: { duration: 0.5, onComplete: onAnimationComplete },
     }); // Scale back down to 1
   };
   return (
@@ -42,14 +39,7 @@ export default function Portal() {
       <Helmet>
         <title>Trinité</title>
       </Helmet>
-
-      <motion.div
-      // initial="initial"
-      // animate="in"
-      // exit="out"
-      // variants={pageVariants}
-      // transition={pageTransition}
-      >
+      <motion.div>
         {progress < 100 ? (
           // Show loading screen when isLoading is true
           <div className="h-screen w-screen flex items-center justify-center  text-9xl bg-black text-white">
@@ -58,10 +48,11 @@ export default function Portal() {
         ) : (
           // Render the Portal content when the model finishes loading
           <div className="h-screen w-screen flex flex-col justify-center gap-32 sm:gap-52 items-center dark:bg-black">
+            {/* <> {dispatch(setPreloading())}</> */}
             <div className="sr-only sm:not-sr-only"></div>
             <div className="text-white flex flex-col-reverse sm:flex-row items-center gap-16 sm:gap-32">
               <img src={logo} className="h-28 sm:h-32" alt="" />
-              <div className="the-house text-2xl sm:text-4xl ">
+              <div className="the-house text-2xl sm:text-4xl hiragino-font">
                 MAISON <br /> DE HAUTE <br /> JOAILLERIE
               </div>
             </div>

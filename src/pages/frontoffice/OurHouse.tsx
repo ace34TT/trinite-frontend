@@ -25,7 +25,6 @@ export default function OurHouse() {
           <p className="">
             {t("OurHouse.trad1")}
             <br />
-
             {t("OurHouse.trad2")}
           </p>
           <br />
@@ -63,7 +62,7 @@ export default function OurHouse() {
                 transition: { duration: 0.3, ease: "easeInOut" },
               }}
               initial={{
-                x: -600,
+                x: -500,
                 y: -50,
                 rotate: 25,
               }}
@@ -71,7 +70,7 @@ export default function OurHouse() {
                 x: 0,
                 y: 0,
                 rotate: 0,
-                transition: { delay: 0.75, duration: 0.5, ease: "easeInOut" },
+                transition: { delay: 0.05, duration: 0.5, ease: "easeInOut" },
               }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="absolute top-0 -left-[400px] 2xl:-left-[450px] hidden sm:block w-[350px] z-20"
@@ -107,11 +106,6 @@ export default function OurHouse() {
             </motion.div>
           </div>
           <br />
-          {/* <div>
-            <p>
-              <span className="relative">{t("OurHouse.trad7")}</span>
-            </p>
-          </div> */}
           <p>{t("OurHouse.trad8")}</p>
         </div>
       </div>

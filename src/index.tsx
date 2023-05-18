@@ -11,17 +11,27 @@ import { Provider } from "react-redux";
 import { persistStore } from "redux-persist";
 import "./configs/i18n";
 import "./assets/font/SourceSerifVariable-Roman.otf";
+import { Helmet } from "react-helmet";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 let persistor = persistStore(store);
 root.render(
   <div className="dark:bg-black bg-white">
+    <Helmet>
+      <link
+        rel="preload"
+        href="./assets/font/Hiragino Kaku Gothic StdN W8.otf"
+        as="font"
+        type="font/otf"
+        crossOrigin="anonymous"
+      />
+    </Helmet>
     <React.StrictMode>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <BrowserRouter>
-            <Favicon url="https://i.ibb.co/0st12ck/1-transparent-logo-black-scroped.png" />
+            <Favicon url="https://i.ibb.co/XYzgp01/image-63.png" />
             <App />
           </BrowserRouter>
         </PersistGate>

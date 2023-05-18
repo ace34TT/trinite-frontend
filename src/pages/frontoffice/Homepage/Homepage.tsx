@@ -14,15 +14,10 @@ import "./style.css";
 import { gsap } from "gsap";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
-import {
-  Bloom,
-  DepthOfField,
-  EffectComposer,
-  SSAO,
-} from "@react-three/postprocessing";
-import { KernelSize } from "postprocessing";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import MainModel from "../../../components/three-model/MainModel";
 import { Model } from "../../../components/three-model/Bracelet";
+import { SimplifiedModel } from "../../../components/three-model/SimplifiedModel";
 export default function Homepage() {
   const { t } = useTranslation();
   const [activeModel, setActiveModel] = useState(0);
@@ -52,16 +47,14 @@ export default function Homepage() {
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
       navigator.userAgent
     );
-  const childRef = useRef<THREE.Group>(null);
+
   const ref = useRef<any>(null);
   //
-  // const [showCustomCursor, setShowCustomCursor] = useState(false);
   return (
     <>
       <Helmet>
         <title>Trinité - Accueil</title>
       </Helmet>
-      {/* {showCustomCursor ? <CustomCursor /> : <></>} */}
       <div className="flex flex-col justify-center items-center h-screen w-full absolute  top-0 left-0 min-h-[650px]">
         <Canvas>
           <PerspectiveCamera position={[0, 0, 0]} />
@@ -72,30 +65,18 @@ export default function Homepage() {
             far={5000}
             makeDefault // this line will make this camera the default camera for the scene
           />
-          {/* <ambientLight intensity={1} /> */}
-          {/* <OrbitControls enablePan={false} /> */}
           <OrbitControls enablePan={false} maxZoom={150} minZoom={90} />
-
+          {/* <OrbitControls enablePan={false} /> */}
           <Suspense fallback={null}>
             <EffectComposer>
-              <Bloom
-                luminanceThreshold={0.9}
+              {/* <Bloom
+                luminanceThreshold={0.1}
                 luminanceSmoothing={1}
-                intensity={2}
-              />
-              {/* <DepthOfField
-                focusDistance={0.02}
-                focalLength={0.8}
-                bokehScale={2}
-                height={480}
+                intensity={4}
               /> */}
-              {/* <SSAO /> */}
             </EffectComposer>
-            {!isMobile ? (
-              <MainModel ref={ref}></MainModel>
-            ) : (
-              <Model ref={childRef} />
-            )}
+            {/* {!isMobile ? <MainModel ref={ref} /> : <Model />} */}
+            {!isMobile ? <SimplifiedModel /> : <SimplifiedModel />}
             <Environment preset="warehouse" />
           </Suspense>
         </Canvas>
@@ -152,12 +133,10 @@ export default function Homepage() {
               }}
             ></div>
           </div>
-        ) : (
-          <></>
-        )}
+        ) : null}
         <div id="text-hidden" ref={textHiddenRef}>
           {t("home.trad1")}
-          <br className="sr-only sm:not-sr-only" /> {t("home.trad2")}
+          <br className="" /> {t("home.trad2")}
         </div>
         <div
           id="hider"

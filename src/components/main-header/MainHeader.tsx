@@ -125,6 +125,7 @@ const MainHeader = () => {
           </div>
           <div id="logo" className="">
             <Link
+              className=""
               to={"/accueil"}
               onClick={() => {
                 setActiveLink(-1);
@@ -137,12 +138,12 @@ const MainHeader = () => {
             id="text-1"
             className="hidden sm:block py-7 text-black dark:text-white"
           >
-            <ul className="flex items-center font-normal gap-16 text-md uppercase">
+            <ul className="flex items-center font-normal gap-16 text-md uppercase hiragino-font">
               <li>
                 <NavLink
                   className={`${
                     theme.currentTheme === "dark" ? "link-dark" : "link"
-                  } relative`}
+                  } relative `}
                   to={"/notre-maison"}
                   onClick={() => {
                     setActiveLink(1);
@@ -150,7 +151,7 @@ const MainHeader = () => {
                 >
                   {t("header.trad1")}
                   {activeLink === 1 && (
-                    <div className="absolute -top-14 -left-10">
+                    <div className="absolute -top-14 -left-20">
                       <CircleSt theme={theme.currentTheme}></CircleSt>
                     </div>
                   )}
@@ -168,7 +169,7 @@ const MainHeader = () => {
                 >
                   Trinité
                   {activeLink === 2 && (
-                    <div className="absolute -top-12 -left-14">
+                    <div className="absolute -top-16 -left-10">
                       <CircleNd theme={theme.currentTheme}></CircleNd>
                     </div>
                   )}
@@ -186,7 +187,7 @@ const MainHeader = () => {
                 >
                   {t("header.trad2")}
                   {activeLink === 3 && (
-                    <div className="absolute -top-10 -left-10">
+                    <div className="absolute -top-10 -left-12">
                       <CircleRd theme={theme.currentTheme}></CircleRd>
                     </div>
                   )}
@@ -204,7 +205,7 @@ const MainHeader = () => {
                 >
                   Contact
                   {activeLink === 4 && (
-                    <div className="absolute -top-10 -left-11">
+                    <div className="absolute -top-14 -left-8">
                       <CircleTh theme={theme.currentTheme}></CircleTh>
                     </div>
                   )}
@@ -225,87 +226,6 @@ const MainHeader = () => {
                 >
                   {activeLanguage === 0 ? languages[1].name : languages[0].name}
                 </button>
-                {/* <div className="flex items-center gap-2">
-                  <div>{}</div>
-
-                  <div
-                    className="flex items-center justify-center cursor-pointer"
-                    onClick={() => {
-                      i18n.changeLanguage(languages[0].code);
-                      setActiveLanguage(0);
-                    }}
-                  >
-                    <div
-                      className={`${
-                        activeLanguage === 0 && theme.currentTheme === "dark"
-                          ? "bg-white"
-                          : ""
-                      } 
-                      ${
-                        activeLanguage === 0 && theme.currentTheme === "light"
-                          ? "bg-black"
-                          : ""
-                      } rounded-full w-10 h-10 flex items-center justify-center`}
-                    >
-                      <span
-                        className={`${
-                          activeLanguage === 0 && theme.currentTheme === "dark"
-                            ? "text-black"
-                            : ""
-                        } 
-                        ${
-                          activeLanguage === 0 && theme.currentTheme === "light"
-                            ? "text-white"
-                            : ""
-                        }
-                          font-bold text-md`}
-                      >
-                        FR
-                      </span>
-                    </div>
-                  </div>
-                  <span>-</span>
-                  <div
-                    className="flex items-center justify-center cursor-pointer"
-                    onClick={() => {
-                      i18n.changeLanguage(languages[1].code);
-                      setActiveLanguage(1);
-                    }}
-                  >
-                    <div
-                      className={`${
-                        activeLanguage === 1 && theme.currentTheme === "dark"
-                          ? "bg-white"
-                          : ""
-                      } 
-                        ${
-                          activeLanguage === 1 && theme.currentTheme === "light"
-                            ? "bg-black"
-                            : ""
-                        }
-                      
-                        rounded-full w-10 h-10 flex items-center justify-center`}
-                    >
-                      <span
-                        className={`${
-                          activeLanguage === 1 && theme.currentTheme === "dark"
-                            ? "text-black"
-                            : ""
-                        } 
-                          ${
-                            activeLanguage === 1 &&
-                            theme.currentTheme === "light"
-                              ? "text-white"
-                              : ""
-                          }
-                        
-                          font-bold text-md`}
-                      >
-                        En
-                      </span>
-                    </div>
-                  </div>
-                </div> */}
               </li>
               <li>
                 <div className="flex items-center justify-center w-full">
@@ -344,7 +264,7 @@ const MainHeader = () => {
           </div>
           <div
             id="text2"
-            className="text-xl uppercase hidden sm:block leading-5"
+            className="text-xl uppercase hidden sm:block leading-5 hiragino-font"
           >
             Maison <br /> de haute <br /> joaillerie
           </div>
@@ -354,7 +274,7 @@ const MainHeader = () => {
       <div
         className={`${
           showMenu ? "block" : "hidden"
-        } sm:hidden pt-20 absolute bg-white dark:bg-black w-[100%] h-screen overscroll-none`}
+        } sm:hidden pt-20 absolute bg-white dark:bg-black w-[100%] h-screen overscroll-none `}
         id="mobile-menu"
       >
         <div className="pl-6 pt-2 pb-3 space-y-1 uppercase">
@@ -365,15 +285,15 @@ const MainHeader = () => {
               enableScroll();
             }}
           >
-            <div className="flex flex-col gap-10 pl-4">
+            <div className="flex flex-col gap-12 pl-8 hiragino-font">
               <div className="relative">
                 {activeLink === 1 && (
-                  <div className="absolute -top-14 -left-6">
+                  <div className="absolute -top-14 -left-20">
                     <CircleSt theme={theme.currentTheme}></CircleSt>
                   </div>
                 )}
                 <Link
-                  className="block  text-base font-medium relative"
+                  className="block text-base font-medium relative hiragino-font"
                   to={"/notre-maison"}
                   onClick={() => {
                     setActiveLink(1);
@@ -384,7 +304,7 @@ const MainHeader = () => {
               </div>
               <div className="relative">
                 {activeLink === 2 && (
-                  <div className="absolute -top-11 -left-12">
+                  <div className="absolute -top-14 -left-10">
                     <CircleNd theme={theme.currentTheme}></CircleNd>
                   </div>
                 )}
@@ -407,7 +327,7 @@ const MainHeader = () => {
               >
                 {t("header.trad2")}
                 {activeLink === 3 && (
-                  <div className="absolute -top-10 -left-8">
+                  <div className="absolute -top-10 -left-12">
                     <CircleRd theme={theme.currentTheme}></CircleRd>
                   </div>
                 )}
@@ -421,7 +341,7 @@ const MainHeader = () => {
               >
                 Contact
                 {activeLink === 4 && (
-                  <div className="absolute -top-9 -left-10">
+                  <div className="absolute -top-14 -left-9">
                     <CircleTh theme={theme.currentTheme}></CircleTh>
                   </div>
                 )}

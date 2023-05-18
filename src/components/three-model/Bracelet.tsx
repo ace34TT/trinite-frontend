@@ -29,15 +29,12 @@ export const Model = forwardRef((props, ref) => {
     "models/model-1/Bracelet-Gold-transformed.glb"
   ) as GLTFResult;
   const groupRef = useRef<THREE.Group>(null);
-  //
-
   return (
     <group ref={groupRef} {...props} dispose={null}>
       <group position={[0, -0.2, 0]} rotation={[1.8, 0, 1.2]} scale={scale}>
         <mesh
           geometry={nodes.Circle001.geometry}
           material={materials["Scratched Gold"]}
-          // material={reflectiveMaterial}
         />
         <mesh
           geometry={nodes.Circle001_1.geometry}
@@ -52,4 +49,4 @@ export const Model = forwardRef((props, ref) => {
   );
 });
 
-useGLTF.preload("models/model-1/Bracelet-Gold-transformed.glb");
+// useGLTF.preload("models/model-1/Bracelet-Gold-transformed.glb");

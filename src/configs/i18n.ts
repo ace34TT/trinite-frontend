@@ -32,7 +32,7 @@ i18n.use(initReactI18next).init({
           trad4:
             "Notre emblématique bracelet Trinité est plus qu'un simple bijou, c'est un symbole de l'histoire et de la culture de Madagascar,   transmis de génération en génération dans la culture malgache.",
           trad5:
-            "Chez Trintée, chaque bijoux est une pièce unique, créée avec passion et savoir-faire artisanal, pour vous offrir une expérience unique et intemporelle, où la qualité, l'éthique et la durabilité sont au cœur de notre engagement.",
+            "Chez Trinté, chaque bijoux est une pièce unique, créée avec passion et savoir-faire artisanal, pour vous offrir une expérience unique et intemporelle, où la qualité, l'éthique et la durabilité sont au cœur de notre engagement.",
           trad6:
             "Nous sommes fiers de mettre en lumière les traditions malgaches tout en apportant notre touche personnelle à chacune de nos créations.",
           trad7:
