@@ -1,6 +1,5 @@
-import React from "react";
 import "./App.css";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "swiper/swiper-bundle.min.css";
 import MainLayout from "./pages/frontoffice/MainLayout";
 import OurHouse from "./pages/frontoffice/OurHouse";
@@ -10,11 +9,18 @@ import Contact from "./pages/frontoffice/contact/Contact";
 import Portal from "./pages/frontoffice/portal/Portal";
 import Homepage from "./pages/frontoffice/Homepage/Homepage";
 import CustomCursor from "./components/custom-cursor/CustomCursor";
-import { AnimatePresence } from "framer-motion";
+import { useSelector } from "react-redux";
+import { RootState } from "./redux/store";
+import { isMobile } from "react-device-detect";
+import { Helmet } from "react-helmet";
+
 function App() {
+  // const dispatch = useDispatch();
+  const preloading = useSelector((state: RootState) => state.preloading);
   return (
     <>
-      <CustomCursor />
+      {/* {!preloading && <CustomCursor />} */}
+      {!isMobile && <CustomCursor />}
       <Routes>
         <Route path="/" element={<Portal />} />
         <Route path="/" element={<MainLayout />}>
