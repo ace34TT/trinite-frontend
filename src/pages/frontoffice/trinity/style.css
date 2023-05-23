@@ -14,3 +14,11 @@
 .slick-cloned > div:first-child {
   height: 100%;
 }
+
+.slick-dots.custom-dots li button:before {
+  color: rgb(85, 85, 85);
+  opacity: 1;
+}
+.slick-dots.custom-dots li.slick-active button:before {
+  color: rgb(227, 218, 119);
+}

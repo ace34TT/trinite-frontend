@@ -66,13 +66,13 @@ export function SimplifiedModel(props: JSX.IntrinsicElements["group"]) {
           material={materials["Scratched Gold"]}
         />
       </group>
-      <mesh
+      {/* <mesh
         geometry={nodes.Circle016.geometry}
         material={materials.Material}
         position={[0, -0.2, 0]}
         rotation={[1.8, 0, 1.2]}
         scale={scale}
-      />
+      /> */}
     </group>
   );
 }

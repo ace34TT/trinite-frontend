@@ -136,11 +136,11 @@ export default function Homepage() {
         ) : null}
         <div
           id="text-hidden "
-          className="flex justify-center"
+          className="flex justify-center px-10"
           ref={textHiddenRef}
         >
-          <div className="text-left ml-6">
-            {t("home.trad1")}
+          <div className="text-left sm:text-center">
+            {t("home.trad1")} <br className="sr-only sm:not-sr-only" />
             {t("home.trad2")}
           </div>
         </div>

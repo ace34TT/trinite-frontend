@@ -29,7 +29,7 @@ function MainLayout() {
           backgroundColor: "white",
           fontSize: "13px",
         }}
-        declineButtonStyle={{ background: "none" }}
+        declineButtonStyle={{ background: "none", fontSize: "13px" }}
         expires={150}
       >
         <div className={"w-10/12 prose max-w-none text-xs text-white"}>
