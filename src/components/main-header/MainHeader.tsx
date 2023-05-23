@@ -74,7 +74,7 @@ const MainHeader = () => {
         <div className="relative flex items-center justify-around h-24 pb-5 sm:pb-0 border-b-2  border-white sm:border-b-0">
           <div
             id="iconMobile"
-            className="absolute inset-y-0 left-0 flex items-center sm:hidden "
+            className="absolute inset-y-0 left-0 flex items-center xl:hidden "
           >
             <button
               type="button"
@@ -136,14 +136,14 @@ const MainHeader = () => {
           </div>
           <div
             id="text-1"
-            className="hidden sm:block py-7 text-black dark:text-white"
+            className="hidden xl:block py-7 text-black dark:text-white"
           >
             <ul className="flex items-center font-normal gap-16 text-md uppercase hiragino-font">
               <li>
                 <NavLink
                   className={`${
                     theme.currentTheme === "dark" ? "link-dark" : "link"
-                  } relative `}
+                  } relative text-xl`}
                   to={"/notre-maison"}
                   onClick={() => {
                     setActiveLink(1);
@@ -161,7 +161,7 @@ const MainHeader = () => {
                 <NavLink
                   className={`${
                     theme.currentTheme === "dark" ? "link-dark" : "link"
-                  } relative`}
+                  } relative text-xl`}
                   to={"/trinite"}
                   onClick={() => {
                     setActiveLink(2);
@@ -179,7 +179,7 @@ const MainHeader = () => {
                 <NavLink
                   className={`${
                     theme.currentTheme === "dark" ? "link-dark" : "link"
-                  } relative`}
+                  } relative text-xl`}
                   to={"/atelier"}
                   onClick={() => {
                     setActiveLink(3);
@@ -197,7 +197,7 @@ const MainHeader = () => {
                 <NavLink
                   className={`${
                     theme.currentTheme === "dark" ? "link-dark" : "link"
-                  } relative`}
+                  } relative text-xl`}
                   to="/contact"
                   onClick={() => {
                     setActiveLink(4);
@@ -222,7 +222,7 @@ const MainHeader = () => {
                     i18n.changeLanguage(languages[0].code);
                     setActiveLanguage(0);
                   }}
-                  className="uppercase"
+                  className="uppercase text-xl"
                 >
                   {activeLanguage === 0 ? languages[1].name : languages[0].name}
                 </button>
@@ -264,7 +264,7 @@ const MainHeader = () => {
           </div>
           <div
             id="text2"
-            className="text-xl uppercase hidden sm:block leading-5 hiragino-font"
+            className="text-2xl uppercase hidden sm:block  leading-5 hiragino-font"
           >
             Maison <br /> de haute <br /> joaillerie
           </div>
@@ -274,7 +274,7 @@ const MainHeader = () => {
       <div
         className={`${
           showMenu ? "block" : "hidden"
-        } sm:hidden pt-20 absolute bg-white dark:bg-black w-[100%] h-screen overscroll-none `}
+        } pt-20 absolute bg-white dark:bg-black w-[100%] h-screen overscroll-none `}
         id="mobile-menu"
       >
         <div className="pl-6 pt-2 pb-3 space-y-1 uppercase">
@@ -293,7 +293,7 @@ const MainHeader = () => {
                   </div>
                 )}
                 <Link
-                  className="block text-base font-medium relative hiragino-font"
+                  className="block text-xl font-medium relative hiragino-font"
                   to={"/notre-maison"}
                   onClick={() => {
                     setActiveLink(1);
@@ -309,7 +309,7 @@ const MainHeader = () => {
                   </div>
                 )}
                 <Link
-                  className="block  text-base font-medium relative"
+                  className="block  text-xl font-medium relative"
                   to={"/trinite"}
                   onClick={() => {
                     setActiveLink(2);
@@ -319,7 +319,7 @@ const MainHeader = () => {
                 </Link>
               </div>
               <Link
-                className="block  text-base font-medium relative"
+                className="block text-xl font-medium relative "
                 to={"/atelier"}
                 onClick={() => {
                   setActiveLink(3);
@@ -333,7 +333,7 @@ const MainHeader = () => {
                 )}
               </Link>
               <Link
-                className="block  text-base font-medium relative "
+                className="block text-xl font-medium relative "
                 to="/contact"
                 onClick={() => {
                   setActiveLink(4);
@@ -357,7 +357,7 @@ const MainHeader = () => {
                     i18n.changeLanguage(languages[0].code);
                     setActiveLanguage(0);
                   }}
-                  className="uppercase"
+                  className="uppercase text-xl"
                 >
                   {activeLanguage === 0 ? languages[1].name : languages[0].name}
                 </button>

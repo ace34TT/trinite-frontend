@@ -14,14 +14,17 @@ export default function Contact() {
         <title>Trinité - Contact</title>
       </Helmet>
       <div
-        className="flex flex-1 flex-col items-center justify-center"
+        className="flex flex-1 flex-col items-center justify-center px-4"
         style={{ height: "calc(100vh - 200px)" }}
       >
-        <img
-          src={language === "fr" ? elements[1] : elements[0]}
-          className="h-[450px]"
-          alt=""
-        />
+        <div className="h-[280px] xl:h-[450px] w-auto overflow-hidden">
+          <img
+            src={language === "fr" ? elements[1] : elements[0]}
+            className="h-full w-auto object-cover object-center"
+            alt=""
+            style={{ transform: "scale(1.4)" }}
+          />
+        </div>
       </div>
     </>
   );

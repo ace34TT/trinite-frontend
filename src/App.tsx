@@ -7,12 +7,11 @@ import Trinity from "./pages/frontoffice/trinity/Trinity";
 import Workshop from "./pages/frontoffice/Workshop";
 import Contact from "./pages/frontoffice/contact/Contact";
 import Portal from "./pages/frontoffice/portal/Portal";
-import Homepage from "./pages/frontoffice/Homepage/Homepage";
+import Homepage from "./pages/frontoffice/homepage/Homepage";
 import CustomCursor from "./components/custom-cursor/CustomCursor";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
 import { isMobile } from "react-device-detect";
-import { Helmet } from "react-helmet";
 
 function App() {
   // const dispatch = useDispatch();

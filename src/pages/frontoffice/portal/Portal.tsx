@@ -52,7 +52,7 @@ export default function Portal() {
             <div className="sr-only sm:not-sr-only"></div>
             <div className="text-white flex flex-col-reverse sm:flex-row items-center gap-16 sm:gap-32">
               <img src={logo} className="h-28 sm:h-32" alt="" />
-              <div className="the-house text-2xl sm:text-4xl hiragino-font">
+              <div className="the-house text-3xl leading-7 sm:text-4xl hiragino-font">
                 MAISON <br /> DE HAUTE <br /> JOAILLERIE
               </div>
             </div>

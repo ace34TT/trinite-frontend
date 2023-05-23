@@ -9,6 +9,7 @@ import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { useWindowSize } from "react-use";
 import { useFrame } from "react-three-fiber";
+import { isMobile } from "react-device-detect";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -29,7 +30,7 @@ export function SimplifiedModel(props: JSX.IntrinsicElements["group"]) {
   const groupRef = useRef<THREE.Group>(null);
   useEffect(() => {
     if (width < 768) {
-      setScale(0.1);
+      setScale(0.09);
     } else {
       setScale(0.15);
     }
@@ -68,12 +69,13 @@ export function SimplifiedModel(props: JSX.IntrinsicElements["group"]) {
       <mesh
         geometry={nodes.Circle016.geometry}
         material={materials.Material}
-        position={[-0.05, 0.42, -0.43]}
-        rotation={[-1.57, 0, -1.92]}
-        scale={0.08}
+        position={[0, -0.2, 0]}
+        rotation={[1.8, 0, 1.2]}
+        scale={scale}
       />
     </group>
   );
 }
-
-useGLTF.preload("/models/simplified/Bracelet-with-diamond-3-transformed.glb");
+if (isMobile) {
+  useGLTF.preload("/models/simplified/Bracelet-with-diamond-3-transformed.glb");
+}

@@ -56,7 +56,7 @@ export default function Trinity() {
   const { t } = useTranslation();
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -70,10 +70,10 @@ export default function Trinity() {
       </Helmet>
       <div className="pt-0 sm:pt-16" style={{ fontFamily: "CustomFont" }}>
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
-          <div className="h-[700px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t border-l border-gray-300">
+          <div className="h-[800px] sm:h-auto py-16 px-14 flex flex-col items-center justify-center border-t sm:border-l border-gray-300">
             <p className="text-justify text-xl">{t("Trinite.trad1")}</p>
           </div>
-          <div className="h-[700px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t border-l border-gray-300">
+          <div className="h-[800px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t sm:border-l border-gray-300">
             <div className="w-full h-full flex flex-col gap-4">
               <div className="w-full flex justify-between gap-10">
                 <p className="flex-grow">
@@ -156,7 +156,7 @@ export default function Trinity() {
               </Slider>
             </div>
           </div>
-          <div className="h-[700px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t border-l border-gray-300">
+          <div className="h-[800px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t sm:border-l border-gray-300">
             <div className="w-full h-full flex flex-col gap-4">
               <div className="w-full flex justify-between gap-10">
                 <p>
@@ -257,7 +257,7 @@ export default function Trinity() {
               </Slider>
             </div>
           </div>
-          <div className="h-[700px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t border-l border-gray-300">
+          <div className="h-[800px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t sm:border-l border-gray-300">
             <div className="w-full h-full flex flex-col gap-4">
               <div className="w-full flex justify-between gap-10">
                 <p>
@@ -363,7 +363,7 @@ export default function Trinity() {
               </Slider>
             </div>
           </div>
-          <div className="h-[700px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t border-l border-gray-300">
+          <div className="h-[800px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t sm:border-l border-gray-300">
             <div className="w-full h-full flex flex-col gap-4">
               <div className="w-full flex justify-between gap-10">
                 <p>
@@ -407,7 +407,7 @@ export default function Trinity() {
               </Slider>
             </div>
           </div>
-          <div className="h-[700px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t border-l  border-gray-300">
+          <div className="h-[800px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t sm:border-l border-gray-300">
             <div className="h-full w-full flex flex-col gap-4">
               <div className="w-full flex justify-between gap-10">
                 <p>
@@ -451,7 +451,7 @@ export default function Trinity() {
               </Slider>
             </div>
           </div>
-          <div className="h-[700px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t border-l border-gray-300">
+          <div className="h-[800px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t sm:border-l border-gray-300">
             <div className="h-full w-full flex flex-col gap-4">
               <div className="w-full flex justify-between gap-10">
                 <p>
@@ -495,7 +495,7 @@ export default function Trinity() {
               </Slider>
             </div>
           </div>
-          <div className="h-[700px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t border-l border-gray-300">
+          <div className="h-[800px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t sm:border-l border-gray-300">
             <div className="h-full w-full flex flex-col gap-4">
               <div className="w-full flex justify-between gap-10">
                 <p>
@@ -507,8 +507,8 @@ export default function Trinity() {
               </div>
               <br />
               <Slider {...settings}>
-                <div className="h-full">
-                  <div className="h-full relative flex flex-col items-center">
+                <div className="h-full w-full">
+                  <div className="h-full w-full relative flex flex-col items-center">
                     <div
                       className="h-full w-full flex items-center justify-center"
                       style={{
@@ -539,7 +539,7 @@ export default function Trinity() {
               </Slider>
             </div>
           </div>
-          <div className="sr-only sm:not-sr-only h-[700px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t border-l border-gray-300">
+          <div className="sr-only sm:not-sr-only h-[800px] sm:h-auto py-16 px-14 flex flex-col items-center justify-start border-t border-l border-gray-300">
             <div className="h-full w-full flex flex-col gap-4"></div>
           </div>
         </div>

@@ -21,14 +21,14 @@ const CustomCursor = () => {
   }, []);
   return (
     <div
-      className="cursor w-10 h-10 rounded-full flex justify-center items-center bg-transparent border-2 border-white"
+      className="cursor w-5 h-5 rounded-full flex justify-center items-center border-2 bg-black border-black dark:bg-white dark:border-white"
       style={{
         transform: `translate(${cursorPosition.x - 16}px, ${
           cursorPosition.y - 16
         }px)`,
       }}
     >
-      <div className="w-4 h-4 rounded-full bg-white"></div>
+      {/* <div className="w-4 h-4 rounded-full bg-white"></div> */}
     </div>
   );
 };

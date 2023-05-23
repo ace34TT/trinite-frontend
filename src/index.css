@@ -7,8 +7,10 @@ a::after {
 
 @font-face {
   font-family: "Hiragino";
+  /* src: local("Hiragino"),
+    url("./assets/font/Hiragino\ Kaku\ Gothic\ StdN\ W8.otf") format("opentype"); */
   src: local("Hiragino"),
-    url("./assets/font/Hiragino\ Kaku\ Gothic\ StdN\ W8.otf") format("opentype");
+    url("./assets/font/HelveticaNowText-ExtraBold.ttf") format("opentype");
   font-display: swap;
 }
 
