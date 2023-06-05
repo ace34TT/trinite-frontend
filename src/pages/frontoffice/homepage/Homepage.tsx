@@ -2,8 +2,10 @@ import { Suspense, useRef, useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
 import "../../../assets/font/style.css";
+
 import {
   Environment,
+  Lightformer,
   OrbitControls,
   OrthographicCamera,
   PerspectiveCamera,
@@ -74,10 +76,8 @@ export default function Homepage() {
                 intensity={4}
               /> */}
             </EffectComposer>
-            {/* {!isMobile ? <MainModel ref={ref} /> : <Model />} */}
             {!isMobile ? <SimplifiedModels ref={ref} /> : <SimplifiedModel />}
-            {/* <SimplifiedModels ref={ref} /> */}
-            <Environment preset="warehouse" />
+            <Environment files="hdrs/empty_warehouse_01_1k.hdr" />
           </Suspense>
         </Canvas>
       </div>
