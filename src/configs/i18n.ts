@@ -32,7 +32,7 @@ i18n.use(initReactI18next).init({
           trad4:
             "Notre emblématique bracelet Trinité est plus qu'un simple bijou, c'est un symbole de l'histoire et de la culture de Madagascar,   transmis de génération en génération dans la culture malgache.",
           trad5:
-            "Chez Trintée, chaque bijoux est une pièce unique, créée avec passion et savoir-faire artisanal, pour vous offrir une expérience unique et intemporelle, où la qualité, l'éthique et la durabilité sont au cœur de notre engagement.",
+            "Chez Trinté, chaque bijoux est une pièce unique, créée avec passion et savoir-faire artisanal, pour vous offrir une expérience unique et intemporelle, où la qualité, l'éthique et la durabilité sont au cœur de notre engagement.",
           trad6:
             "Nous sommes fiers de mettre en lumière les traditions malgaches tout en apportant notre touche personnelle à chacune de nos créations.",
           trad7:
@@ -42,7 +42,7 @@ i18n.use(initReactI18next).init({
         },
         Trinite: {
           trad1:
-            "La collection Trinité incarne la fusion exquise entre l'héritage ancestral et l'audace de l'innovation. La collection allie la sagesse d'un savoir-faire séculaire aux aspirations novatrices d'une nouvelle génération, pour offrir des créations uniques et intemporelles.",
+            "La collection Trinité incarne la fusion exquise entre l'héritage ancestral et l'audace de l'innovation. La\u00A0collection allie la sagesse d'un savoir-faire séculaire aux aspirations novatrices d'une nouvelle génération, pour offrir des créations uniques et intemporelles.",
           trad2: {
             txt1: "Bracelet TRINITE",
             txt2: "Or jaune",

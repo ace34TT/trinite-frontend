@@ -15,7 +15,7 @@ export default function Workshop() {
       </Helmet>
       <div
         style={{ fontFamily: "CustomFont" }}
-        className="flex justify-center py-0 sm:py-16 prose max-w-none text-base sm:text-2xl w-screen"
+        className="my-10 flex justify-center py-0 sm:py-16 prose max-w-none text-base sm:text-2xl w-screen"
       >
         <div className="w-10/12 sm:w-6/12 text-black dark:text-white leading-5 sm:leading-snug">
           <div className="flex justify-center gap-4 ">

@@ -1,6 +1,8 @@
 import "./style.css";
 import { Helmet } from "react-helmet";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { handleHoveringContact } from "../../../features/cursor.feature";
 const elements = [
   require("./../../../assets/element/image 54.png"),
   require("./../../../assets/element/image 56.png"),
@@ -8,34 +10,36 @@ const elements = [
 export default function Contact() {
   const { i18n } = useTranslation();
   const language = i18n.language;
+  const dispatch = useDispatch();
+  const handleOpenEmailForm = () => {
+    const emailAddress = "bonjour@trinite.paris"; // Replace with your desired email address
+    const composeMailURL = `https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=${encodeURIComponent(
+      emailAddress
+    )}`;
+    window.open(composeMailURL, "_blank");
+  };
   return (
     <>
       <Helmet>
         <title>Trinité - Contact</title>
       </Helmet>
       <div
-        className="flex flex-1 flex-col items-center justify-center"
+        className="flex flex-1 flex-col items-center justify-center px-4"
         style={{ height: "calc(100vh - 200px)" }}
       >
-        <img
-          src={language === "fr" ? elements[1] : elements[0]}
-          className="h-[450px]"
-          alt=""
-        />
-        {/* <div
-          className="p-4 py-8 2xl:p-40 bg-cover bg-center"
-          style={{ backgroundImage: `url('${bg}')` }}
+        <div
+          className="h-[280px] xl:h-[450px] w-auto overflow-hidden"
+          onMouseEnter={() => dispatch(handleHoveringContact({ value: true }))}
+          onMouseLeave={() => dispatch(handleHoveringContact({ value: false }))}
+          onClick={handleOpenEmailForm}
         >
-          <div className="contact flex flex-col justify-center items-center prose max-w-none text-gray-900 darken:text-white text-md sm:text-2xl font-extrabold uppercase ">
-            <pear className="uppercase m-2 text-gray-900 darken:text-white text-5xl">
-              Contact
-            </pear
-            <div className="h-6"></div>
-            <p className="m-3 ">bonjour@trinite.com</p>
-            <p className="m-3">0622007168</p>
-            <p className="m-3">www.trinite.jewelry.com</p>
-          </div>
-        </div> */}
+          <img
+            src={language === "fr" ? elements[1] : elements[0]}
+            className="h-full w-auto object-cover object-center"
+            alt=""
+            style={{ transform: "scale(1.4)" }}
+          />
+        </div>
       </div>
     </>
   );

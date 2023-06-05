@@ -1,0 +1,17 @@
+* {
+  cursor: none;
+}
+a::after {
+  content: "";
+}
+
+@font-face {
+  font-family: "Hiragino";
+  src: local("Hiragino"),
+    url("./assets/font/HelveticaNowText-ExtraBold.ttf") format("opentype");
+  font-display: swap;
+}
+
+.hiragino-font {
+  font-family: Hiragino;
+}

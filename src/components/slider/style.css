@@ -1,0 +1,24 @@
+.slick-slider,
+.slick-initialized,
+.slick-list,
+.slick-track {
+  height: 100%;
+}
+
+.slick-slide,
+.slick-active,
+.slick-current,
+.slick-slide > div:first-child,
+.slick-active > div:first-child,
+.slick-current > div:first-child,
+.slick-cloned > div:first-child {
+  height: 100%;
+}
+
+.slick-dots.custom-dots li button:before {
+  color: #555555;
+  opacity: 1;
+}
+.slick-dots.custom-dots li.slick-active button:before {
+  color: #ffffff;
+}

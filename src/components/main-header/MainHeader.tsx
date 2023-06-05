@@ -11,6 +11,7 @@ import CircleRd from "../active-link/CircleRd";
 import CircleTh from "../active-link/CircleTh";
 import DarkLogo from "../logo/DarkLogo";
 import LightLogo from "../logo/LightLogo";
+import { handleHoveringTitles } from "../../features/cursor.feature";
 
 const languages = [
   {
@@ -31,7 +32,6 @@ const MainHeader = () => {
   const [activeLanguage, setActiveLanguage] = useState(0);
   const { t, i18n } = useTranslation();
   const [showMenu, setShowMenu] = useState(false);
-
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
@@ -74,7 +74,7 @@ const MainHeader = () => {
         <div className="relative flex items-center justify-around h-24 pb-5 sm:pb-0 border-b-2  border-white sm:border-b-0">
           <div
             id="iconMobile"
-            className="absolute inset-y-0 left-0 flex items-center sm:hidden "
+            className="absolute inset-y-0 left-0 flex items-center xl:hidden "
           >
             <button
               type="button"
@@ -125,6 +125,7 @@ const MainHeader = () => {
           </div>
           <div id="logo" className="">
             <Link
+              className=""
               to={"/accueil"}
               onClick={() => {
                 setActiveLink(-1);
@@ -135,14 +136,14 @@ const MainHeader = () => {
           </div>
           <div
             id="text-1"
-            className="hidden sm:block py-7 text-black dark:text-white"
+            className="hidden xl:block py-7 text-black dark:text-white"
           >
-            <ul className="flex items-center font-normal gap-16 text-md uppercase">
+            <ul className="flex items-center font-normal gap-16 text-md uppercase hiragino-font">
               <li>
                 <NavLink
                   className={`${
                     theme.currentTheme === "dark" ? "link-dark" : "link"
-                  } relative`}
+                  } relative text-xl`}
                   to={"/notre-maison"}
                   onClick={() => {
                     setActiveLink(1);
@@ -150,7 +151,7 @@ const MainHeader = () => {
                 >
                   {t("header.trad1")}
                   {activeLink === 1 && (
-                    <div className="absolute -top-10 -left-11">
+                    <div className="absolute -top-14 -left-20">
                       <CircleSt theme={theme.currentTheme}></CircleSt>
                     </div>
                   )}
@@ -160,7 +161,7 @@ const MainHeader = () => {
                 <NavLink
                   className={`${
                     theme.currentTheme === "dark" ? "link-dark" : "link"
-                  } relative`}
+                  } relative text-xl`}
                   to={"/trinite"}
                   onClick={() => {
                     setActiveLink(2);
@@ -168,7 +169,7 @@ const MainHeader = () => {
                 >
                   Trinité
                   {activeLink === 2 && (
-                    <div className="absolute -top-7 -left-12">
+                    <div className="absolute -top-16 -left-10">
                       <CircleNd theme={theme.currentTheme}></CircleNd>
                     </div>
                   )}
@@ -178,7 +179,7 @@ const MainHeader = () => {
                 <NavLink
                   className={`${
                     theme.currentTheme === "dark" ? "link-dark" : "link"
-                  } relative`}
+                  } relative text-xl`}
                   to={"/atelier"}
                   onClick={() => {
                     setActiveLink(3);
@@ -186,7 +187,7 @@ const MainHeader = () => {
                 >
                   {t("header.trad2")}
                   {activeLink === 3 && (
-                    <div className="absolute -top-10 -left-10">
+                    <div className="absolute -top-10 -left-12">
                       <CircleRd theme={theme.currentTheme}></CircleRd>
                     </div>
                   )}
@@ -196,7 +197,7 @@ const MainHeader = () => {
                 <NavLink
                   className={`${
                     theme.currentTheme === "dark" ? "link-dark" : "link"
-                  } relative`}
+                  } relative text-xl`}
                   to="/contact"
                   onClick={() => {
                     setActiveLink(4);
@@ -204,7 +205,7 @@ const MainHeader = () => {
                 >
                   Contact
                   {activeLink === 4 && (
-                    <div className="absolute -top-10 -left-11">
+                    <div className="absolute -top-14 -left-8">
                       <CircleTh theme={theme.currentTheme}></CircleTh>
                     </div>
                   )}
@@ -221,91 +222,10 @@ const MainHeader = () => {
                     i18n.changeLanguage(languages[0].code);
                     setActiveLanguage(0);
                   }}
-                  className="uppercase"
+                  className="uppercase text-xl"
                 >
                   {activeLanguage === 0 ? languages[1].name : languages[0].name}
                 </button>
-                {/* <div className="flex items-center gap-2">
-                  <div>{}</div>
-
-                  <div
-                    className="flex items-center justify-center cursor-pointer"
-                    onClick={() => {
-                      i18n.changeLanguage(languages[0].code);
-                      setActiveLanguage(0);
-                    }}
-                  >
-                    <div
-                      className={`${
-                        activeLanguage === 0 && theme.currentTheme === "dark"
-                          ? "bg-white"
-                          : ""
-                      } 
-                      ${
-                        activeLanguage === 0 && theme.currentTheme === "light"
-                          ? "bg-black"
-                          : ""
-                      } rounded-full w-10 h-10 flex items-center justify-center`}
-                    >
-                      <span
-                        className={`${
-                          activeLanguage === 0 && theme.currentTheme === "dark"
-                            ? "text-black"
-                            : ""
-                        } 
-                        ${
-                          activeLanguage === 0 && theme.currentTheme === "light"
-                            ? "text-white"
-                            : ""
-                        }
-                          font-bold text-md`}
-                      >
-                        FR
-                      </span>
-                    </div>
-                  </div>
-                  <span>-</span>
-                  <div
-                    className="flex items-center justify-center cursor-pointer"
-                    onClick={() => {
-                      i18n.changeLanguage(languages[1].code);
-                      setActiveLanguage(1);
-                    }}
-                  >
-                    <div
-                      className={`${
-                        activeLanguage === 1 && theme.currentTheme === "dark"
-                          ? "bg-white"
-                          : ""
-                      } 
-                        ${
-                          activeLanguage === 1 && theme.currentTheme === "light"
-                            ? "bg-black"
-                            : ""
-                        }
-                      
-                        rounded-full w-10 h-10 flex items-center justify-center`}
-                    >
-                      <span
-                        className={`${
-                          activeLanguage === 1 && theme.currentTheme === "dark"
-                            ? "text-black"
-                            : ""
-                        } 
-                          ${
-                            activeLanguage === 1 &&
-                            theme.currentTheme === "light"
-                              ? "text-white"
-                              : ""
-                          }
-                        
-                          font-bold text-md`}
-                      >
-                        En
-                      </span>
-                    </div>
-                  </div>
-                </div> */}
               </li>
               <li>
                 <div className="flex items-center justify-center w-full">
@@ -344,7 +264,11 @@ const MainHeader = () => {
           </div>
           <div
             id="text2"
-            className="text-xl uppercase hidden sm:block leading-5"
+            className="text-2xl uppercase hidden sm:block leading-5 hiragino-font"
+            onMouseEnter={() => dispatch(handleHoveringTitles({ value: true }))}
+            onMouseLeave={() =>
+              dispatch(handleHoveringTitles({ value: false }))
+            }
           >
             Maison <br /> de haute <br /> joaillerie
           </div>
@@ -354,7 +278,7 @@ const MainHeader = () => {
       <div
         className={`${
           showMenu ? "block" : "hidden"
-        } sm:hidden pt-20 absolute bg-white dark:bg-black w-[100%] h-screen overscroll-none`}
+        } pt-20 absolute bg-white dark:bg-black w-[100%] h-screen overscroll-none `}
         id="mobile-menu"
       >
         <div className="pl-6 pt-2 pb-3 space-y-1 uppercase">
@@ -365,186 +289,116 @@ const MainHeader = () => {
               enableScroll();
             }}
           >
-            <Link
-              className="block px-3 py-3 text-base font-medium relative"
-              to={"/notre-maison"}
-              onClick={() => {
-                setActiveLink(1);
-              }}
-            >
-              {t("header.trad1")}
-              {activeLink === 1 && (
-                <div className="absolute -top-6 -left-6">
-                  <CircleSt theme={theme.currentTheme}></CircleSt>
-                </div>
-              )}
-            </Link>
-            <Link
-              className="block px-3 py-3 text-base font-medium relative"
-              to={"/trinite"}
-              onClick={() => {
-                setActiveLink(2);
-              }}
-            >
-              Trinité
-              {activeLink === 2 && (
-                <div className="absolute -top-3 -left-6">
-                  <CircleNd theme={theme.currentTheme}></CircleNd>
-                </div>
-              )}
-            </Link>
-            <Link
-              className="block px-3 py-3 text-base font-medium relative"
-              to={"/atelier"}
-              onClick={() => {
-                setActiveLink(3);
-              }}
-            >
-              {t("header.trad2")}
-              {activeLink === 3 && (
-                <div className="absolute -top-6 -left-6">
-                  <CircleRd theme={theme.currentTheme}></CircleRd>
-                </div>
-              )}
-            </Link>
-            <Link
-              className="block px-3 py-3 text-base font-medium relative "
-              to="/contact"
-              onClick={() => {
-                setActiveLink(4);
-              }}
-            >
-              Contact
-              {activeLink === 4 && (
-                <div className="absolute -top-6 -left-8">
-                  <CircleTh theme={theme.currentTheme}></CircleTh>
-                </div>
-              )}
-            </Link>
-          </div>
-          <div className="px-3 py-3">
-            <button
-              onClick={() => {
-                if (activeLanguage === 0) {
-                  i18n.changeLanguage(languages[1].code);
-                  setActiveLanguage(1);
-                  return;
-                }
-                i18n.changeLanguage(languages[0].code);
-                setActiveLanguage(0);
-              }}
-              className="uppercase"
-            >
-              {activeLanguage === 0 ? languages[1].name : languages[0].name}
-            </button>
-            {/* <div className="flex items-center gap-2">
-              <div
-                className="flex items-center justify-center cursor-pointer"
+            <div className="flex flex-col gap-12 pl-8 hiragino-font">
+              <div className="relative">
+                {activeLink === 1 && (
+                  <div className="absolute -top-14 -left-20">
+                    <CircleSt theme={theme.currentTheme}></CircleSt>
+                  </div>
+                )}
+                <Link
+                  className="block text-xl font-medium relative hiragino-font"
+                  to={"/notre-maison"}
+                  onClick={() => {
+                    setActiveLink(1);
+                  }}
+                >
+                  {t("header.trad1")}
+                </Link>
+              </div>
+              <div className="relative">
+                {activeLink === 2 && (
+                  <div className="absolute -top-14 -left-10">
+                    <CircleNd theme={theme.currentTheme}></CircleNd>
+                  </div>
+                )}
+                <Link
+                  className="block  text-xl font-medium relative"
+                  to={"/trinite"}
+                  onClick={() => {
+                    setActiveLink(2);
+                  }}
+                >
+                  Trinité
+                </Link>
+              </div>
+              <Link
+                className="block text-xl font-medium relative "
+                to={"/atelier"}
                 onClick={() => {
-                  i18n.changeLanguage(languages[0].code);
-                  setActiveLanguage(0);
+                  setActiveLink(3);
                 }}
               >
-                <div
-                  className={`${
-                    activeLanguage === 0 && theme.currentTheme === "dark"
-                      ? "bg-white"
-                      : ""
-                  } 
-                      ${
-                        activeLanguage === 0 && theme.currentTheme === "light"
-                          ? "bg-black"
-                          : ""
-                      } rounded-full w-10 h-10 flex items-center justify-center`}
-                >
-                  <span
-                    className={`${
-                      activeLanguage === 0 && theme.currentTheme === "dark"
-                        ? "text-black"
-                        : ""
-                    } 
-                        ${
-                          activeLanguage === 0 && theme.currentTheme === "light"
-                            ? "text-white"
-                            : ""
-                        }
-                          font-bold text-md`}
-                  >
-                    FR
-                  </span>
-                </div>
-              </div>
-              <span>-</span>
-              <div
-                className="flex items-center justify-center cursor-pointer"
+                {t("header.trad2")}
+                {activeLink === 3 && (
+                  <div className="absolute -top-10 -left-12">
+                    <CircleRd theme={theme.currentTheme}></CircleRd>
+                  </div>
+                )}
+              </Link>
+              <Link
+                className="block text-xl font-medium relative "
+                to="/contact"
                 onClick={() => {
-                  i18n.changeLanguage(languages[1].code);
-                  setActiveLanguage(1);
+                  setActiveLink(4);
                 }}
               >
-                <div
-                  className={`${
-                    activeLanguage === 1 && theme.currentTheme === "dark"
-                      ? "bg-white"
-                      : ""
-                  } 
-                        ${
-                          activeLanguage === 1 && theme.currentTheme === "light"
-                            ? "bg-black"
-                            : ""
-                        }
-                        rounded-full w-10 h-10 flex items-center justify-center`}
+                Contact
+                {activeLink === 4 && (
+                  <div className="absolute -top-14 -left-9">
+                    <CircleTh theme={theme.currentTheme}></CircleTh>
+                  </div>
+                )}
+              </Link>
+              <div className="">
+                <button
+                  onClick={() => {
+                    if (activeLanguage === 0) {
+                      i18n.changeLanguage(languages[1].code);
+                      setActiveLanguage(1);
+                      return;
+                    }
+                    i18n.changeLanguage(languages[0].code);
+                    setActiveLanguage(0);
+                  }}
+                  className="uppercase text-xl"
                 >
-                  <span
-                    className={`${
-                      activeLanguage === 1 && theme.currentTheme === "dark"
-                        ? "text-black"
-                        : ""
-                    } 
-                          ${
-                            activeLanguage === 1 &&
-                            theme.currentTheme === "light"
-                              ? "text-white"
-                              : ""
-                          }
-                        
-                          font-bold text-md`}
+                  {activeLanguage === 0 ? languages[1].name : languages[0].name}
+                </button>
+              </div>
+              <div className="">
+                <div className="flex items-center w-full">
+                  <label
+                    htmlFor="toggleB"
+                    className="flex items-center cursor-pointer"
                   >
-                    En
-                  </span>
+                    <div className="relative">
+                      <input
+                        type="checkbox"
+                        id="toggleB"
+                        className="sr-only"
+                        onClick={() => {
+                          dispatch(toggleTheme());
+                        }}
+                      />
+                      <div
+                        className={`block w-11 h-6 border-2 rounded-xl border-black  ${
+                          theme.currentTheme === "dark"
+                            ? "bg-black border-white"
+                            : "bg-white border-black"
+                        }`}
+                      />
+                      <div
+                        className={`dot absolute right-0 top-0 w-6 h-6 rounded-full transition ${
+                          theme.currentTheme === "dark"
+                            ? "bg-white"
+                            : "bg-black"
+                        }`}
+                      />
+                    </div>
+                  </label>
                 </div>
               </div>
-            </div> */}
-          </div>
-          <div className="px-3 py-3">
-            <div className="flex items-center w-full">
-              <label
-                htmlFor="toggleB"
-                className="flex items-center cursor-pointer"
-              >
-                <div className="relative">
-                  <input
-                    type="checkbox"
-                    id="toggleB"
-                    className="sr-only"
-                    onClick={() => {
-                      dispatch(toggleTheme());
-                    }}
-                  />
-                  <div
-                    className={`block w-11 h-6 border-2 rounded-xl border-black  ${
-                      theme.currentTheme === "dark"
-                        ? "bg-black border-white"
-                        : "bg-white border-black"
-                    }`}
-                  />
-                  <div
-                    className={`dot absolute right-0 top-0 w-6 h-6 rounded-full transition ${
-                      theme.currentTheme === "dark" ? "bg-white" : "bg-black"
-                    }`}
-                  />
-                </div>
-              </label>
             </div>
           </div>
         </div>
