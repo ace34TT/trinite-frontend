@@ -2,13 +2,12 @@ import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import "./style.css";
 import logo from "./../../../assets/logo/logo-trinité.png";
+import rightLogo from "./../../../assets/logo/right-logo.png";
 import { Helmet } from "react-helmet";
 import { useGLTF, useProgress } from "@react-three/drei";
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useDispatch } from "react-redux";
-import { setPreloading } from "../../../features/preloading.feature";
-
 export default function Portal() {
   const navigate = useNavigate();
   const { t } = useTranslation();
@@ -23,6 +22,7 @@ export default function Portal() {
       }, i * 600);
     }
   }, []);
+
   const controls = useAnimation();
   const onAnimationComplete = () => {
     navigate("/accueil");
@@ -41,20 +41,21 @@ export default function Portal() {
       </Helmet>
       <motion.div>
         {progress < 100 ? (
-          // Show loading screen when isLoading is true
-          <div className="h-screen w-screen flex items-center justify-center  text-9xl bg-black text-white">
+          <div
+            className={`h-screen w-screen flex items-center justify-center  text-9xl bg-black text-white`}
+          >
             <div id="loader">{percentage} %</div>
           </div>
         ) : (
-          // Render the Portal content when the model finishes loading
           <div className="h-screen w-screen flex flex-col justify-center gap-32 sm:gap-52 items-center dark:bg-black">
             {/* <> {dispatch(setPreloading())}</> */}
             <div className="sr-only sm:not-sr-only"></div>
             <div className="text-white flex flex-col-reverse sm:flex-row items-center gap-16 sm:gap-32">
-              <img src={logo} className="h-28 sm:h-32" alt="" />
-              <div className="the-house text-3xl leading-7 sm:text-4xl hiragino-font">
+              <img src={logo} className="h-24 sm:h-32" alt="" />
+              {/* <div className="the-house text-3xl leading-7 sm:text-4xl hiragino-font">
                 MAISON <br /> DE HAUTE <br /> JOAILLERIE
-              </div>
+              </div> */}
+              <img src={rightLogo} className="h-24 sm:h-32" alt="" />
             </div>
             <div className="actions flex items-center gap-5 text-white font-light text-3xl">
               <div

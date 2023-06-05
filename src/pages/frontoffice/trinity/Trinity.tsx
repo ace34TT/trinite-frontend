@@ -1,14 +1,13 @@
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet";
-import "./style.css";
 import "./../../../assets/font/style.css";
 import bg from "./../../../assets/background/Capture d’écran 2023-04-21 à 22.24 1.png";
 import Slider, { ResponsiveObject } from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
-import { useState } from "react";
 import { isMobile } from "react-device-detect";
+import CustomSlider from "../../../components/slider/CustomerSilder";
 const images = [
   require("./../../../assets/products/10.png"), // 0
   require("./../../../assets/products/12.png"), // 1
@@ -28,16 +27,24 @@ const images = [
   require("./../../../assets/products/tc-4.png"), // 13
   //
   require("./../../../assets/element/coming-soon.png"), // 14
+  require("./../../../assets/products/main-item-1.png"), // 15
+  require("./../../../assets/products/main-item-2.png"), // 16
+  require("./../../../assets/products/main-item-3.png"), // 17
 ];
 
 function CustomPrevArrow(props: { onClick: any }) {
   const { onClick } = props;
   return (
     <div
-      className="slick-arrow custom-prev-arrow absolute top-1/2 -left-10 transform -translate-y-1/2 cursor-pointer z-10"
+      // className="slick-arrow custom-prev-arrow absolute top-1/2 -left-10 transform -translate-y-1/2 cursor-pointer z-10"
+      className="slick-arrow bg-zinc-300 rounded-full custom-prev-arrow absolute bottom-0 -left-10 transform cursor-pointer z-10"
       onClick={onClick}
     >
-      <MdKeyboardArrowLeft size={42} className="text-gray-300" />
+      <MdKeyboardArrowLeft
+        size={42}
+        className="text-black "
+        style={{ strokeWidth: 1 }}
+      />
     </div>
   );
 }
@@ -46,10 +53,15 @@ function CustomNextArrow(props: { onClick: any }) {
   const { onClick } = props;
   return (
     <div
-      className="slick-arrow custom-next-arrow absolute top-1/2 -right-10 transform -translate-y-1/2 cursor-pointer z-10"
+      // className="slick-arrow custom-next-arrow absolute top-1/2 -right-10 transform -translate-y-1/2 cursor-pointer z-10"
+      className="slick-arrow bg-zinc-300 rounded-full custom-next-arrow absolute bottom-0 -right-10 transform cursor-pointer z-10"
       onClick={onClick}
     >
-      <MdKeyboardArrowRight size={42} className="text-gray-300" />
+      <MdKeyboardArrowRight
+        size={42}
+        className="text-black"
+        style={{ strokeWidth: 1 }}
+      />
     </div>
   );
 }
@@ -58,7 +70,8 @@ export default function Trinity() {
   const { t } = useTranslation();
 
   const settings = {
-    dots: false,
+    dots: true,
+    dotsClass: "slick-dots custom-dots",
     infinite: false,
     speed: 500,
     slidesToShow: 1,
@@ -73,6 +86,9 @@ export default function Trinity() {
           slidesToShow: 1,
           slidesToScroll: 1,
           dotsClass: "slick-dots custom-dots",
+          appendDots: (dots: any) => (
+            <div style={{ position: "absolute", bottom: "0px" }}>{dots}</div>
+          ),
         },
       },
     ] as unknown as ResponsiveObject[],
@@ -83,16 +99,17 @@ export default function Trinity() {
       <Helmet>
         <title>Trinité - Trinité</title>
       </Helmet>
-
-      <div className="pt-0 sm:pt-16" style={{ fontFamily: "CustomFont" }}>
+      <div className="pt-0 " style={{ fontFamily: "CustomFont" }}>
+        <div className="flex w-full justify-start p-10 lg:my-20 lg:px-32 ">
+          <p className="text-sm sm:text-xl w-full lg:w-9/12 text-left white">
+            {t("Trinite.trad1")}
+          </p>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
-          <div className="h-[425px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-center border-t sm:border-l border-gray-300">
-            <p className="text-justify text-xl">{t("Trinite.trad1")}</p>
-          </div>
-          <div className="h-[425px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t sm:border-l border-gray-300">
+          <div className="h-[450px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t sm:border-l dark:border-zinc-700 border-zinc-300">
             <div className="w-full h-full flex flex-col gap-1 sm:gap-4">
               <div className="w-full flex justify-between gap-10">
-                <p className="flex-grow">
+                <p className="flex-grow font-bold text-lg">
                   {t("Trinite.trad2.txt1")}
                   <br />
                   {t("Trinite.trad2.txt2")}
@@ -100,7 +117,25 @@ export default function Trinity() {
                 <p>3200€</p>
               </div>
               <br className="sr-only sm:not-sr-only" />
-              <Slider {...settings}>
+              <CustomSlider>
+                <div className="h-full">
+                  <div
+                    className="h-full flex flex-col items-center"
+                    style={{ position: "relative" }}
+                  >
+                    <div
+                      className="h-auto w-full sm:w-[450px] flex items-center justify-center"
+                      style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                      }}
+                    >
+                      <img src={images[15]} alt="" />
+                    </div>
+                  </div>
+                </div>
                 <div className="h-full">
                   <div
                     className="h-full flex flex-col items-center"
@@ -143,7 +178,7 @@ export default function Trinity() {
                     style={{ position: "relative" }}
                   >
                     <div
-                      className="h-full w-full flex items-center justify-center"
+                      className="h-auto w-72 sm:w-96 flex items-center justify-center"
                       style={{
                         position: "absolute",
                         top: "50%",
@@ -169,13 +204,13 @@ export default function Trinity() {
                     <p>{t("Trinite.text1.trad6")}</p>
                   </div>
                 </div>
-              </Slider>
+              </CustomSlider>
             </div>
           </div>
-          <div className="h-[425px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t sm:border-l border-gray-300">
+          <div className="h-[450px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t sm:border-l dark:border-zinc-700 border-zinc-300">
             <div className="w-full h-full flex flex-col gap-1 sm:gap-4">
               <div className="w-full flex justify-between gap-10">
-                <p>
+                <p className="font-bold text-lg">
                   {t("Trinite.trad3.txt1")}
                   <br></br>
                   {t("Trinite.trad3.txt2")}
@@ -183,7 +218,25 @@ export default function Trinity() {
                 <p>5300€</p>
               </div>
               <br className="sr-only sm:not-sr-only" />
-              <Slider {...settings}>
+              <CustomSlider>
+                <div className="h-full">
+                  <div
+                    className="h-full flex flex-col items-center"
+                    style={{ position: "relative" }}
+                  >
+                    <div
+                      className="h-auto w-full sm:w-[450px] flex items-center justify-center"
+                      style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                      }}
+                    >
+                      <img src={images[17]} alt="" />
+                    </div>
+                  </div>
+                </div>
                 <div className="h-full">
                   <div
                     className="h-full flex flex-col items-center"
@@ -208,7 +261,7 @@ export default function Trinity() {
                     style={{ position: "relative" }}
                   >
                     <div
-                      className="h-full w-full flex items-center justify-center"
+                      className="h-auto w-full sm:w-[400px] flex items-center justify-center"
                       style={{
                         position: "absolute",
                         top: "50%",
@@ -226,7 +279,7 @@ export default function Trinity() {
                     style={{ position: "relative" }}
                   >
                     <div
-                      className="h-full w-full flex items-center justify-center"
+                      className="h-auto w-full sm:w-[450px] flex items-center justify-center"
                       style={{
                         position: "absolute",
                         top: "50%",
@@ -244,7 +297,7 @@ export default function Trinity() {
                     style={{ position: "relative" }}
                   >
                     <div
-                      className="h-full w-full flex items-center justify-center"
+                      className="h-auto w-full sm:w-[400px] flex items-center justify-center"
                       style={{
                         position: "absolute",
                         top: "50%",
@@ -270,13 +323,13 @@ export default function Trinity() {
                     <p>{t("Trinite.text2.trad6")}</p>
                   </div>
                 </div>
-              </Slider>
+              </CustomSlider>
             </div>
           </div>
-          <div className="h-[425px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t sm:border-l border-gray-300">
+          <div className="h-[450px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t sm:border-l dark:border-zinc-700 border-zinc-300">
             <div className="w-full h-full flex flex-col gap-1 sm:gap-4">
               <div className="w-full flex justify-between gap-10">
-                <p>
+                <p className="font-bold text-lg">
                   {t("Trinite.trad5.txt1")}
                   <br></br>
                   {t("Trinite.trad5.txt2")}
@@ -284,14 +337,32 @@ export default function Trinity() {
                 <p>3400€</p>
               </div>
               <br className="sr-only sm:not-sr-only" />
-              <Slider {...settings}>
+              <CustomSlider>
                 <div className="h-full">
                   <div
                     className="h-full flex flex-col items-center"
                     style={{ position: "relative" }}
                   >
                     <div
-                      className="h-full w-full flex items-center justify-center"
+                      className="h-auto w-full sm:w-[450px] flex items-center justify-center"
+                      style={{
+                        position: "absolute",
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%, -50%)",
+                      }}
+                    >
+                      <img src={images[16]} alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div className="h-full">
+                  <div
+                    className="h-full flex flex-col items-center"
+                    style={{ position: "relative" }}
+                  >
+                    <div
+                      className="h-auto w-72 sm:w-[375px] flex items-center justify-center"
                       style={{
                         position: "absolute",
                         top: "50%",
@@ -314,7 +385,7 @@ export default function Trinity() {
                     style={{ position: "relative" }}
                   >
                     <div
-                      className="h-full w-full flex items-center justify-center"
+                      className="h-auto w-80 sm:w-[375px] flex items-center justify-center"
                       style={{
                         position: "absolute",
                         top: "50%",
@@ -332,7 +403,7 @@ export default function Trinity() {
                     style={{ position: "relative" }}
                   >
                     <div
-                      className="h-full w-full flex items-center justify-center"
+                      className="h-auto w-80 sm:w-[375px] flex items-center justify-center"
                       style={{
                         position: "absolute",
                         top: "50%",
@@ -350,7 +421,7 @@ export default function Trinity() {
                     style={{ position: "relative" }}
                   >
                     <div
-                      className="h-full w-full flex items-center justify-center"
+                      className="h-auto w-80 sm:w-[350px] flex items-center justify-center"
                       style={{
                         position: "absolute",
                         top: "50%",
@@ -376,13 +447,13 @@ export default function Trinity() {
                     <p>{t("Trinite.text4.trad6")}</p>
                   </div>
                 </div>
-              </Slider>
+              </CustomSlider>
             </div>
           </div>
-          <div className="h-[425px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t sm:border-l border-gray-300">
+          <div className="h-[450px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t sm:border-l dark:border-zinc-700 border-zinc-300">
             <div className="w-full h-full flex flex-col gap-1 sm:gap-4">
               <div className="w-full flex justify-between gap-10">
-                <p>
+                <p className="font-bold text-lg">
                   {t("Trinite.trad4.txt1")}
                   <br></br>
                   {t("Trinite.trad4.txt2")}
@@ -390,7 +461,7 @@ export default function Trinity() {
                 <p>3900€</p>
               </div>
               <br />
-              <Slider {...settings}>
+              <CustomSlider>
                 <div className="h-full w-full">
                   <div className="h-full flex flex-col items-center relative">
                     <div
@@ -420,13 +491,13 @@ export default function Trinity() {
                     <p>{t("Trinite.text3.trad5")}</p>
                   </div>
                 </div>
-              </Slider>
+              </CustomSlider>
             </div>
           </div>
-          <div className="h-[425px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t sm:border-l border-gray-300">
+          <div className="h-[450px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t sm:border-l dark:border-zinc-700 border-zinc-300">
             <div className="w-full h-full flex flex-col gap-1 sm:gap-4">
               <div className="w-full flex justify-between gap-10">
-                <p>
+                <p className="font-bold text-lg">
                   {t("Trinite.trad6.txt1")}
                   <br></br>
                   {t("Trinite.trad6.txt2")}
@@ -434,7 +505,7 @@ export default function Trinity() {
                 <p>5300€</p>
               </div>
               <br className="sr-only sm:not-sr-only" />
-              <Slider {...settings}>
+              <CustomSlider>
                 <div className="h-full">
                   <div className="h-full relative flex flex-col items-center">
                     <div
@@ -464,13 +535,13 @@ export default function Trinity() {
                     <p>{t("Trinite.text5.trad6")}</p>
                   </div>
                 </div>
-              </Slider>
+              </CustomSlider>
             </div>
           </div>
-          <div className="h-[425px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t sm:border-l border-gray-300">
+          <div className="h-[450px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t sm:border-l dark:border-zinc-700 border-zinc-300">
             <div className="w-full h-full flex flex-col gap-1 sm:gap-4">
               <div className="w-full flex justify-between gap-10">
-                <p>
+                <p className="font-bold text-lg">
                   {t("Trinite.trad7.txt1")}
                   <br></br>
                   {t("Trinite.trad7.txt2")}
@@ -478,7 +549,7 @@ export default function Trinity() {
                 <p>3200€</p>
               </div>
               <br className="sr-only sm:not-sr-only" />
-              <Slider {...settings}>
+              <CustomSlider>
                 <div className="h-full">
                   <div className=" h-full relative flex flex-col items-center">
                     <div
@@ -508,13 +579,13 @@ export default function Trinity() {
                     <p>{t("Trinite.text6.trad6")}</p>
                   </div>
                 </div>
-              </Slider>
+              </CustomSlider>
             </div>
           </div>
-          <div className="h-[425px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t sm:border-l border-gray-300">
+          <div className="h-[450px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t sm:border-l dark:border-zinc-700 border-zinc-300">
             <div className="w-full h-full flex flex-col gap-1 sm:gap-4">
               <div className="w-full flex justify-between gap-10">
-                <p>
+                <p className="font-bold text-lg">
                   {t("Trinite.trad8.txt1")}
                   <br></br>
                   {t("Trinite.trad8.txt2")}
@@ -522,7 +593,7 @@ export default function Trinity() {
                 <p>3200€</p>
               </div>
               <br className="sr-only sm:not-sr-only" />
-              <Slider {...settings}>
+              <CustomSlider>
                 <div className="h-full w-full">
                   <div className="h-full w-full relative flex flex-col items-center">
                     <div
@@ -552,10 +623,13 @@ export default function Trinity() {
                     <p>{t("Trinite.text7.trad6")}</p>
                   </div>
                 </div>
-              </Slider>
+              </CustomSlider>
             </div>
           </div>
-          <div className="sr-only sm:not-sr-only h-[425px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t border-l border-gray-300">
+          <div className="sr-only sm:not-sr-only h-[450px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t border-l dark:border-zinc-700 border-zinc-300">
+            <div className="w-full h-full flex flex-col gap-4"></div>
+          </div>
+          <div className="sr-only sm:not-sr-only h-[450px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t border-l dark:border-zinc-700 border-zinc-300">
             <div className="w-full h-full flex flex-col gap-4"></div>
           </div>
         </div>

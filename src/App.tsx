@@ -12,6 +12,7 @@ import CustomCursor from "./components/custom-cursor/CustomCursor";
 import { useSelector } from "react-redux";
 import { RootState } from "./redux/store";
 import { isMobile } from "react-device-detect";
+import { Helmet } from "react-helmet";
 
 function App() {
   // const dispatch = useDispatch();
@@ -20,6 +21,14 @@ function App() {
     <>
       {/* {!preloading && <CustomCursor />} */}
       {!isMobile && <CustomCursor />}
+      <Helmet>
+        <link
+          rel="preload"
+          href="./assets/font/HelveticaNowText-ExtraBold.ttf"
+          as="font"
+          crossOrigin="anonymous"
+        />
+      </Helmet>
       <Routes>
         <Route path="/" element={<Portal />} />
         <Route path="/" element={<MainLayout />}>

@@ -16,9 +16,9 @@
 }
 
 .slick-dots.custom-dots li button:before {
-  color: rgb(85, 85, 85);
+  color: #555555;
   opacity: 1;
 }
 .slick-dots.custom-dots li.slick-active button:before {
-  color: rgb(227, 218, 119);
+  color: #ffffff;
 }

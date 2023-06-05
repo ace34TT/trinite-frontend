@@ -124,9 +124,7 @@ const SimplifiedModels = forwardRef(
                 scale={scale}
               />
             </>
-          ) : (
-            <></>
-          )}
+          ) : null}
         </>
       </group>
     );

@@ -42,7 +42,7 @@ i18n.use(initReactI18next).init({
         },
         Trinite: {
           trad1:
-            "La collection Trinité incarne la fusion exquise entre l'héritage ancestral et l'audace de l'innovation. La collection allie la sagesse d'un savoir-faire séculaire aux aspirations novatrices d'une nouvelle génération, pour offrir des créations uniques et intemporelles.",
+            "La collection Trinité incarne la fusion exquise entre l'héritage ancestral et l'audace de l'innovation. La\u00A0collection allie la sagesse d'un savoir-faire séculaire aux aspirations novatrices d'une nouvelle génération, pour offrir des créations uniques et intemporelles.",
           trad2: {
             txt1: "Bracelet TRINITE",
             txt2: "Or jaune",

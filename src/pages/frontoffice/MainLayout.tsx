@@ -9,7 +9,7 @@ function MainLayout() {
     <motion.div>
       <CookieConsent
         flipButtons
-        debug={true}
+        // debug={true}
         location="bottom"
         buttonText="Accepter"
         enableDeclineButton

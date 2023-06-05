@@ -11,6 +11,7 @@ import CircleRd from "../active-link/CircleRd";
 import CircleTh from "../active-link/CircleTh";
 import DarkLogo from "../logo/DarkLogo";
 import LightLogo from "../logo/LightLogo";
+import { handleHoveringTitles } from "../../features/cursor.feature";
 
 const languages = [
   {
@@ -31,7 +32,6 @@ const MainHeader = () => {
   const [activeLanguage, setActiveLanguage] = useState(0);
   const { t, i18n } = useTranslation();
   const [showMenu, setShowMenu] = useState(false);
-
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
@@ -264,7 +264,11 @@ const MainHeader = () => {
           </div>
           <div
             id="text2"
-            className="text-2xl uppercase hidden sm:block  leading-5 hiragino-font"
+            className="text-2xl uppercase hidden sm:block leading-5 hiragino-font"
+            onMouseEnter={() => dispatch(handleHoveringTitles({ value: true }))}
+            onMouseLeave={() =>
+              dispatch(handleHoveringTitles({ value: false }))
+            }
           >
             Maison <br /> de haute <br /> joaillerie
           </div>
