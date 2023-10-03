@@ -4,14 +4,14 @@ import "./style.css";
 import logo from "./../../../assets/logo/logo-trinité.png";
 import rightLogo from "./../../../assets/logo/right-logo.png";
 import { Helmet } from "react-helmet";
-import { useGLTF, useProgress } from "@react-three/drei";
+import { useProgress } from "@react-three/drei";
 import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useDispatch } from "react-redux";
+import { handleHoveringTitles } from "../../../features/cursor.feature";
 export default function Portal() {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const dispatch = useDispatch();
   //
   const { progress } = useProgress();
   const [percentage, setPercentage] = useState(0);
@@ -24,16 +24,15 @@ export default function Portal() {
   }, []);
 
   const controls = useAnimation();
-  const onAnimationComplete = () => {
-    navigate("/accueil");
-  };
-  const handleClick = async () => {
+
+  const handleClick = async (to: string) => {
     controls.start({
       opacity: 1,
       scale: 50,
-      transition: { duration: 0.5, onComplete: onAnimationComplete },
-    }); // Scale back down to 1
+      transition: { duration: 0.5, onComplete: () => navigate(to) },
+    });
   };
+  const dispatch = useDispatch();
   return (
     <>
       <Helmet>
@@ -52,23 +51,36 @@ export default function Portal() {
             <div className="sr-only sm:not-sr-only"></div>
             <div className="text-white flex flex-col-reverse sm:flex-row items-center gap-16 sm:gap-32">
               <img src={logo} className="h-24 sm:h-32" alt="" />
-              {/* <div className="the-house text-3xl leading-7 sm:text-4xl hiragino-font">
-                MAISON <br /> DE HAUTE <br /> JOAILLERIE
-              </div> */}
-              <img src={rightLogo} className="h-24 sm:h-32" alt="" />
+              <div
+                id="text2"
+                className="text-2xl uppercase hidden sm:block leading-5 hiragino-font"
+                onMouseEnter={() =>
+                  dispatch(handleHoveringTitles({ value: true }))
+                }
+                onMouseLeave={() =>
+                  dispatch(handleHoveringTitles({ value: false }))
+                }
+              >
+                Maison <br /> de haute <br /> joaillerie
+              </div>
             </div>
             <div className="actions flex items-center gap-5 text-white font-light text-3xl">
               <div
                 className="p-4 cursor-pointer hover:scale-110 transform transition duration-300 ease-in-out"
                 onClick={() => {
-                  handleClick();
+                  handleClick("/accueil");
                 }}
               >
                 {t("homepage_1")}
               </div>
               <div className="border border-gray-400 h-16"></div>
-              <div className="p-4 cursor-pointer hover:scale-110 transform transition duration-300 ease-in-out">
-                <Link to={"/contact"}>Contact</Link>
+              <div
+                className="p-4 cursor-pointer hover:scale-110 transform transition duration-300 ease-in-out"
+                onClick={() => {
+                  handleClick("/contact");
+                }}
+              >
+                Contact
               </div>
             </div>
           </div>

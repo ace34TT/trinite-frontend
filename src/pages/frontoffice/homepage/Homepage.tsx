@@ -19,6 +19,7 @@ import { RootState } from "../../../redux/store";
 import { EffectComposer } from "@react-three/postprocessing";
 import { SimplifiedModel } from "../../../components/three-model/SimplifiedModel";
 import SimplifiedModels from "../../../components/three-model/SimplifiedModels";
+import { BrowserView, isBrowser } from "react-device-detect";
 export default function Homepage() {
   const { t } = useTranslation();
   const [activeModel, setActiveModel] = useState(0);
@@ -140,7 +141,7 @@ export default function Homepage() {
           ref={textHiddenRef}
         >
           <div className="text-left sm:text-center">
-            {t("home.trad1")} <br className="sr-only sm:not-sr-only" />
+            {t("home.trad1")} {isBrowser && <br />}
             {t("home.trad2")}
           </div>
         </div>

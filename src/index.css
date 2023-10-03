@@ -4,6 +4,9 @@
 a::after {
   content: "";
 }
+html {
+  overflow-x: hidden;
+}
 
 @font-face {
   font-family: "Hiragino";
@@ -11,7 +14,9 @@ a::after {
     url("./assets/font/HelveticaNowText-ExtraBold.ttf") format("opentype");
   font-display: swap;
 }
-
+* {
+  cursor: none !important;
+}
 .hiragino-font {
   font-family: Hiragino;
 }

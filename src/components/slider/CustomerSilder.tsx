@@ -3,23 +3,20 @@ import { isMobile } from "react-device-detect";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import "./style.css";
 import Slider, { ResponsiveObject } from "react-slick";
+import { useTranslation } from "react-i18next";
 interface IProps {
   children: ReactNode;
+  desc: ReactNode;
 }
 
 function CustomPrevArrow(props: { onClick: any }) {
   const { onClick } = props;
   return (
     <div
-      // className="slick-arrow custom-prev-arrow absolute top-1/2 -left-10 transform -translate-y-1/2 cursor-pointer z-10"
-      className="slick-arrow bg-zinc-300 rounded-full custom-prev-arrow absolute bottom-0 -left-10 transform cursor-pointer z-10"
+      className="slick-arrow custom-prev-arrow absolute bottom-0 -left-10 transform cursor-pointer z-10"
       onClick={onClick}
     >
-      <MdKeyboardArrowLeft
-        size={42}
-        className="text-black "
-        style={{ strokeWidth: 1 }}
-      />
+      <MdKeyboardArrowLeft size={42} className="text-zinc-300 " />
     </div>
   );
 }
@@ -29,19 +26,15 @@ function CustomNextArrow(props: { onClick: any }) {
   return (
     <div
       // className="slick-arrow custom-next-arrow absolute top-1/2 -right-10 transform -translate-y-1/2 cursor-pointer z-10"
-      className="slick-arrow bg-zinc-300 rounded-full custom-next-arrow absolute bottom-0 -right-10 transform cursor-pointer z-10"
+      className="slick-arrow rounded-full custom-next-arrow absolute bottom-0 -right-10 transform cursor-pointer z-10"
       onClick={onClick}
     >
-      <MdKeyboardArrowRight
-        size={42}
-        className="text-black"
-        style={{ strokeWidth: 1 }}
-      />
+      <MdKeyboardArrowRight size={42} className="text-zinc-300" />
     </div>
   );
 }
 
-const CustomSlider: React.FC<IProps> = ({ children }) => {
+const CustomSlider: React.FC<IProps> = ({ children, desc }) => {
   const [showItems, setShowItems] = useState(false);
   const settings = {
     dots: showItems,
@@ -68,13 +61,20 @@ const CustomSlider: React.FC<IProps> = ({ children }) => {
       },
     ] as unknown as ResponsiveObject[],
   };
+  const { t } = useTranslation();
   return (
     <div
-      className="h-full"
+      className="h-[450px] sm:h-auto py-5 px-7 sm:py-16 sm:px-14 flex flex-col items-center justify-start border-t sm:border-l dark:border-zinc-700 border-zinc-300"
       onMouseEnter={() => setShowItems(true)}
       onMouseLeave={() => setShowItems(false)}
     >
-      <Slider {...settings}>{children}</Slider>
+      <div className="w-full h-full flex flex-col gap-1 sm:gap-4">
+        <div className="w-full flex justify-between gap-10">{desc}</div>
+        <br className="sr-only sm:not-sr-only" />
+        <div className="h-full">
+          <Slider {...settings}>{children}</Slider>
+        </div>{" "}
+      </div>
     </div>
   );
 };
